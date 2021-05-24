@@ -7,6 +7,9 @@
         <div class="content-container">
             <app-breadcrumbs></app-breadcrumbs>
             <app-advance-search (filterChangeEvent)="onFilterChange($event)"></app-advance-search>
+            <hr>
+            <app-dynamic-form></app-dynamic-form>
+            <hr>
             <ng-container *ngFor="let question of questionList; let qIndex = index">
                 <app-question-card [question]="question" [highlightAnswer]="true" [index]="qIndex" ></app-question-card>
             </ng-container>

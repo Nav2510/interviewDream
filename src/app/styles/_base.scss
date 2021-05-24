@@ -76,9 +76,9 @@ h6 {
   }
 }
 .mat-checkbox.checkbox-success {
-  color: $color-sucess;
+  color: $color-success;
   .mat-checkbox-frame {
-    border-color: $color-sucess;
+    border-color: $color-success;
   }
 }
 .mat-checkbox.checkbox-error {
@@ -141,13 +141,50 @@ h6 {
 }
 
 // button
+.ivd-btn.btn-accent {
+  border-radius: 0px;
+  background-color: $dark-theme-accent-color;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
 .ivd-btn.btn-primary {
+  border-radius: 0px;
+  background-color: $color-primary;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
+.ivd-btn.btn-success {
+  border-radius: 0px;
+  background-color: $color-success;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
+.ivd-btn.btn-danger {
+  border-radius: 0px;
+  background-color: $color-danger;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
+.ivd-btn-2.btn-accent {
+  span {
+    color: $dark-theme-accent-color;
+  }
+}
+.ivd-btn-2.btn-primary {
   span {
     color: $color-primary;
   }
 }
-
-.ivd-btn.btn-danger {
+.ivd-btn-2.btn-success {
+  span {
+    color: $color-success;
+  }
+}
+.ivd-btn-2.btn-danger {
   span {
     color: $color-danger;
   }
@@ -183,9 +220,9 @@ h6 {
 }
 
 .mat-radio-button.radio-success {
-  color: $color-sucess;
+  color: $color-success;
   .mat-radio-outer-circle {
-    border-color: $color-sucess !important;
+    border-color: $color-success !important;
   }
 }
 .mat-radio-button.radio-error {
@@ -547,6 +584,31 @@ h6 {
   .ivd-menu-item:hover {
     color: $dark-theme-font-color-light;
     background-color: $dark-theme-hover-color;
+  }
+}
+
+// dynamic-form
+.ivd-dynamic-form {
+  .ivd-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ivd-dynamic-form-field {
+    width: 100%;
+  }
+  .ivd-input-wrapper {
+    box-sizing: border-box;
+    padding: 0 7px;
+  }
+  .ivd-input-wrapper.no-padding {
+    padding: 0;
+  }
+  .ivd-inline {
+    display: flex;
+    align-items: center;
+    label {
+      width: 40%;
+    }
   }
 }
 
