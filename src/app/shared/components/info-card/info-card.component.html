@@ -1,0 +1,26 @@
+<div class="ivd-info-card"
+[ngClass]="{'ivd-info-card-animation' : animations}"
+>
+    <div class="ivd-info-title">{{cardInfo.label}}</div>
+    <p class="ivd-info-description">{{cardInfo.description}}</p>
+    <div class="ivd-tags-wrapper">
+        <span class="ivd-tag tag-circle" *ngFor="let tag of cardInfo.tagList">
+            {{tag | uppercase}}
+        </span>
+    </div>
+    <div class="ivd-sub-info-wrapper">
+        <div class="ivd-sub-info-list ivd-sub-info-label">
+            <span *ngIf="cardInfo.maxTime">Max Time</span>
+            <span *ngIf="cardInfo.maxTime">Max Score</span>
+            <span>Number of Questions</span>
+            <span>Difficulty</span>
+        </div>
+        <div class="ivd-sub-info-list ivd-sub-info-value">
+            <span *ngIf="cardInfo.maxTime">{{cardInfo.maxTime}}</span>
+            <span *ngIf="cardInfo.maxScore">{{cardInfo.maxScore}}</span>
+            <span>{{cardInfo.numberOfQuestions}}</span>
+            <span><app-star-rating [rating]="cardInfo.difficulty"></app-star-rating></span>
+        </div>
+    </div>
+    <a class="ivd-info-card-link" href="">{{(cardType === 'paper') ? 'Open Paper' : 'Open Test'}}</a>
+</div>

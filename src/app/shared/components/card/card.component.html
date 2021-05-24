@@ -1,0 +1,24 @@
+<mat-card 
+tabindex="0" 
+class="ivd-card"
+(click)="onClick()"
+[ngClass]="{'ivd-card-animation' : animations}"
+>
+    <img mat-card-image class="ivd-card-image" [src]="card.imagePath" alt="card_barground_image">
+    <mat-card-content class="ivd-card-content">
+        <div class="ivd-card-title">
+            {{card.title | uppercase}}
+        </div>
+        <div class="ivd-card-description">
+            {{card.description}}
+        </div>
+        <div class="ivd-card-price">
+            {{card.price | currency}}
+        </div>
+        <div class="ivd-tags-wrapper">
+            <span class="ivd-tag" *ngFor="let tag of card.tagList">
+                {{tag | titlecase}}
+            </span>
+        </div>
+    </mat-card-content>
+</mat-card>

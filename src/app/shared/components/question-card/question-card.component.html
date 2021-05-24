@@ -1,0 +1,52 @@
+<div class="ivd-qstn-card">
+    <mat-expansion-panel class="ivd-qstn-expansion-panel" (opened)="isExpansionOpened = true"
+        (closed)="isExpansionOpened = false" hideToggle>
+        <mat-expansion-panel-header #qstnPanelHeader class="ivd-qstn-panel-header" [collapsedHeight]="'156px'"
+            [expandedHeight]="'156px'" (click)="qstnPanelHeader._toggle()">
+            <mat-panel-description class="ivd-qstn-panel-header-desc">
+                <div class="ivd-qstn-index-wrapper">
+                    {{index + 1}}.
+                </div>
+                <div class="ivd-qstn-content-wrapper">
+                    <div class="ivd-qstn-desc">
+                        {{question.statement}}
+                    </div>
+                    <div class="ivd-qstn-options-wrapper">
+                        <ng-container *ngIf="isSingleCorrect()">
+                            <mat-radio-group aria-label="Select an option" class="ivd-radio-group row">
+                                <div class="ivd-qstn-options" *ngFor="let option of question.options">
+                                    <mat-radio-button class="ivd-radio-button" [name]="question.id"
+                                        [value]="option.value" labelPosition="right"
+                                        [checked]="question.value === option.value">
+                                        {{ option.label }}
+                                    </mat-radio-button>
+                                </div>
+                            </mat-radio-group>
+                        </ng-container>
+                        <ng-container *ngIf="isMultipleCorrect()">
+                            <ul>
+                                <li *ngFor="let option of question.options">
+                                    <mat-checkbox [value]="option.value" [ngClass]="{'checkbox-success': highlightSuccess(option.isAnswer), 'checkbox-error': highlightError(option.isAnswer, option.value)}" (change)="onCheckboxChange($event)">
+                                        {{option.label}}
+                                    </mat-checkbox>
+                                </li>
+                            </ul>
+                        </ng-container>
+                    </div>
+                    <div class="ivd-qstn-btn-wrapper">
+                        <button class="ivd-qstn-btn ivd-btn btn-primary" (click)="qstnPanelHeader._toggle(); toggleViewAnswer()" mat-button>
+                            {{(isExpansionOpened)? 'Hide Answer' : 'View Answer'}}
+                        </button>
+                        <button class="ivd-qstn-btn ivd-btn btn-danger" mat-button>
+                            Report
+                        </button>
+                    </div>
+                </div>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="ivd-qstn-explanation-wrapper">
+            <h4 *ngIf="question.explanation">Explanation</h4>
+            {{(question.explanation)? question.explanation: 'Sorry no explanation avalable'}}
+        </div>
+    </mat-expansion-panel>
+</div>

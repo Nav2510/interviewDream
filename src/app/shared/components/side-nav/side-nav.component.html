@@ -1,0 +1,31 @@
+<div class="ivd-side-nav">
+  <div class="ivd-list">
+    <div class="ivd-list-item" *ngFor="let item of list;let listIndex = index">
+      <ng-container *ngIf="!item.subList">
+        <div class="ivd-list-content" matRipple [matRippleColor]="rippleColor"
+          [ngClass]="{'ivd-selected': listIndex === selectedListIndex}" (click)="onClickListItem(listIndex, item.route)">
+          <mat-icon class="ivd-list-icon">{{item.icon}}</mat-icon>
+          {{item.label}}
+        </div>
+      </ng-container>
+      <ng-container *ngIf="item.subList">
+        <div class="ivd-list-content ivd-sub-list-content" (click)="toggleExpand(listIndex)" matRipple
+          [matRippleColor]="rippleColor">
+          <div class="ivd-sub-list-wrapper">
+            <mat-icon class="ivd-list-icon">{{item.icon}}</mat-icon>
+            {{item.label}}
+          </div>
+          <mat-icon class="ivd-dropdown" [ngClass]="{'ivd-expanded': expandedList === listIndex}">expand_more</mat-icon>
+        </div>
+        <div class="ivd-sub-list" *ngIf="expandedList === listIndex">
+          <div class="ivd-sub-list-item" matRipple [matRippleColor]="rippleColor"
+            (click)="onClickSubListItem(listIndex, subIndex, subItem.route)"
+            [ngClass]="{'ivd-selected': isSubSelected(listIndex, subIndex)}"
+            *ngFor="let subItem of item.subList; let subIndex = index">
+            {{subItem.label}}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

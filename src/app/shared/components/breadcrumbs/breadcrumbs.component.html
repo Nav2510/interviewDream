@@ -1,0 +1,12 @@
+ <div class="ivd-breadcrumb">
+    <ng-container *ngFor="let breadcrumb of breadcrumbList; let breadcrumbIndex = index">
+        <a class="ivd-breadcrumb-link"
+        [ngClass]="{'ivd-last-breadcrumb': breadcrumbIndex === breadcrumbList.length - 1}"
+        [routerLink]="breadcrumb.url">
+            <span class="ivd-breadcrumb-label">{{breadcrumb.label}}</span>
+        </a>
+        <mat-icon 
+        *ngIf="breadcrumbIndex !== breadcrumbList.length - 1" 
+        class="ivd-breadcrumb-icon">chevron_right</mat-icon>
+    </ng-container>
+</div>

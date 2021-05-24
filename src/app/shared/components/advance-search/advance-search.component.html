@@ -1,0 +1,61 @@
+<div class="ivd-adv-filter">
+    <form class="ivd-row" [formGroup]="filterModel" (ngSubmit)="onSubmit()">
+        <div 
+        class="ivd-input-wrapper"
+        [ngClass]="config.classes"
+        *ngFor="let config of filterConfig">
+            <ng-container [ngSwitch]="config.type">
+                <!-- Input Type -->
+                <label class="ivd-label">{{config.label}}</label>
+                <mat-form-field
+                class="ivd-form-field ivd-filter-field"
+                appearance="outline"
+                *ngSwitchCase="'input'">
+                    <input 
+                    matInput 
+                    placeholder="{{ config.placeholder }}"
+                    [id]="config.id"
+                    [type]="config.type" 
+                    [formControlName]="config.name">
+                </mat-form-field>
+                
+                <!-- Dropdown Type -->
+                <mat-form-field 
+                class="ivd-form-field ivd-filter-field"
+                *ngSwitchCase="'dropdown'"
+                appearance="outline">
+                    <mat-select 
+                    panelClass="ivd-select-panel ivd-multiple" 
+                    placeholder="{{ config.placeholder }}"
+                    disableOptionCentering="true" 
+                    [formControlName]="config.name" 
+                    [id]="config.name"
+                    multiple>
+                        <mat-option [value]="option.value" *ngFor="let option of config.options">
+                            <div class="ivd-option-content">
+                                {{option.label}}
+                            </div>
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+                <!-- Button Type -->
+              <button 
+              class="ivd-filter-btn ivd-filter-field"
+              *ngSwitchCase="'button'"
+              mat-flat-button>
+              {{config.label}}
+              <mat-icon *ngIf="config.icon" class="ivd-filter-btn-icon">{{config.icon}}</mat-icon>
+            </button>
+            </ng-container>
+        </div>
+    </form>
+    <mat-chip-list class="ivd-chip-list" aria-label="Filter selection">
+        <mat-chip 
+        class="ivd-chip ivd-filter-chip" 
+        (click)="onChipClose(item.mappedField, item.value)"
+        *ngFor="let item of selectedItems">{{item.label}}
+            <mat-icon class="ivd-filter-chip-icon">close</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+</div>

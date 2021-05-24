@@ -1,0 +1,30 @@
+<div class="ivd-top-nav">
+    <div class="ivd-menu-icon">
+        <button (click)="onToggleMenu()" mat-icon-button aria-label="Icon button with a menu icon">
+            <img src="assets/icons/menu.svg" alt="">
+        </button>
+    </div>
+    <div class="ivd-info-wrapper">
+        <button class="ivd-icon-btn" mat-icon-button aria-label="Icon button with a chat icon">
+            <mat-icon>chat_bubble</mat-icon>
+        </button>
+        <button class="ivd-icon-btn" mat-icon-button aria-label="Icon button with a notification icon">
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <button class="ivd-user-btn" mat-button [matMenuTriggerFor]="menu">
+            <div class="ivd-user-wrapper">
+                <div class="ivd-avatar-img-wrapper">
+                    <img class="ivd-avatar-img" src="assets/images/avatar/avatar.JPG" alt="Avatar Image">
+                </div>
+                <span class="ivd-user">
+                    Nav2510
+                    <mat-icon>expand_more</mat-icon>
+                </span>
+            </div>
+        </button>
+        <mat-menu class="ivd-menu" #menu="matMenu">
+            <button class="ivd-menu-item" mat-menu-item>Profile</button>
+            <button class="ivd-menu-item" mat-menu-item>Logout</button>
+        </mat-menu>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.mat-expansion-panel-header {
+    height: 48px;
+    transition: height .2s ease-in-out;
+}
+.mat-expanded {
+    height: 48px !important;
+    transition: height .2 ease-in-out;
+}
+
+.mat-expansion-panel-spacing {
+    margin: 0px 0;
+}
