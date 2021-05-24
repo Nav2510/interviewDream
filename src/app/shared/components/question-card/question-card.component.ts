@@ -36,7 +36,16 @@ export class QuestionCardComponent {
   highlightSuccess(isAnswer: boolean): boolean {
     return this.isExpansionOpened && this.highlightAnswer && isAnswer;
   }
+
   highlightError(isAnswer: boolean, value: string): boolean {
+    if (typeof this.userSelection === "string") {
+      return (
+        this.isExpansionOpened &&
+        this.highlightAnswer &&
+        !isAnswer &&
+        this.userSelection === value
+      );
+    }
     return (
       this.isExpansionOpened &&
       this.highlightAnswer &&
