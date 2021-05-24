@@ -1,0 +1,9 @@
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.course-wrapper {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 20px;
+}
