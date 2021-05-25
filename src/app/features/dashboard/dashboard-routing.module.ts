@@ -1,7 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CoursesComponent } from "./components/courses/courses.component";
 
+import { CoursesComponent } from "./components/courses/courses.component";
+import { PaperComponent } from "./components/paper/paper.component";
+import { PapersComponent } from "./components/papers/papers.component";
+import { TestsComponent } from "./components/tests/tests.component";
 import { DashboardComponent } from "./dashboard.component";
 
 const routes: Routes = [
@@ -12,6 +15,18 @@ const routes: Routes = [
       {
         path: "courses",
         component: CoursesComponent,
+      },
+      {
+        path: "papers",
+        component: PapersComponent,
+      },
+      {
+        path: "papers/:paperId",
+        component: PaperComponent,
+      },
+      {
+        path: "tests",
+        component: TestsComponent,
       },
     ],
   },

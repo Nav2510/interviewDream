@@ -4,6 +4,7 @@
 body,
 .main-container {
   background-color: $dark-theme-primary-color-dark;
+  color: $dark-theme-font-color;
 }
 
 h1,
@@ -13,8 +14,14 @@ h4,
 h5,
 h6 {
   margin: 3px 0;
-  font-weight: $font-semi-bold;
+  font-weight: $font-medium;
+  color: inherit;
   letter-spacing: 0.4px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid $dark-theme-primary-color-light;
 }
 
 // Basic grid system
@@ -278,6 +285,7 @@ h6 {
   }
   .mat-option-pseudo-checkbox {
     margin-left: 10px !important;
+    border-color: $dark-theme-font-color;
   }
 }
 .ivd-multiple {
@@ -360,6 +368,13 @@ h6 {
   color: $dark-theme-font-color;
   background-color: $dark-theme-primary-color-lighter;
   padding: 2px 16px;
+}
+
+.ivd-tag.ivd-tag-circle {
+  border-radius: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 400;
 }
 
 // side nav
@@ -448,8 +463,7 @@ h6 {
 // info card
 .ivd-info-card {
   // height: 213px;
-  width: 361px;
-  margin: 5px;
+  width: 410px;
   background-color: $dark-theme-primary-color-light;
   color: $dark-theme-font-color;
   padding: 19px;
@@ -620,7 +634,7 @@ h6 {
   }
   .ivd-filter-btn {
     border-radius: 0px;
-    margin-top: 4px;
+    margin-top: 23px;
     height: 34px;
     font-size: 13px;
     letter-spacing: 0.2px;

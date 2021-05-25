@@ -1,0 +1,13 @@
+.tests-container {
+  margin: 10px -15px auto -15px;
+}
+.tests-wrapper {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.test-wrapper {
+  width: 100/3%;
+  box-sizing: border-box;
+  padding: 15px;
+}

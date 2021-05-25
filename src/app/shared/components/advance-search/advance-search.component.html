@@ -6,7 +6,7 @@
         *ngFor="let config of filterConfig">
             <ng-container [ngSwitch]="config.type">
                 <!-- Input Type -->
-                <label class="ivd-label">{{config.label}}</label>
+                <label class="ivd-label" *ngIf="config.type !== 'button'">{{config.label}}</label>
                 <mat-form-field
                 class="ivd-form-field ivd-filter-field"
                 appearance="outline"
