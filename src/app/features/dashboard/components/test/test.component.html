@@ -1,10 +1,10 @@
-<div class="paper-container">
-  <div class="paper-main-wrapper">
-    <div class="paper-header">
-      <h2>{{paper.title}}</h2>
+<div class="test-container">
+  <div class="test-main-wrapper">
+    <div class="test-header">
+      <h2>{{test.title}}</h2>
       <div class="actions-wrapper">
         <button class="ivd-btn btn-accent" (click)="onEditSave()" mat-flat-button>{{editMode ? 'Save Changes' : 'Edit
-          Paper'}}</button>
+          Test'}}</button>
         <ng-container *ngIf="editMode">
           <button class="ivd-btn btn-accent" mat-flat-button> Select Question </button>
           <button class="ivd-btn btn-accent" mat-flat-button> Add Question </button>
@@ -13,34 +13,34 @@
     </div>
     <hr>
 
-    <div class="paper-wrapper">
+    <div class="test-wrapper">
       <div *ngFor="let question of questions; let i = index" class="question-wrapper">
         <app-question-card [question]="question" [index]="i"></app-question-card>
       </div>
     </div>
   </div>
-  <div class="paper-side-content">
-    <ng-container *ngIf="editMode; else paperDetail">
-<app-dynamic-form [config]="editPaperModel"></app-dynamic-form>
+  <div class="test-side-content">
+    <ng-container *ngIf="editMode; else testDetail">
+      <app-dynamic-form [config]="editTestModel"></app-dynamic-form>
     </ng-container>
   </div>
 </div>
-<ng-template #paperDetail>
-  <div class="paper-title">{{paper.title}}</div>
-  <p>{{paper.description}}</p>
+<ng-template #testDetail>
+  <div class="test-title">{{test.title}}</div>
+  <p>{{test.description}}</p>
   <div class="ivd-tags-wrapper">
-    <span class="ivd-tag ivd-tag-circle" *ngFor="let tag of paper.tagList">
+    <span class="ivd-tag ivd-tag-circle" *ngFor="let tag of test.tagList">
       {{tag | uppercase}}
     </span>
   </div>
-  <ul class="paper-sub-details">
+  <ul class="test-sub-details">
     <li><span>Difficulty</span><span>
-        <app-star-rating [rating]="paper.difficulty"></app-star-rating>
+        <app-star-rating [rating]="test.difficulty"></app-star-rating>
       </span></li>
-    <li><span>Type</span><span>{{paper.type}}</span></li>
-    <li><span>Author</span><span>{{paper.author}}</span></li>
+    <li><span>Type</span><span>{{test.type}}</span></li>
+    <li><span>Author</span><span>{{test.author}}</span></li>
   </ul>
   <div class="rating-wrapper">
-    <h4>rate this paper</h4>
+    <h4>rate this test</h4>
   </div>
 </ng-template>

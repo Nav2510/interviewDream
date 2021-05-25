@@ -44,14 +44,14 @@ export const testForm: IConfigModel[] = [
     name: "timeLimit",
     type: "input",
     placeholder: "Enter time limit...",
-    classes: ["ivd-col-6"],
+    classes: ["ivd-col-12"],
   },
   {
     label: "Set Score",
     name: "setScore",
     type: "input",
     placeholder: "Enter score value...",
-    classes: ["ivd-col-6"],
+    classes: ["ivd-col-12"],
   },
   {
     label: "Type",

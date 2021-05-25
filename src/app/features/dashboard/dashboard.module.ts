@@ -8,6 +8,7 @@ import { CoursesComponent } from "./components/courses/courses.component";
 import { PaperComponent } from "./components/paper/paper.component";
 import { PapersComponent } from "./components/papers/papers.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { TestComponent } from "./components/test/test.component";
 import { TestsComponent } from "./components/tests/tests.component";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { DashboardComponent } from "./dashboard.component";
@@ -17,9 +18,10 @@ import { DashboardComponent } from "./dashboard.component";
     CoursesComponent,
     DashboardComponent,
     ProfileComponent,
-    TestsComponent,
     PaperComponent,
     PapersComponent,
+    TestComponent,
+    TestsComponent,
   ],
   imports: [
     DashboardRoutingModule,

@@ -3,13 +3,13 @@ hr {
   margin-bottom: 17px;
 }
 
-.paper-container {
+.test-container {
   display: flex;
 }
-.paper-main-wrapper {
+.test-main-wrapper {
   width: 77%;
 }
-.paper-header {
+.test-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,18 +23,18 @@ hr {
 .question-wrapper {
   margin-bottom: 17px;
 }
-.paper-side-content {
+.test-side-content {
   margin-left: 21px;
   width: 23%;
   color: inherit;
-  .paper-title {
+  .test-title {
     font-size: 22px;
   }
   p {
     font-size: 18px;
     line-height: 28px;
   }
-  .paper-sub-details {
+  .test-sub-details {
     list-style: none;
     padding: 0px;
     margin-bottom: 10px;
