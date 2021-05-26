@@ -1,27 +1,27 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { questions } from "src/app/shared/mocks/questions";
-import { IConfigModel } from "src/app/shared/models/filter-config.model";
-import { IQuestionModel } from "src/app/shared/models/question.model";
-import { paperForm } from "../../../../shared/mocks/create-paper-form";
+import { paperForm } from '../../../../shared/mocks/create-paper-form';
+import { questions } from '../../../../shared/mocks/questions';
+import { IConfigModel } from '../../../../shared/models/filter-config.model';
+import { IQuestionModel } from '../../../../shared/models/question.model';
 
 @Component({
-  selector: "app-paper",
-  templateUrl: "./paper.component.html",
-  styleUrls: ["./paper.component.scss"],
+  selector: 'app-paper',
+  templateUrl: './paper.component.html',
+  styleUrls: ['./paper.component.scss'],
 })
 export class PaperComponent implements OnInit {
   questions: IQuestionModel[];
   editPaperModel: IConfigModel[];
   editMode = false;
   paper = {
-    title: "Practice Paper 1",
+    title: 'Practice Paper 1',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    tagList: ["data-structures", "algorithms"],
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    tagList: ['data-structures', 'algorithms'],
     difficulty: 2.3,
-    type: "Single Correct Answer",
-    author: "Navdeep Singh",
+    type: 'Single Correct Answer',
+    author: 'Navdeep Singh',
   };
 
   constructor() {}

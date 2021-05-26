@@ -1,24 +1,24 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
-import { IBreadcrumbModel } from "../models/breadcrumb.model";
+import { IBreadcrumbModel } from '../models/breadcrumb.model';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class BreadCrumbService {
   private breadcrumbSource = new BehaviorSubject<IBreadcrumbModel[]>([
     {
-      label: "Dashboard",
-      url: "/dashboard",
+      label: 'Dashboard',
+      url: '/dashboard',
     },
     {
-      label: "Courses",
-      url: "/dashboard/courses",
+      label: 'Courses',
+      url: '/dashboard/courses',
     },
     {
-      label: "All Courses",
-      url: "/dashboard/courses",
+      label: 'All Courses',
+      url: '/dashboard/courses',
     },
   ]);
   latestBreadcrumb = this.breadcrumbSource.asObservable();

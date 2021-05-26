@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { tests } from "src/app/shared/mocks/tests";
-import { IInfoCardModel } from "src/app/shared/models/info-card.model";
+import { tests } from '../../../../shared/mocks/tests';
+import { IInfoCardModel } from '../../../../shared/models/info-card.model';
 
 @Component({
-  selector: "app-tests",
-  templateUrl: "./tests.component.html",
-  styleUrls: ["./tests.component.scss"],
+  selector: 'app-tests',
+  templateUrl: './tests.component.html',
+  styleUrls: ['./tests.component.scss'],
 })
 export class TestsComponent implements OnInit {
   tests: IInfoCardModel[];
