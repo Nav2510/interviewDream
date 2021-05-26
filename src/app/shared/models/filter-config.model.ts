@@ -1,13 +1,13 @@
-import { FilterConfigTypeEnum } from '../enums/filter-config-type.enum';
+import { ConfigTypeEnum } from '../enums/config-type.enum';
 import { IOptionModel } from './filter-option.model';
 
-export interface IFilterConfigModel {
-    label: string
-    name: string
-    type: FilterConfigTypeEnum
-    classes: string[]
-    defaultValue?: string | number | number[] | string[]
-    placeholder?: string
-    options?: IOptionModel[]
-    icon?: string
+export interface IConfigModel {
+  label: string;
+  name: string;
+  type: ConfigTypeEnum;
+  classes: string[];
+  defaultValue?: string | number | number[] | string[];
+  placeholder?: string;
+  options?: IOptionModel[];
+  icon?: string;
 }

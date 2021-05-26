@@ -1,12 +1,12 @@
-import { Component, Input } from "@angular/core";
-import { MatCheckboxChange } from "@angular/material";
+import { Component, Input } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material';
 
-import { IQuestionModel } from "../../models/question.model";
+import { IQuestionModel } from '../../models/question.model';
 
 @Component({
-  selector: "app-question-card",
-  templateUrl: "./question-card.component.html",
-  styleUrls: ["./question-card.component.scss"],
+  selector: 'app-question-card',
+  templateUrl: './question-card.component.html',
+  styleUrls: ['./question-card.component.scss'],
 })
 export class QuestionCardComponent {
   @Input() question: IQuestionModel;
@@ -16,11 +16,11 @@ export class QuestionCardComponent {
   isExpansionOpened = false;
 
   isSingleCorrect() {
-    return this.question.type === "single_correct";
+    return this.question.type === 'single_correct';
   }
 
   isMultipleCorrect() {
-    return this.question.type === "multiple_correct";
+    return this.question.type === 'multiple_correct';
   }
 
   onCheckboxChange(event: MatCheckboxChange) {
@@ -36,7 +36,16 @@ export class QuestionCardComponent {
   highlightSuccess(isAnswer: boolean): boolean {
     return this.isExpansionOpened && this.highlightAnswer && isAnswer;
   }
+
   highlightError(isAnswer: boolean, value: string): boolean {
+    if (typeof this.userSelection === 'string') {
+      return (
+        this.isExpansionOpened &&
+        this.highlightAnswer &&
+        !isAnswer &&
+        this.userSelection === value
+      );
+    }
     return (
       this.isExpansionOpened &&
       this.highlightAnswer &&

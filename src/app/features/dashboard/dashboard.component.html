@@ -5,21 +5,10 @@
     <mat-sidenav-content class="main-container">
         <app-top-nav (toggleSideNav)="onToggleSideNav()"></app-top-nav>
         <div class="content-container">
-            <app-breadcrumbs></app-breadcrumbs>
-            <app-advance-search (filterChangeEvent)="onFilterChange($event)"></app-advance-search>
-            <ng-container *ngFor="let question of questionList; let qIndex = index">
-                <app-question-card [question]="question" [highlightAnswer]="true" [index]="qIndex" ></app-question-card>
-            </ng-container>
-            <ng-container *ngFor="let card of testInfoCards">
-                <div style="margin: 15px;">
-                    <app-info-card [cardInfo]="card" [cardType]="'test'"></app-info-card>
-                </div>
-            </ng-container>
-            <ng-container *ngFor="let card of paperInfoCards">
-                <div style="margin: 15px;">
-                    <app-info-card [cardInfo]="card" [cardType]="'paper'" [animations]="'true'"></app-info-card>
-                </div>
-            </ng-container>
+            <div class="breadcrumb-wrapper">
+                <app-breadcrumbs></app-breadcrumbs>
+            </div>
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

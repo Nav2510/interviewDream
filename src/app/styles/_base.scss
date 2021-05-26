@@ -1,9 +1,10 @@
-@import "./variables";
+@import './variables';
 
 // Base scss
 body,
 .main-container {
   background-color: $dark-theme-primary-color-dark;
+  color: $dark-theme-font-color;
 }
 
 h1,
@@ -13,8 +14,14 @@ h4,
 h5,
 h6 {
   margin: 3px 0;
-  font-weight: $font-semi-bold;
+  font-weight: $font-medium;
+  color: inherit;
   letter-spacing: 0.4px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid $dark-theme-primary-color-light;
 }
 
 // Basic grid system
@@ -65,10 +72,20 @@ h6 {
 }
 
 // checkbox
-.mat-checkbox.checkbox-success {
-  color: $color-sucess;
+.mat-checkbox {
   .mat-checkbox-frame {
-    border-color: $color-sucess;
+    border-color: $dark-theme-font-color;
+  }
+}
+.mat-checkbox.mat-checkbox-checked {
+  .mat-checkbox-background {
+    background-color: $dark-theme-primary-color-lighter-400;
+  }
+}
+.mat-checkbox.checkbox-success {
+  color: $color-success;
+  .mat-checkbox-frame {
+    border-color: $color-success;
   }
 }
 .mat-checkbox.checkbox-error {
@@ -120,7 +137,7 @@ h6 {
     border-left: 15px solid transparent !important;
     border-right: none !important;
     border-top: 15px solid transparent !important;
-    border-image-source: url("assets/icons/expand_more_white.svg") !important;
+    border-image-source: url('assets/icons/expand_more_white.svg') !important;
     border-image-repeat: stretch !important;
   }
 }
@@ -131,13 +148,50 @@ h6 {
 }
 
 // button
+.ivd-btn.btn-accent {
+  border-radius: 0px;
+  background-color: $dark-theme-accent-color;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
 .ivd-btn.btn-primary {
+  border-radius: 0px;
+  background-color: $color-primary;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
+.ivd-btn.btn-success {
+  border-radius: 0px;
+  background-color: $color-success;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
+.ivd-btn.btn-danger {
+  border-radius: 0px;
+  background-color: $color-danger;
+  span {
+    color: $dark-theme-font-color;
+  }
+}
+.ivd-btn-2.btn-accent {
+  span {
+    color: $dark-theme-accent-color;
+  }
+}
+.ivd-btn-2.btn-primary {
   span {
     color: $color-primary;
   }
 }
-
-.ivd-btn.btn-danger {
+.ivd-btn-2.btn-success {
+  span {
+    color: $color-success;
+  }
+}
+.ivd-btn-2.btn-danger {
   span {
     color: $color-danger;
   }
@@ -169,6 +223,19 @@ h6 {
 .mat-radio-container:hover {
   .mat-radio-ripple .mat-ripple {
     display: none;
+  }
+}
+
+.mat-radio-button.radio-success {
+  color: $color-success;
+  .mat-radio-outer-circle {
+    border-color: $color-success !important;
+  }
+}
+.mat-radio-button.radio-error {
+  color: $color-danger;
+  .mat-radio-outer-circle {
+    border-color: $color-danger !important;
   }
 }
 
@@ -218,6 +285,7 @@ h6 {
   }
   .mat-option-pseudo-checkbox {
     margin-left: 10px !important;
+    border-color: $dark-theme-font-color;
   }
 }
 .ivd-multiple {
@@ -266,6 +334,7 @@ h6 {
       font-weight: $font-regular;
       font-size: 12px;
       margin-bottom: 10px;
+      height: 70px;
     }
     .ivd-card-price {
       font-weight: $font-regular;
@@ -277,7 +346,7 @@ h6 {
     }
   }
 }
-.ivd-card:not([class*="mat-elevation-z"]) {
+.ivd-card:not([class*='mat-elevation-z']) {
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   box-shadow: 0px 3px 8px #040e1c;
 }
@@ -301,94 +370,88 @@ h6 {
   padding: 2px 16px;
 }
 
-// side nav
+.ivd-tag.ivd-tag-circle {
+  border-radius: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 400;
+}
 
 .mat-drawer-side {
   border: none;
 }
+
+// side nav
 .ivd-side-nav {
-  color: $dark-theme-font-color;
   background-color: $dark-theme-primary-color-light;
-  font-size: 13px;
   height: 100vh;
-  .ivd-list-item {
+  .mat-expansion-panel {
+    background-color: $dark-theme-primary-color-light;
+    color: $dark-theme-font-color;
+    border-radius: 0px;
+    box-shadow: none;
+    margin: 0;
+  }
+  .mat-expansion-panel-header {
+    font-size: 13px;
+    padding-left: 17px;
+    padding-right: 20px;
+    transition: background-color 0.2s ease-in-out;
+    &:hover:not([class*='ivd-selected']) {
+      background: rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      color: $dark-theme-font-color-light !important;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .mat-expansion-panel:not(.mat-expanded)
+    .mat-expansion-panel-header:hover:not([aria-disabled='true']) {
+    background: rgba(0, 0, 0, 0.14);
+  }
+  .mat-expansion-panel-header-title {
+    color: $dark-theme-font-color;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    .ivd-list-content {
-      padding: 0px 16px;
-      display: flex;
-      height: 36px;
-      width: 100%;
-      align-items: center;
-      transition: background-color 0.2s ease-in-out;
-      &:hover:not([class*="ivd-selected"]) {
-        background: rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-        color: $dark-theme-font-color-light;
-      }
-      &:hover {
-        cursor: pointer;
-      }
-      .ivd-dropdown {
-        font-size: 18px;
-        height: auto;
-        width: auto;
-        transition: transform 0.2s ease-in-out;
-      }
-    }
-    .ivd-sub-list-content {
-      display: flex;
-      justify-content: space-between;
-      .ivd-sub-list-wrapper {
-        display: flex;
-        align-items: center;
-      }
-    }
-    .ivd-sub-list {
-      width: 100%;
-      animation: ivd-side-nav-expand-anim 0.4s ease-in-out;
-      animation: ivd-side-nav-opacity-anim 0.2s ease-in-out;
-    }
-    .ivd-sub-list-item {
-      padding: 0px 0px 0px 37px;
-      display: flex;
-      align-items: center;
-      height: 38px;
-      transition: background-color 0.2s ease-in-out;
-      &:hover:not([class*="ivd-selected"]) {
-        background: rgba(0, 0, 0, 0.07);
-        cursor: pointer;
-        color: $dark-theme-font-color-light;
-      }
-      &:hover {
-        cursor: pointer;
-      }
-    }
   }
   .ivd-list-icon {
     font-size: 14px;
     height: auto;
-    width: auto;
-    margin-right: 8px;
   }
-
+  .mat-expansion-indicator::after {
+    color: $dark-theme-font-color;
+  }
+  .mat-expansion-panel-body {
+    font-size: 13px;
+    padding: 0;
+  }
+  .ivd-sub-list-item {
+    padding: 12px 24px 12px 40px;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background: rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      color: $dark-theme-font-color-light;
+      cursor: pointer;
+    }
+  }
+  .mat-accordion .mat-expansion-panel:last-of-type {
+    border-radius: 0px;
+  }
   .ivd-selected {
     background-color: $dark-theme-accent-color;
     color: $dark-theme-font-color-light;
-  }
-
-  .ivd-expanded {
-    transform: rotate(180deg);
+    &:hover {
+      background-color: $dark-theme-accent-color !important;
+    }
   }
 }
 
 // info card
 .ivd-info-card {
   // height: 213px;
-  width: 361px;
-  margin: 5px;
+  width: 410px;
   background-color: $dark-theme-primary-color-light;
   color: $dark-theme-font-color;
   padding: 19px;
@@ -432,7 +495,7 @@ h6 {
     font-weight: $font-medium;
     transition: color 0.2s ease-in-out;
     &::after {
-      content: " ";
+      content: ' ';
       display: block;
       position: absolute;
       height: 1px;
@@ -527,6 +590,31 @@ h6 {
   }
 }
 
+// dynamic-form
+.ivd-dynamic-form {
+  .ivd-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ivd-dynamic-form-field {
+    width: 100%;
+  }
+  .ivd-input-wrapper {
+    box-sizing: border-box;
+    padding: 0 7px;
+  }
+  .ivd-input-wrapper.no-padding {
+    padding: 0;
+  }
+  .ivd-inline {
+    display: flex;
+    align-items: center;
+    label {
+      width: 40%;
+    }
+  }
+}
+
 // advance-filter
 .ivd-adv-filter {
   .ivd-filter-field {
@@ -534,7 +622,7 @@ h6 {
   }
   .ivd-filter-btn {
     border-radius: 0px;
-    margin-top: 4px;
+    margin-top: 23px;
     height: 34px;
     font-size: 13px;
     letter-spacing: 0.2px;
@@ -634,6 +722,16 @@ h6 {
   }
   .ivd-qstn-explanation-wrapper {
     color: $dark-theme-font-color;
+  }
+
+  .ivd-qstn-options-list {
+    padding-left: 0px;
+    list-style-type: none;
+  }
+
+  .ivd-qstn-options-list-item {
+    margin-bottom: 8px;
+    font-size: 14px;
   }
 
   .mat-expansion-panel-header-description {

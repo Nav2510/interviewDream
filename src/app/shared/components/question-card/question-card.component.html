@@ -1,8 +1,8 @@
 <div class="ivd-qstn-card">
     <mat-expansion-panel class="ivd-qstn-expansion-panel" (opened)="isExpansionOpened = true"
         (closed)="isExpansionOpened = false" hideToggle>
-        <mat-expansion-panel-header #qstnPanelHeader class="ivd-qstn-panel-header" [collapsedHeight]="'156px'"
-            [expandedHeight]="'156px'" (click)="qstnPanelHeader._toggle()">
+        <mat-expansion-panel-header #qstnPanelHeader class="ivd-qstn-panel-header" collapsedHeight="156px"
+            expandedHeight="156px" (click)="qstnPanelHeader._toggle()">
             <mat-panel-description class="ivd-qstn-panel-header-desc">
                 <div class="ivd-qstn-index-wrapper">
                     {{index + 1}}.
@@ -13,19 +13,24 @@
                     </div>
                     <div class="ivd-qstn-options-wrapper">
                         <ng-container *ngIf="isSingleCorrect()">
-                            <mat-radio-group aria-label="Select an option" class="ivd-radio-group row">
+                            <mat-radio-group aria-label="Select an option" [(ngModel)]="userSelection" class="ivd-radio-group row">
                                 <div class="ivd-qstn-options" *ngFor="let option of question.options">
-                                    <mat-radio-button class="ivd-radio-button" [name]="question.id"
-                                        [value]="option.value" labelPosition="right"
-                                        [checked]="question.value === option.value">
+                                    <mat-radio-button 
+                                    class="ivd-radio-button" 
+                                    [name]="question.id"
+                                    [value]="option.value"
+                                    labelPosition="right"
+                                    [checked]="question.value === option.value"
+                                    [ngClass]="{'radio-success': highlightSuccess(option.isAnswer), 'radio-error': highlightError(option.isAnswer, option.value)}"
+                                    >
                                         {{ option.label }}
                                     </mat-radio-button>
                                 </div>
                             </mat-radio-group>
                         </ng-container>
                         <ng-container *ngIf="isMultipleCorrect()">
-                            <ul>
-                                <li *ngFor="let option of question.options">
+                            <ul class="ivd-qstn-options-list">
+                                <li *ngFor="let option of question.options" class="ivd-qstn-options-list-item">
                                     <mat-checkbox [value]="option.value" [ngClass]="{'checkbox-success': highlightSuccess(option.isAnswer), 'checkbox-error': highlightError(option.isAnswer, option.value)}" (change)="onCheckboxChange($event)">
                                         {{option.label}}
                                     </mat-checkbox>
@@ -34,10 +39,10 @@
                         </ng-container>
                     </div>
                     <div class="ivd-qstn-btn-wrapper">
-                        <button class="ivd-qstn-btn ivd-btn btn-primary" (click)="qstnPanelHeader._toggle(); toggleViewAnswer()" mat-button>
+                        <button class="ivd-qstn-btn ivd-btn-2 btn-primary" (click)="qstnPanelHeader._toggle()" mat-button>
                             {{(isExpansionOpened)? 'Hide Answer' : 'View Answer'}}
                         </button>
-                        <button class="ivd-qstn-btn ivd-btn btn-danger" mat-button>
+                        <button class="ivd-qstn-btn ivd-btn-2 btn-danger" mat-button>
                             Report
                         </button>
                     </div>
