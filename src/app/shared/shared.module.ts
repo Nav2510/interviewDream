@@ -9,6 +9,7 @@ import { CardComponent } from './components/card/card.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { InfoCardComponent } from './components/info-card/info-card.component';
 import { ProfileInfoCardComponent } from './components/profile-info-card/profile-info-card.component';
+import { ProfileMainInfoComponent } from './components/profile-main-info/profile-main-info.component';
 import { QuestionCardComponent } from './components/question-card/question-card.component';
 import { ScoreCardComponent } from './components/score-card/score-card.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
@@ -24,6 +25,7 @@ const COMPONENTS = [
   DynamicFormComponent,
   InfoCardComponent,
   ProfileInfoCardComponent,
+  ProfileMainInfoComponent,
   QuestionCardComponent,
   ScoreCardComponent,
   SideNavComponent,

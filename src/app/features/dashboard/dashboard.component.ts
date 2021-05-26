@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { IFilterValueModel } from '../../shared/models/filter-value.model';
 
@@ -10,10 +11,15 @@ import { IFilterValueModel } from '../../shared/models/filter-value.model';
 export class DashboardComponent {
   showSideNav = true;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   onToggleSideNav() {
     this.showSideNav = !this.showSideNav;
+  }
+
+  isNotProfilePage() {
+    const url = this.router.url;
+    return !url.includes('profile');
   }
 
   onFilterChange(value: IFilterValueModel) {}
