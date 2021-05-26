@@ -1,8 +1,8 @@
 <div class="ivd-qstn-card">
     <mat-expansion-panel class="ivd-qstn-expansion-panel" (opened)="isExpansionOpened = true"
         (closed)="isExpansionOpened = false" hideToggle>
-        <mat-expansion-panel-header #qstnPanelHeader class="ivd-qstn-panel-header" [collapsedHeight]="'156px'"
-            [expandedHeight]="'156px'" (click)="qstnPanelHeader._toggle()">
+        <mat-expansion-panel-header #qstnPanelHeader class="ivd-qstn-panel-header" collapsedHeight="156px"
+            expandedHeight="156px" (click)="qstnPanelHeader._toggle()">
             <mat-panel-description class="ivd-qstn-panel-header-desc">
                 <div class="ivd-qstn-index-wrapper">
                     {{index + 1}}.
