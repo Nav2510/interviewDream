@@ -313,6 +313,14 @@ hr {
   }
 }
 
+//dashboard
+.ivd-content-container {
+  padding: 25px;
+  background-color: $dark-theme-primary-color;
+  margin: 15px;
+  min-height: calc(100vh - 123px);
+}
+
 // card
 .ivd-card {
   background-color: $dark-theme-primary-color-light;
@@ -355,6 +363,104 @@ hr {
   cursor: pointer;
   transform: scale(1.02);
   box-shadow: 0px 5px 12px #040e1c;
+}
+
+// profile-main-info
+.ivd-profile-main-info {
+  padding: 15px;
+  padding-bottom: 0px;
+  .image-wrapper {
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .bg-image {
+    width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .main-content-wrapper {
+    height: 120px;
+    background-color: $dark-theme-primary-color;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .user-profile-wrapper {
+    top: -135px;
+    left: 48px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .edit-action {
+      background-color: $dark-theme-font-color;
+      color: $dark-theme-primary-color-light;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+
+      mat-icon {
+        position: absolute;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .user-image-wrapper {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid $dark-theme-font-color;
+      overflow: hidden;
+      .profile-image {
+        height: 100%;
+        width: auto;
+      }
+    }
+    .user-name-wrapper {
+      h2 {
+        text-transform: uppercase;
+      }
+      text-align: center;
+    }
+  }
+  .work-detail-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 300px;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        display: flex;
+        align-items: center;
+      }
+    }
+    mat-icon {
+      margin-right: 10px;
+    }
+  }
+  .social-link-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 30px;
+    img {
+      margin-left: 20px;
+    }
+  }
 }
 
 // tag
@@ -448,6 +554,32 @@ hr {
   }
 }
 
+// score-card
+.ivd-score-card {
+  background-color: $dark-theme-primary-color-light;
+  height: 100%;
+  padding: 7px;
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 20px 0px;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  .score-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .ivd-score-label {
+    width: 40%;
+  }
+  .ivd-test-link {
+    text-transform: uppercase;
+    color: $dark-theme-accent-color-light;
+  }
+}
+
 // info card
 .ivd-info-card {
   // height: 213px;
@@ -518,6 +650,65 @@ hr {
 
 .ivd-info-card-animation:hover {
   box-shadow: 0px 5px 12px #000000ab;
+}
+
+//profile-info-card
+.ivd-profile-info-card {
+  background-color: $dark-theme-primary-color-light;
+  position: relative;
+  padding: 7px 26px 25px 8px;
+  .ivd-list {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  .ivd-list-item {
+    display: flex;
+    margin-bottom: 18px;
+  }
+  .ivd-list-item:last-child {
+    margin-bottom: 0px;
+  }
+  .ivd-label {
+    font-size: 13px;
+    font-weight: $font-medium;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    width: 30%;
+  }
+  .ivd-value {
+    width: 70%;
+    letter-spacing: 0.3px;
+    font-size: 13px;
+    font-weight: $font-regular;
+  }
+  .ivd-edit-btn {
+    position: absolute;
+    right: 7px;
+    top: 4px;
+  }
+  .ivd-submit-btn {
+    position: absolute;
+    right: 7px;
+    top: 4px;
+  }
+  mat-icon {
+    font-size: 17px;
+  }
+  .ivd-edit-form {
+    margin-top: -9px;
+    margin-bottom: -9px;
+    .ivd-list-item {
+      align-items: center;
+      margin-bottom: 0px;
+    }
+    .ivd-form-field .mat-form-field-infix {
+      padding: 8px 0 8px 0 !important;
+    }
+    .mat-form-field-wrapper {
+      margin: 0;
+    }
+  }
 }
 
 // top-nav

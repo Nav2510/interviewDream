@@ -1,0 +1,35 @@
+<div class="ivd-profile-info-card">
+  <h2>{{card.title}}</h2>
+  <ng-container *ngIf="!editMode; else editFormTemp">
+    <ul class="ivd-list" *ngIf="card.list">
+      <li class="ivd-list-item" *ngFor="let item of card.list">
+        <span class="ivd-label">{{item.label}}</span>
+        <span class="ivd-value">{{item.value}}</span>
+      </li>
+    </ul>
+  </ng-container>
+
+
+  <button mat-icon-button class="ivd-edit-btn" *ngIf="!editMode" (click)="onEdit()">
+    <mat-icon>create</mat-icon>
+  </button>
+</div>
+
+<ng-template #editFormTemp>
+<form [formGroup]="model" (ngSubmit)="onSubmit()" class="ivd-edit-form">
+  <ul class="ivd-list" *ngIf="card.list">
+    <li class="ivd-list-item" *ngFor="let item of card.list">
+      <span class="ivd-label">{{item.label}}</span>
+        <div class="ivd-input-wrapper">
+          <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline" *ngIf="item.type === 'input'">
+            <input matInput placeholder="{{ item.placeholder }}" [id]="item.id" [type]="item.type"
+              [formControlName]="item.label">
+          </mat-form-field>
+        </div>
+    </li>
+  </ul>
+  <button mat-icon-button class="ivd-submit-btn" *ngIf="editMode" type="submit">
+    <mat-icon>check</mat-icon>
+  </button>
+</form>
+</ng-template>

@@ -1,0 +1,48 @@
+.profile-container {
+  width: 100%;
+  .row-1 {
+    display: flex;
+  }
+  .column-11 {
+    width: 70%;
+  }
+  .column-12 {
+    width: 30%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .row-2 {
+    display: flex;
+    margin-top: 10px;
+  }
+  .column-21,
+  .column-22 {
+    width: 50%;
+    height: 100%;
+  }
+  .column-22 {
+    margin-left: 10px;
+  }
+  .row-3 {
+    margin-bottom: 10px;
+  }
+}
+.summary-wrapper {
+  width: 66.6%;
+}
+.basic-info-wrapper {
+  width: 33.3;
+}
+.education-info-wrapper {
+  width: 33.3%;
+}
+.additional-info-wrapper {
+  width: 33.3%;
+}
+.ivd-content-container {
+  padding: 12px;
+  min-height: fit-content;
+}
+.score-wrapper {
+  height: 100%;
+}

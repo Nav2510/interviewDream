@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoursesComponent } from './components/courses/courses.component';
 import { PaperComponent } from './components/paper/paper.component';
 import { PapersComponent } from './components/papers/papers.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { TestComponent } from './components/test/test.component';
 import { TestsComponent } from './components/tests/tests.component';
 import { DashboardComponent } from './dashboard.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'courses',
         component: CoursesComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
       },
       {
         path: 'papers',

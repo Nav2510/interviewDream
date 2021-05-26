@@ -31,7 +31,7 @@ export const sideNav: IListModel[] = [
       {
         label: 'Public profile',
         name: 'publicProfile',
-        route: 'profile/public',
+        route: 'dashboard/profile',
         order: 100,
       },
       {

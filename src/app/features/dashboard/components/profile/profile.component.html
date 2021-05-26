@@ -1,1 +1,29 @@
-<p>profile works!</p>
+<div class="profile-container">
+  <app-profile-main-info></app-profile-main-info>
+  <div class="ivd-content-container">
+    <div class="row-1">
+      <div class="column-11">
+        <app-profile-info-card [card]="summary"></app-profile-info-card>
+        <div class="row-2">
+          <div class="column-21">
+            <div class="row-3">
+              <app-profile-info-card [card]="basic"></app-profile-info-card>
+            </div>
+            <app-profile-info-card [card]="education"></app-profile-info-card>
+          </div>
+          <div class="column-22">
+            <div class="row-3">
+              <app-profile-info-card [card]="additional"></app-profile-info-card>
+            </div>
+            <app-profile-info-card [card]="contact"></app-profile-info-card>
+          </div>
+        </div>
+      </div>
+      <div class="column-12">
+        <div class="score-wrapper">
+          <app-score-card></app-score-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
