@@ -1,0 +1,13 @@
+.papers-container {
+  margin: 10px -15px auto -15px;
+}
+.papers-wrapper {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.paper-wrapper {
+  width: 100/3%;
+  box-sizing: border-box;
+  padding: 15px;
+}

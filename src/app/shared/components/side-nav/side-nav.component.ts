@@ -1,4 +1,10 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -88,8 +94,8 @@ export class SideNavComponent {
           name: 'myCourses',
           route: 'courses/my',
           order: 200,
-        }
-      ]
+        },
+      ],
     },
     {
       icon: 'description',
@@ -120,8 +126,8 @@ export class SideNavComponent {
           name: 'editPracticePaper',
           route: 'papers/edit',
           order: 400,
-        }
-      ]
+        },
+      ],
     },
     {
       icon: 'web_asset',
@@ -146,8 +152,8 @@ export class SideNavComponent {
           name: 'editTest',
           route: 'test/edit',
           order: 300,
-        }
-      ]
+        },
+      ],
     },
     {
       icon: 'payment',
@@ -183,14 +189,12 @@ export class SideNavComponent {
       name: 'logout',
       route: 'logout',
       order: 1300,
-    }
+    },
   ];
 
   isOpen = true;
 
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   onClickListItem(listIndex: number, route: string) {
     this.selectedListIndex = listIndex;
@@ -198,7 +202,7 @@ export class SideNavComponent {
   }
 
   toggleExpand(index: number) {
-    this.expandedList = (this.expandedList !== index) ? index   : -1;
+    this.expandedList = this.expandedList !== index ? index : -1;
   }
 
   onClickSubListItem(listIndex: number, subIndex: number, route: string) {
@@ -208,6 +212,9 @@ export class SideNavComponent {
   }
 
   isSubSelected(listIndex: number, subIndex: number) {
-    return listIndex === this.selectedListIndex && subIndex === this.selectedSubListIndex;
+    return (
+      listIndex === this.selectedListIndex &&
+      subIndex === this.selectedSubListIndex
+    );
   }
 }

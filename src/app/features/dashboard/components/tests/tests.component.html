@@ -1,0 +1,9 @@
+<app-advance-search (filterChangeEvent)="onFilterChange($event)"></app-advance-search>
+
+<div class="tests-container">
+  <div class="tests-wrapper">
+<div *ngFor="let test of tests" class="test-wrapper">
+  <app-info-card [cardInfo]="test" cardType="test" [animations]="true"></app-info-card>
+</div>
+  </div>
+</div>

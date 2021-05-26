@@ -1,27 +1,26 @@
 import { IConfigModel } from '../models/filter-config.model';
 
-export const testForm: IConfigModel[] = [
+export const paperForm: IConfigModel[] = [
   {
     label: 'Title',
     name: 'title',
     type: 'input',
     defaultValue: '',
-    placeholder: 'Enter the title for test...',
+    placeholder: 'Enter the title for paper...',
     classes: ['ivd-col-12'],
   },
   {
     label: 'Description',
     name: 'description',
     type: 'textarea',
-    placeholder: 'Enter description of the test here',
+    placeholder: 'Enter description of the paper here',
     classes: ['ivd-col-12'],
   },
   {
     label: 'Categories',
     name: 'categories',
     type: 'dropdown',
-    placeholder: 'Select tags for test...',
-    defaultValue: ['all'],
+    placeholder: 'Select tags for paper...',
     classes: ['ivd-col-12'],
     // TODO: Check for grouped dropdown with title
     options: [
@@ -40,24 +39,10 @@ export const testForm: IConfigModel[] = [
     ],
   },
   {
-    label: 'Set Time Limit',
-    name: 'timeLimit',
-    type: 'input',
-    placeholder: 'Enter time limit...',
-    classes: ['ivd-col-12'],
-  },
-  {
-    label: 'Set Score',
-    name: 'setScore',
-    type: 'input',
-    placeholder: 'Enter score value...',
-    classes: ['ivd-col-12'],
-  },
-  {
     label: 'Type',
     name: 'type',
     type: 'dropdown',
-    placeholder: 'Select type for test...',
+    placeholder: 'Select type for paper...',
     classes: ['ivd-col-12', 'ivd-inline'],
   },
   {

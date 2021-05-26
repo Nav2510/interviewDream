@@ -1,5 +1,5 @@
-import { QuestionTypeEnum } from "../enums/question-type.enum";
-import { IOptionModel } from "./option.model";
+import { QuestionTypeEnum } from '../enums/question-type.enum';
+import { IOptionModel } from './option.model';
 
 export interface IQuestionModel {
   id: string;

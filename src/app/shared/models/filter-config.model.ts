@@ -1,5 +1,5 @@
-import { ConfigTypeEnum } from "../enums/config-type.enum";
-import { IOptionModel } from "./filter-option.model";
+import { ConfigTypeEnum } from '../enums/config-type.enum';
+import { IOptionModel } from './filter-option.model';
 
 export interface IConfigModel {
   label: string;

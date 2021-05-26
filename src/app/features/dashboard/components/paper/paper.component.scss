@@ -1,0 +1,57 @@
+hr {
+  margin-top: 13px;
+  margin-bottom: 17px;
+}
+
+.paper-container {
+  display: flex;
+}
+.paper-main-wrapper {
+  width: 77%;
+}
+.paper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.actions-wrapper {
+  button {
+    margin-left: 14px;
+  }
+}
+.question-wrapper {
+  margin-bottom: 17px;
+}
+.paper-side-content {
+  margin-left: 21px;
+  width: 23%;
+  color: inherit;
+  .paper-title {
+    font-size: 22px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .paper-sub-details {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 10px;
+    li {
+      display: flex;
+      font-size: 12px;
+      margin-bottom: 12px;
+      span:first-child {
+        width: 40%;
+      }
+    }
+  }
+  .rating-wrapper {
+    h4 {
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0px;
+    }
+  }
+}
