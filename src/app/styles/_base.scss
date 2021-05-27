@@ -95,6 +95,30 @@ hr {
   }
 }
 
+// link
+.ivd-link {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  &::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 1px;
+    background: $dark-theme-font-color;
+    width: 0%;
+    left: 50%;
+    opacity: 0.3;
+    transition: transform 0.1s 0.1s ease-in-out, opacity 0.2s ease-in-out,
+      width 0.1s 0.1s ease-in-out;
+  }
+  &:hover:after {
+    opacity: 1;
+    transform: translateX(-50%);
+    width: 100%;
+    color: $dark-theme-font-color;
+  }
+}
+
 // form-field
 .ivd-form-field {
   .mat-form-field-outline {
@@ -363,6 +387,172 @@ hr {
   cursor: pointer;
   transform: scale(1.02);
   box-shadow: 0px 5px 12px #040e1c;
+}
+
+// login
+.ivd-login {
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $dark-theme-primary-color-light;
+  box-shadow: 0 3px 18px $dark-theme-primary-color-lighter;
+  width: 774px;
+  height: 508px;
+}
+
+// login-signup-card
+.ivd-login-signup-card {
+  display: flex;
+  height: 100%;
+  .easy-login-container {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    .back-btn {
+      position: absolute;
+      top: 12px;
+      left: 20px;
+    }
+  }
+  .login-image {
+    height: 100%;
+  }
+  .action-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+    h3 {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 7px 40px;
+      border-radius: 0px;
+      width: 250px;
+      background: transparent;
+      border: 1px solid #56bfff57;
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 7px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      &:hover {
+        background-color: #ffffff20;
+      }
+    }
+  }
+  .login-form-container {
+    width: 50%;
+    position: relative;
+    h3 {
+      margin-bottom: 20px;
+    }
+    .login-register-wrapper {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      button {
+        transition: background-color 0.2s ease-in-out;
+        color: $dark-theme-font-color;
+        background-color: $dark-theme-primary-color;
+        // border: 1px solid $dark-theme-primary-color-lighter;
+        border: none;
+        padding: 4px 12px;
+        cursor: pointer;
+        line-height: 17px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+      .selected {
+        background-color: $dark-theme-accent-color;
+      }
+    }
+    .form-wrapper {
+      width: 70%;
+      margin: 100px auto 0 auto;
+      .ivd-input-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+      .submit-btn {
+        width: 100%;
+        border: none;
+        background: $dark-theme-accent-color;
+        color: $dark-theme-font-color;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: $font-medium;
+        margin-top: 20px;
+        padding: 9px 0;
+        border-radius: 0;
+      }
+      .link-wrapper {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      .login-register-link {
+        margin-top: 10px;
+        font-size: 10px;
+        display: inline-block;
+        text-decoration: none;
+        color: $dark-theme-font-color;
+      }
+      .float-right {
+        right: 0;
+        position: absolute;
+      }
+      .float-left {
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+}
+
+//account-selector-card
+.ivd-account-selector-card {
+  height: 100%;
+  display: flex;
+  position: relative;
+  .title {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .student-wrapper,
+  .instructor-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    img {
+      height: 100%;
+      width: auto;
+      filter: blur(3px) brightness(0.4) grayscale(100%);
+      cursor: pointer;
+      transition: filter 0.3s ease-in-out;
+      &:hover {
+        filter: blur(0px) brightness(1) grayscale(0%);
+      }
+    }
+    .sub-title {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 // profile-main-info
