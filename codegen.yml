@@ -1,0 +1,19 @@
+overwrite: true
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+# TODO: Uncomment once migrated from tslint to eslint
+#    - eslint --fix
+# TODO: Use link as environment variable -> ${SCHEMA_URL}
+# Checkout `https://www.graphql-code-generator.com/docs/getting-started/codegen-config#environment-variables` for more.
+schema: "https://interviewdream-backend.herokuapp.com/graphql"
+documents: "src/graphql/documents/**/*.graphql"
+generates:
+  src/graphql/generated/graphql.types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-apollo-angular"
+  src/graphql/generated/graphql.schema.json:
+    plugins:
+      - "introspection"

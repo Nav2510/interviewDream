@@ -1,0 +1,21 @@
+fragment Profile on Profile {
+  _id
+  bgImage
+  contactInfo {
+    ...ContactInfo 
+  }
+  educationInfo {
+    ...EducationInfo
+  }
+  email
+  interviewDreamScore {
+    category
+    score
+  }
+  personalInfo {
+    ...PersonalInfo
+  }
+  profileImage
+  publicProfileUrl
+  username
+}
