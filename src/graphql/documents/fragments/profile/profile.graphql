@@ -2,7 +2,7 @@ fragment Profile on Profile {
   _id
   bgImage
   contactInfo {
-    ...ContactInfo 
+    ...ContactInfo
   }
   educationInfo {
     ...EducationInfo
