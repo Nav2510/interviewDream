@@ -1,0 +1,5 @@
+fragment PersonalInfo on PersonalInfo {
+  country
+  dob
+  gender
+}
