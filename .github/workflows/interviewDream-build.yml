@@ -14,6 +14,8 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: npm cache clean -f
+      - run: rm -rf node_modules
       - run: npm i
       - run: npm run pipeline
       - run: echo "🍏 This job's status is ${{ job.status }}."
