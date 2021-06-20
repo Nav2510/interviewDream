@@ -1,0 +1,17 @@
+schema: 'https://interviewdream-backend.herokuapp.com/graphql'
+documents: src/graphql/documents/**/*.graphql
+extensions:
+  codegen:
+    generates:
+      src/graphql/generated/graphql.schema.json:
+        plugins:
+          - introspection
+      src/graphql/generated/graphql.types.ts:
+        plugins:
+          - typescript
+          - typescript-operations
+          - typescript-apollo-angular
+    hooks:
+      afterAllFileWrite:
+        - prettier --write
+    overwrite: true
