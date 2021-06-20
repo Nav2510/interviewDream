@@ -6,13 +6,14 @@
     "start": "concurrently \"npm run start:ng\" \"npm run graphql:codegen:watch\"",
     "start:ng": "ng serve --port=5000",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "graphql:coverage": "graphql coverage",
     "graphql:validate": "graphql validate",
     "graphql:codegen": "graphql codegen",
-    "graphql:codegen:watch": "graphql codegen --watch"
+    "graphql:codegen:watch": "graphql codegen --watch",
+    "pipeline": "npm run lint && npm run graphql:codegen && npm run test && npm run build"
   },
   "private": true,
   "dependencies": {
