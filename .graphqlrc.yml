@@ -9,6 +9,12 @@ extensions:
       src/graphql/generated/graphql.types.ts:
         plugins:
           - typescript
+      src/graphql/generated:
+        preset: near-operation-file
+        presetConfig:
+          extension: .graphql-gen.ts
+          baseTypesPath: graphql.types.ts
+        plugins:
           - typescript-operations
           - typescript-apollo-angular
     hooks:

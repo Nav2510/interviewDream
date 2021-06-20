@@ -10,8 +10,9 @@
 # dependencies
 /node_modules
 
-# generated
+# graphql generated files
 /src/graphql/generated
+/src/graphql/**/*.graphql-gen.ts
 
 # profiling files
 chrome-profiler-events*.json
