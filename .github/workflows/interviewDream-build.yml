@@ -1,8 +1,5 @@
 name: interviewDream Build
 on:
-  push:
-    branches:
-      - "setup/build-pipeline-setup"
   pull_request:
     branches:
       - "develop"
