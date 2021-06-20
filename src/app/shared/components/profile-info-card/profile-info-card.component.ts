@@ -29,11 +29,9 @@ export class ProfileInfoCardComponent implements OnInit {
       formObj[config.label] = new FormControl(config.value);
     });
     this.model = new FormGroup(formObj);
-    console.log(this.model);
   }
 
   onSubmit() {
     this.editMode = false;
-    console.log(this.model.value);
   }
 }

@@ -1,5 +1,5 @@
 <div class="ivd-profile-info-card">
-  <h2>{{card.title}}</h2>
+  <h2>{{card?.title}}</h2>
   <ng-container *ngIf="!editMode; else editFormTemp">
     <ul class="ivd-list" *ngIf="card.list">
       <li class="ivd-list-item" *ngFor="let item of card.list">
