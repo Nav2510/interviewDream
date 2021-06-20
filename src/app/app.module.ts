@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,14 +8,12 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { LandingComponent } from './features/landing/landing.component';
 import { LoginModule } from './features/login/login.module';
+import { GraphQLModule } from './graphql.module';
 import { MaterialModule } from './shared/material.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LandingComponent,
-  ],
+  declarations: [AppComponent, LandingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,8 +22,10 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     MaterialModule,
     BrowserAnimationsModule,
+    GraphQLModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
