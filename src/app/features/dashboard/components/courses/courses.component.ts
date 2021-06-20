@@ -15,4 +15,6 @@ export class CoursesComponent implements OnInit {
   ngOnInit() {
     this.courses = courses;
   }
+
+  onFilterChange(event: Event): void {}
 }

@@ -20,7 +20,7 @@
                                     [name]="question.id"
                                     [value]="option.value"
                                     labelPosition="right"
-                                    [checked]="question.value === option.value"
+                                    [checked]="option.isAnswer"
                                     [ngClass]="{'radio-success': highlightSuccess(option.isAnswer), 'radio-error': highlightError(option.isAnswer, option.value)}"
                                     >
                                         {{ option.label }}

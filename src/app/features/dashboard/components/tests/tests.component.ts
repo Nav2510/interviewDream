@@ -15,4 +15,6 @@ export class TestsComponent implements OnInit {
   ngOnInit() {
     this.tests = tests;
   }
+
+  onFilterChange(event: Event): void {}
 }

@@ -30,7 +30,7 @@ export class LoginSignupCardComponent {
     this.model = this.buildForm();
   }
 
-  onForgotPassword() {}
+  onForgetPassword() {}
 
   onToggleLoginRegister() {
     this.isRegister = !this.isRegister;
