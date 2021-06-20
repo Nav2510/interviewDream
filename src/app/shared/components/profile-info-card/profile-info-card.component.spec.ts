@@ -8,18 +8,24 @@ describe('ProfileInfoCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileInfoCardComponent ]
-    })
-    .compileComponents();
+      declarations: [ProfileInfoCardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProfileInfoCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    component.card = {
+      title: 'test_title',
+      list: [{ label: 'test_label', type: 'input', value: 'test_value' }],
+      summary: 'test_summary',
+    };
+
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });
