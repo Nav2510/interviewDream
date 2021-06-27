@@ -21,6 +21,10 @@ For deployed backend server and all the graphql apis [InterviewDream - deployed 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## CI/CD Pipeline
+
+Project use [Github actions](https://docs.github.com/en/actions/quickstart) for running build pipeline on Ubuntu container. Pipeline runs for each `Pull request` created for the `develop` branch.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
