@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { InfoCardTypeEnum } from '../../enums/info-card-type.enum';
 import { IInfoCardModel } from '../../models/info-card.model';
@@ -8,14 +8,8 @@ import { IInfoCardModel } from '../../models/info-card.model';
   templateUrl: './info-card.component.html',
   styleUrls: ['./info-card.component.scss']
 })
-export class InfoCardComponent implements OnInit {
+export class InfoCardComponent {
   @Input() cardInfo: IInfoCardModel
   @Input() cardType: InfoCardTypeEnum
   @Input() animations: boolean
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
