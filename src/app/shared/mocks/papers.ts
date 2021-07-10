@@ -2,6 +2,7 @@ import { InfoCardModel } from 'src/app/shared/components/info-card/info-card.mod
 
 export const papers: InfoCardModel[] = [
   {
+    id: 3298,
     label: 'Java Error handling',
     description:
       // tslint:disable-next-line: max-line-length
@@ -11,6 +12,7 @@ export const papers: InfoCardModel[] = [
     tagList: ['Java', 'Error'],
   },
   {
+    id: 29282,
     label: 'Sorting',
     description:
       // tslint:disable-next-line: max-line-length
@@ -20,6 +22,7 @@ export const papers: InfoCardModel[] = [
     tagList: ['Algorithms', 'sort', 'javascript'],
   },
   {
+    id: 28281,
     label: 'Graphql',
     // tslint:disable-next-line: max-line-length
     description:
