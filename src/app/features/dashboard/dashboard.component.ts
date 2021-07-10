@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { IFilterValueModel } from '../../shared/models/filter-value.model';
+import { IFilterValueModel } from '../../shared/components/advance-search/filter-value.model';
 
 @Component({
   selector: 'app-dashboard',

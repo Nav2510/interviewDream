@@ -1,7 +1,7 @@
-import { QuestionTypeEnum } from '../enums/question-type.enum';
-import { IOptionModel } from './option.model';
+import { QuestionTypeEnum } from './question-type.enum';
+import { OptionModel } from './option.model';
 
-export interface IQuestionModel {
+export interface QuestionModel {
   id: string;
   type: QuestionTypeEnum;
   order: number;
@@ -12,5 +12,5 @@ export interface IQuestionModel {
   difficulty: number;
   marks: number;
   explanation?: string;
-  options?: IOptionModel[];
+  options?: OptionModel[];
 }

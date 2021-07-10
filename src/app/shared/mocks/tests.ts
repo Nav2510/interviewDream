@@ -1,6 +1,6 @@
-import { IInfoCardModel } from '../models/info-card.model';
+import { InfoCardModel } from '../components/info-card/info-card.model';
 
-export const tests: IInfoCardModel[] = [
+export const tests: InfoCardModel[] = [
   {
     label: 'Basic of Algorithms',
     description:

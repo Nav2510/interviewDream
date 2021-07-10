@@ -1,17 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
-import { IQuestionModel } from '../../models/question.model';
+import { QuestionModel } from './question.model';
 
 @Component({
   selector: 'app-question-card',
   templateUrl: './question-card.component.html',
-  styleUrls: ['./question-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionCardComponent {
-  @Input() question: IQuestionModel;
+  @Input() question: QuestionModel;
   @Input() index: number;
   @Input() highlightAnswer: boolean;
+
   userSelection: string[] = [];
   isExpansionOpened = false;
 

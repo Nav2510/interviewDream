@@ -1,6 +1,6 @@
-import { IInfoCardModel } from 'src/app/shared/models/info-card.model';
+import { InfoCardModel } from 'src/app/shared/components/info-card/info-card.model';
 
-export const papers: IInfoCardModel[] = [
+export const papers: InfoCardModel[] = [
   {
     label: 'Java Error handling',
     description:

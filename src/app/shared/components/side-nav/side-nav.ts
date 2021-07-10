@@ -1,6 +1,6 @@
-import { IListModel } from '../models/list.model';
+import { SideNavModel } from './side-nav.model';
 
-export const sideNav: IListModel[] = [
+export const SIDE_NAV_CONTENT: SideNavModel[] = [
   {
     icon: 'home',
     label: 'Home',

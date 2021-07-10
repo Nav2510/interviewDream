@@ -1,4 +1,4 @@
-export interface IProfileInfoCardModel {
+export interface ProfileInfoCardModel {
   title: string;
   summary?: string;
   list?: Array<{

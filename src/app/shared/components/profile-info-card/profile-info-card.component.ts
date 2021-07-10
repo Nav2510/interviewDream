@@ -1,21 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { IProfileInfoCardModel } from '../../models/profile-info-card.model';
+import { ProfileInfoCardModel } from './profile-info-card.model';
 
 @Component({
   selector: 'app-profile-info-card',
   templateUrl: './profile-info-card.component.html',
   styleUrls: ['./profile-info-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProfileInfoCardComponent implements OnInit {
-  @Input() card: IProfileInfoCardModel;
+export class ProfileInfoCardComponent {
+  @Input() card: ProfileInfoCardModel;
 
   editMode = false;
   model: FormGroup;
-
-  ngOnInit() {}
-
   onEdit() {
     this.editMode = !this.editMode;
     if (this.editMode) {

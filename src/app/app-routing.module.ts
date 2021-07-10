@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './features/landing/landing.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent,
+    loadChildren: () =>
+      import('./features/landing/landing.module').then(
+        (module) => module.LandingModule
+      ),
   },
   {
     path: '',
@@ -20,6 +22,10 @@ const routes: Routes = [
       import('./features/dashboard/dashboard.module').then(
         (module) => module.DashboardModule
       ),
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
 

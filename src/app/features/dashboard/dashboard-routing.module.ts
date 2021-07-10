@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CoursesComponent } from './components/courses/courses.component';
-import { PaperComponent } from './components/paper/paper.component';
-import { PapersComponent } from './components/papers/papers.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { TestComponent } from './components/test/test.component';
-import { TestsComponent } from './components/tests/tests.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
@@ -16,27 +10,49 @@ const routes: Routes = [
     children: [
       {
         path: 'courses',
-        component: CoursesComponent,
+        loadChildren: () =>
+          import('./components/courses/courses.module').then(
+            (module) => module.CoursesModule
+          ),
       },
       {
         path: 'profile',
-        component: ProfileComponent,
+        loadChildren: () =>
+          import('./components/profile/profile.module').then(
+            (module) => module.ProfileModule
+          ),
       },
       {
         path: 'papers',
-        component: PapersComponent,
+        loadChildren: () =>
+          import('./components/papers/papers.module').then(
+            (module) => module.PapersModule
+          ),
       },
       {
         path: 'papers/:paperId',
-        component: PaperComponent,
+        loadChildren: () =>
+          import('./components/paper/paper.module').then(
+            (module) => module.PaperModule
+          ),
       },
       {
         path: 'tests',
-        component: TestsComponent,
+        loadChildren: () =>
+          import('./components/tests/tests.module').then(
+            (module) => module.TestsModule
+          ),
       },
       {
         path: 'tests/:testId',
-        component: TestComponent,
+        loadChildren: () =>
+          import('./components/test/test.module').then(
+            (module) => module.TestModule
+          ),
+      },
+      {
+        path: '**',
+        redirectTo: 'profile',
       },
     ],
   },

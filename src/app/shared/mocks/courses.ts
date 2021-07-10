@@ -1,6 +1,6 @@
-import { ICardModel } from '../models/card.model';
+import { CardModel } from '../components/card/card.model';
 
-export const courses: ICardModel[] = [
+export const COURSES: CardModel[] = [
   {
     description: 'Basic of Java course. Complete understanding of Java.',
     imagePath: 'assets/images/bgImages/1.jpg',
