@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 import { TestComponent } from './test.component';
 import { StarRatingModule } from '../../../../shared/components/star-rating/star-rating.module';
@@ -14,6 +15,8 @@ const routes: Routes = [
   },
 ];
 
+const MATERIALS = [MatButtonModule];
+
 @NgModule({
   declarations: [TestComponent],
   imports: [
@@ -22,6 +25,7 @@ const routes: Routes = [
     QuestionCardModule,
     StarRatingModule,
     RouterModule.forChild(routes),
+    ...MATERIALS,
   ],
 })
 export class TestModule {}
