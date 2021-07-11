@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './core/guards/auth.guard';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { LoginModule } from './features/login/login.module';
 import { GraphQLModule } from './graphql.module';
@@ -20,7 +21,7 @@ import { GraphQLModule } from './graphql.module';
     GraphQLModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

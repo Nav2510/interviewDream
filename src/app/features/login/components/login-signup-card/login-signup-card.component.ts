@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../../../../core/services/auth.service';
+
 @Component({
   selector: 'app-login-signup-card',
   templateUrl: './login-signup-card.component.html',
@@ -11,14 +13,34 @@ export class LoginSignupCardComponent {
   isRegister = true;
   model: FormGroup = this.buildForm();
 
-  // eslint-disable-next-line no-unused-vars
-  constructor(private router: Router) {}
+  constructor(
+    // eslint-disable-next-line no-unused-vars
+    private readonly router: Router,
+    // eslint-disable-next-line no-unused-vars
+    private readonly authService: AuthService,
+  ) {}
 
   onSubmit() {
     if (this.isRegister) {
-      this.router.navigate(['/select-account']);
+      this.authService
+        .register(
+          this.model.value.email,
+          this.model.value.password,
+          this.model.value.username,
+        )
+        .subscribe((isValidated) => {
+          if (isValidated) {
+            this.router.navigate(['/select-account']);
+          }
+        });
     } else {
-      this.router.navigate(['/dashboard/profile']);
+      this.authService
+        .login(this.model.value.email, this.model.value.password)
+        .subscribe((isValidated) => {
+          if (isValidated) {
+            this.router.navigate(['/dashboard/profile']);
+          }
+        });
     }
   }
 
@@ -37,7 +59,7 @@ export class LoginSignupCardComponent {
     this.isRegister = !this.isRegister;
   }
 
-  buildForm(): FormGroup {
+  private buildForm(): FormGroup {
     if (this.isRegister) {
       const formObj = {
         email: new FormControl(''),

@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AccountSelectorCardComponent } from './components/account-selector-card/account-selector-card.component';
-import { LoginSignupCardComponent } from './components/login-signup-card/login-signup-card.component';
 import { LoginComponent } from './login.component';
 
 const routes: Routes = [
@@ -12,11 +10,17 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginSignupCardComponent,
+        loadChildren: () =>
+          import(
+            './components/login-signup-card/login-signup-card.module'
+          ).then((module) => module.LoginSignupCardModule),
       },
       {
         path: 'select-account',
-        component: AccountSelectorCardComponent,
+        loadChildren: () =>
+          import(
+            './components/account-selector-card/account-selector-card.module'
+          ).then((module) => module.AccountSelectorCardModule),
       },
     ],
   },

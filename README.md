@@ -23,18 +23,14 @@ CI/CD Pipeline checks:
 
 1. Pipeline is setup using [Github actions](https://github.com/features/actions) for `lint`, `test`, and `build`.
 2. Code smells and bugs are checked using Sonar Cloud.<br />
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Nav2510_interviewDream&metric=alert_status)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Nav2510_interviewDream&metric=code_smells)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Nav2510_interviewDream&metric=bugs)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream)
+   [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Nav2510_interviewDream&metric=alert_status)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream)
+   [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Nav2510_interviewDream&metric=code_smells)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Nav2510_interviewDream&metric=bugs)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream)
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/dashboard?id=Nav2510_interviewDream)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## CI/CD Pipeline
-
-Project use [Github actions](https://docs.github.com/en/actions/quickstart) for running build pipeline on Ubuntu container. Pipeline runs for each `Pull request` created for the `develop` branch.
+Run `ng serve` for a dev server. Navigate to `http://localhost:5000/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
