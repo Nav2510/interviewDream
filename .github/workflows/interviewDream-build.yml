@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - "develop"
+      - "master"
 jobs:
   Lint_Test_Build_Actions:
     runs-on: ubuntu-latest
