@@ -8,13 +8,15 @@
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "test": "ng test --code-coverage",
     "e2e": "ng e2e",
     "graphql:coverage": "graphql coverage",
     "graphql:validate": "graphql validate",
     "graphql:codegen": "graphql codegen",
     "graphql:codegen:watch": "graphql codegen --watch",
-    "pipeline": "npm run lint && npm run graphql:codegen && npm run build"
+    "pipeline": "npm run lint && npm run graphql:codegen && npm run build",
+    "heroku-postbuild": "npm run graphql:codegen && npm run build:prod"
   },
   "private": true,
   "dependencies": {
