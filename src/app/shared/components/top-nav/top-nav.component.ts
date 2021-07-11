@@ -1,17 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core'
 
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
-  styleUrls: ['./top-nav.component.scss']
+  styleUrls: ['./top-nav.component.scss'],
 })
-export class TopNavComponent implements OnInit {
+export class TopNavComponent {
   @Output() toggleSideNav = new EventEmitter()
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   onToggleMenu() {
     this.toggleSideNav.next()

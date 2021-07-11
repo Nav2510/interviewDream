@@ -6,12 +6,13 @@ import { ICardModel } from '../../models/card.model';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
   @Input() card: ICardModel;
   @Input() animations: boolean;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private router: Router) {}
 
   onClick(): void {

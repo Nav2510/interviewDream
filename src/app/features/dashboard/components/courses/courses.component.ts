@@ -16,5 +16,7 @@ export class CoursesComponent implements OnInit {
     this.courses = courses;
   }
 
-  onFilterChange(event: Event): void {}
+  onFilterChange(event: Event): void {
+    console.log(event);
+  }
 }

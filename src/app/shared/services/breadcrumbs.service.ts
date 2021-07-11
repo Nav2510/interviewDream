@@ -29,5 +29,7 @@ export class BreadCrumbService {
     this.breadcrumbSource.next(updatedValue);
   }
 
-  removeBreadcrumb(breadcrumb: IBreadcrumbModel[]) {}
+  removeBreadcrumb(breadcrumb: IBreadcrumbModel[]) {
+    console.log(breadcrumb);
+  }
 }

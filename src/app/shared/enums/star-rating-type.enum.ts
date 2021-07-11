@@ -4,7 +4,7 @@ export type StarRatingTypeEnum =
 | 'complete'
 
 export const StarRatingTypeEnum = {
-    Empty: 'empty',
-    Half: 'half',
-    Complete: 'complete'
+  Empty: 'empty',
+  Half: 'half',
+  Complete: 'complete'
 }
