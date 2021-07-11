@@ -6,6 +6,7 @@
     "start": "concurrently \"npm run start:ng\" \"npm run graphql:codegen:watch\"",
     "start:ng": "ng serve --port=5000",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "build": "ng build",
     "test": "ng test --code-coverage",
     "e2e": "ng e2e",

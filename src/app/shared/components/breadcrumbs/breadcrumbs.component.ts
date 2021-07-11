@@ -21,7 +21,7 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.breadcrumbService.latestBreadcrumb.subscribe((breadcrumbList: IBreadcrumbModel[]) => {
         this.breadcrumbList = breadcrumbList
-    }))
+      }))
   }
 
   ngOnDestroy(): void {

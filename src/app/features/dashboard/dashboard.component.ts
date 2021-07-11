@@ -11,7 +11,7 @@ import { IFilterValueModel } from '../../shared/models/filter-value.model';
 export class DashboardComponent {
   showSideNav = true;
 
-  constructor(private router: Router) {}
+  constructor(private readonly router: Router) {}
 
   onToggleSideNav() {
     this.showSideNav = !this.showSideNav;
@@ -22,5 +22,7 @@ export class DashboardComponent {
     return !url.includes('profile');
   }
 
-  onFilterChange(value: IFilterValueModel) {}
+  onFilterChange(value: IFilterValueModel) {
+    console.log(value);
+  }
 }

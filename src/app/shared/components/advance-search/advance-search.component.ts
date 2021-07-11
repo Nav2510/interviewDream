@@ -153,7 +153,8 @@ export class AdvanceSearchComponent implements OnInit {
 
   createChipLabel(value: string, type: 'key' | 'value'): string {
     if (type === 'key') {
-      return this.capitalize(value).slice(0, 4);
+      const charactersToRemove = 4;
+      return this.capitalize(value).slice(0, charactersToRemove);
     } else {
       let fragList = value.split('-');
       fragList = fragList.map((frag) => {
@@ -164,15 +165,16 @@ export class AdvanceSearchComponent implements OnInit {
   }
 
   capitalize(value: string): string {
+    const charactersToRemove = 1;
     const firstletter = value.charAt(0).toUpperCase();
-    const remainingStr = value.slice(1, value.length);
+    const remainingStr = value.slice(charactersToRemove, value.length);
     return firstletter + remainingStr;
   }
 
   onChipClose(mappedField: string, value: string) {
     const modelValue: { [key: string]: string[] } = this.filterModel.value;
     const filterValue = modelValue[mappedField].filter(
-      (item) => item !== value
+      (item) => item !== value,
     );
     this.filterModel.patchValue({ [mappedField]: filterValue });
     this.setChips();

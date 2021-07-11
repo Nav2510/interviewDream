@@ -3,6 +3,6 @@ export type InfoCardTypeEnum =
 | 'test'
 
 export const InfoCardTypeEnum = {
-    Paper: 'paper',
-    Test: 'test',
+  Paper: 'paper',
+  Test: 'test',
 }

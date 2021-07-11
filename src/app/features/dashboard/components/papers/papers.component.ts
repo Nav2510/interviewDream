@@ -17,5 +17,7 @@ export class PapersComponent implements OnInit {
     this.papers = papers;
   }
 
-  onFilterChange(event: Event): void {}
+  onFilterChange(event: Event): void {
+    console.log(event);
+  }
 }
