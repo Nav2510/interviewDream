@@ -17,6 +17,7 @@ export class SideNavComponent {
   list: IListModel[] = sideNav;
   isOpen = true;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private router: Router) {}
 
   onClickListItem(listIndex: number, route: string) {

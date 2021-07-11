@@ -11,6 +11,7 @@ import { IFilterValueModel } from '../../shared/models/filter-value.model';
 export class DashboardComponent {
   showSideNav = true;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private readonly router: Router) {}
 
   onToggleSideNav() {

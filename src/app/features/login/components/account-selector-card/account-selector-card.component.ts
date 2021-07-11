@@ -11,9 +11,11 @@ export class AccountSelectorCardComponent {
     student: 'student',
     instructor: 'instructor',
   };
+  // eslint-disable-next-line no-unused-vars
   constructor(private router: Router) {}
 
   onSelection(accountType) {
+    console.log(accountType);
     this.router.navigate(['/dashboard/profile']);
   }
 }
