@@ -11,8 +11,6 @@ import { InfoCardModel } from '../../../../shared/components/info-card/info-card
 export class PapersComponent implements OnInit {
   papers: InfoCardModel[];
 
-  constructor() {}
-
   ngOnInit() {
     this.papers = papers;
   }

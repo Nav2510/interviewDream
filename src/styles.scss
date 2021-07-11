@@ -4,11 +4,11 @@
 
 @import '~@angular/material/theming';
 $custom-typography: mat-typography-config(
-  $font-family: 'Raleway'
+  $font-family: 'Raleway',
 );
 
 @include angular-material-typography($custom-typography);
 
 * {
-    font-family: 'Raleway';
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }

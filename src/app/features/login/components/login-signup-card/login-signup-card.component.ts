@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-signup-card',
   templateUrl: './login-signup-card.component.html',
-  styleUrls: ['./login-signup-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginSignupCardComponent {
   isRegister = true;
@@ -31,7 +31,9 @@ export class LoginSignupCardComponent {
     this.model = this.buildForm();
   }
 
-  onForgetPassword() {}
+  onForgetPassword() {
+    // TODO: Update this method
+  }
 
   onToggleLoginRegister() {
     this.isRegister = !this.isRegister;

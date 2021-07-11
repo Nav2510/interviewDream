@@ -10,7 +10,6 @@ import { InfoCardModel } from '../../../../shared/components/info-card/info-card
 })
 export class TestsComponent implements OnInit {
   tests: InfoCardModel[];
-  constructor() {}
 
   ngOnInit() {
     this.tests = tests;
