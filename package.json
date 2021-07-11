@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run start:ng\" \"npm run graphql:codegen:watch\"",
-    "start:ng": "ng serve --port=5000",
+    "start": "ng serve --port=5000",
+    "start:ng:codegen": "concurrently \"npm run start\" \"npm run graphql:codegen:watch\"",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "build": "ng build",
