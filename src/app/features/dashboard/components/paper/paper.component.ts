@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { paperForm } from '../../../../shared/mocks/create-paper-form';
 import { questions } from '../../../../shared/mocks/questions';
-import { IConfigModel } from '../../../../shared/models/filter-config.model';
-import { IQuestionModel } from '../../../../shared/models/question.model';
+import { ConfigModel } from '../../../../shared/components/dynamic-form/config.model';
+import { QuestionModel } from '../../../../shared/components/question-card/question.model';
 
 @Component({
   selector: 'app-paper',
@@ -11,8 +11,8 @@ import { IQuestionModel } from '../../../../shared/models/question.model';
   styleUrls: ['./paper.component.scss'],
 })
 export class PaperComponent implements OnInit {
-  questions: IQuestionModel[];
-  editPaperModel: IConfigModel[];
+  questions: QuestionModel[];
+  editPaperModel: ConfigModel[];
   editMode = false;
   paper = {
     title: 'Practice Paper 1',

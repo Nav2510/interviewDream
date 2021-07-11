@@ -1,4 +1,4 @@
-export interface IListModel {
+export interface SideNavModel {
   icon: string;
   label: string;
   name: string;

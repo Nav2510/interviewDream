@@ -1,6 +1,6 @@
-import { IQuestionModel } from '../models/question.model';
+import { QuestionModel } from '../components/question-card/question.model';
 
-export const questions: IQuestionModel[] = [
+export const questions: QuestionModel[] = [
   {
     id: '2281',
     statement:

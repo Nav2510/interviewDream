@@ -1,14 +1,19 @@
-import { Component, EventEmitter, Output } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
-  styleUrls: ['./top-nav.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopNavComponent {
-  @Output() toggleSideNav = new EventEmitter()
+  @Output() toggleSideNav = new EventEmitter<void>();
 
   onToggleMenu() {
-    this.toggleSideNav.next()
+    this.toggleSideNav.emit();
   }
 }

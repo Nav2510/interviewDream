@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ICardModel } from '../../shared/models/card.model';
+import { CardModel } from '../../shared/components/card/card.model';
 
 @Component({
   selector: 'app-landing',
@@ -8,7 +8,7 @@ import { ICardModel } from '../../shared/models/card.model';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent {
-  items: ICardModel[] = [
+  items: CardModel[] = [
     {
       description:
         'angular as a framework, learn about all features of Angular',

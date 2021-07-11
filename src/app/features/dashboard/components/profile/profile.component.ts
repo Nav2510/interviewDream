@@ -1,7 +1,7 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
-import { profile } from '../../../../shared/mocks/profile'
-import { IProfileInfoCardModel } from '../../../../shared/models/profile-info-card.model'
+import { PROFILE } from '../../../../shared/mocks/profile';
+import { ProfileInfoCardModel } from '../../../../shared/components/profile-info-card/profile-info-card.model';
 
 @Component({
   selector: 'app-profile',
@@ -9,9 +9,9 @@ import { IProfileInfoCardModel } from '../../../../shared/models/profile-info-ca
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  summary: IProfileInfoCardModel = profile.summary
-  basic: IProfileInfoCardModel = profile.basic
-  additional: IProfileInfoCardModel = profile.additional
-  contact: IProfileInfoCardModel = profile.contact
-  education: IProfileInfoCardModel = profile.education
+  summary: ProfileInfoCardModel = PROFILE.summary;
+  basic: ProfileInfoCardModel = PROFILE.basic;
+  additional: ProfileInfoCardModel = PROFILE.additional;
+  contact: ProfileInfoCardModel = PROFILE.contact;
+  education: ProfileInfoCardModel = PROFILE.education;
 }

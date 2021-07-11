@@ -1,18 +1,27 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EventEmitter } from 'events';
-import { IConfigModel } from '../../models/filter-config.model';
+
+import { ConfigModel } from './config.model';
 
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicFormComponent implements OnInit {
+  @Input() config: ConfigModel[];
+
   @Output() formSubmit = new EventEmitter();
-  @Input() config: IConfigModel[];
 
   model: FormGroup;
+
   ngOnInit() {
     if (this.config) {
       this.build();
@@ -21,7 +30,8 @@ export class DynamicFormComponent implements OnInit {
 
   build() {
     const formObj = {};
-    this.config.forEach((config: IConfigModel) => {
+
+    this.config.forEach((config: ConfigModel) => {
       if (config.type !== 'button') {
         formObj[config.name] = new FormControl(config.defaultValue);
       }

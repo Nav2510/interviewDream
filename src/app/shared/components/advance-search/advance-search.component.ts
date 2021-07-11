@@ -1,10 +1,16 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { IConfigModel } from '../../models/filter-config.model';
-import { IFilterValueModel } from '../../models/filter-value.model';
+import { ConfigModel } from '../dynamic-form/config.model';
+import { IFilterValueModel } from './filter-value.model';
 
-interface IChipModel {
+interface ChipModel {
   label: string;
   value: string;
   mappedField: string;
@@ -13,13 +19,14 @@ interface IChipModel {
 @Component({
   selector: 'app-advance-search',
   templateUrl: './advance-search.component.html',
-  styleUrls: ['./advance-search.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdvanceSearchComponent implements OnInit {
   @Output() filterChangeEvent = new EventEmitter<IFilterValueModel>();
+
   filterModel: FormGroup;
-  selectedItems: IChipModel[] = [];
-  filterConfig: IConfigModel[] = [
+  selectedItems: ChipModel[] = [];
+  filterConfig: ConfigModel[] = [
     {
       label: 'Title',
       name: 'title',
@@ -106,15 +113,13 @@ export class AdvanceSearchComponent implements OnInit {
     },
   ];
 
-  constructor() {}
-
   ngOnInit() {
     this.build();
   }
 
   build() {
     const formObj = {};
-    this.filterConfig.forEach((config: IConfigModel) => {
+    this.filterConfig.forEach((config: ConfigModel) => {
       if (config.type !== 'button') {
         formObj[config.name] = new FormControl(config.defaultValue);
       }
@@ -131,7 +136,7 @@ export class AdvanceSearchComponent implements OnInit {
     this.selectedItems = [];
     for (const [key, valueList] of Object.entries(this.filterModel.value)) {
       if (typeof valueList === 'object') {
-        let chipList: IChipModel[] = [];
+        let chipList: ChipModel[] = [];
         chipList = (valueList as string[])
           .filter((value) => {
             return value !== 'all';

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { IBreadcrumbModel } from '../models/breadcrumb.model';
+import { BreadcrumbModel } from './breadcrumb.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BreadCrumbService {
-  private breadcrumbSource = new BehaviorSubject<IBreadcrumbModel[]>([
+  private breadcrumbSource = new BehaviorSubject<BreadcrumbModel[]>([
     {
       label: 'Dashboard',
       url: '/dashboard',
@@ -23,13 +23,13 @@ export class BreadCrumbService {
   ]);
   latestBreadcrumb = this.breadcrumbSource.asObservable();
 
-  addBreadcrumb(breadcrumb: IBreadcrumbModel) {
+  addBreadcrumb(breadcrumb: BreadcrumbModel) {
     const currentValue = this.breadcrumbSource.value;
     const updatedValue = [...currentValue, breadcrumb];
     this.breadcrumbSource.next(updatedValue);
   }
 
-  removeBreadcrumb(breadcrumb: IBreadcrumbModel[]) {
+  removeBreadcrumb(breadcrumb: BreadcrumbModel[]) {
     console.log(breadcrumb);
   }
 }

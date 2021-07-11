@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { tests } from '../../../../shared/mocks/tests';
-import { IInfoCardModel } from '../../../../shared/models/info-card.model';
+import { InfoCardModel } from '../../../../shared/components/info-card/info-card.model';
 
 @Component({
   selector: 'app-tests',
@@ -9,7 +9,7 @@ import { IInfoCardModel } from '../../../../shared/models/info-card.model';
   styleUrls: ['./tests.component.scss'],
 })
 export class TestsComponent implements OnInit {
-  tests: IInfoCardModel[];
+  tests: InfoCardModel[];
   constructor() {}
 
   ngOnInit() {

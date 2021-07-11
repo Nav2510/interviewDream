@@ -1,13 +1,13 @@
-import { ConfigTypeEnum } from '../enums/config-type.enum';
-import { IOptionModel } from './filter-option.model';
+import { ConfigTypeEnum } from './config-type.enum';
+import { OptionModel } from './option.model';
 
-export interface IConfigModel {
+export interface ConfigModel {
   label: string;
   name: string;
   type: ConfigTypeEnum;
   classes: string[];
   defaultValue?: string | number | number[] | string[];
   placeholder?: string;
-  options?: IOptionModel[];
+  options?: OptionModel[];
   icon?: string;
 }
