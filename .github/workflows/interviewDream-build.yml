@@ -1,0 +1,21 @@
+name: interviewDream Build
+on:
+  pull_request:
+    branches:
+      - "develop"
+      - "master"
+jobs:
+  Lint_Test_Build_Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 Triggered by --> ${{ github.event_name }} event."
+      - run: echo "🐧 Running on --> ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 Branch --> ${{ github.ref }} , Repository --> ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: sudo npm ci
+      # TODO: Uncomment once jest is integrated
+      # - run: sudo npm run test
+      - run: sudo npm run pipeline
+      - run: echo "🍏 This job's status is ${{ job.status }}."

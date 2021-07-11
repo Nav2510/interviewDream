@@ -1,16 +1,16 @@
-import { IQuestionModel } from './question.model';
+import { QuestionModel } from '../components/question-card/question.model';
 
-export interface ITestModel {
-    label: string;
-    id: string;
-    description: string;
-    // TODO: Need to check with APIs
-    questions: IQuestionModel[];
-    difficulty: number;
-    numberOfQuestions: number;
-    maxMarks: number;
-    maxTime: number;
-    passingMarks?: number;
-    categories: string[];
-    subCategories: string[];
+export interface TestModel {
+  label: string;
+  id: string;
+  description: string;
+  // TODO: Need to check with APIs
+  questions: QuestionModel[];
+  difficulty: number;
+  numberOfQuestions: number;
+  maxMarks: number;
+  maxTime: number;
+  passingMarks?: number;
+  categories: string[];
+  subCategories: string[];
 }

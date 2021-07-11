@@ -1,6 +1,6 @@
-import { IConfigModel } from '../models/filter-config.model';
+import { ConfigModel } from '../components/dynamic-form/config.model';
 
-export const testForm: IConfigModel[] = [
+export const testForm: ConfigModel[] = [
   {
     label: 'Title',
     name: 'title',

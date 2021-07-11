@@ -3,8 +3,8 @@
         <app-side-nav></app-side-nav>
     </mat-sidenav>
     <mat-sidenav-content class="main-container">
-        <app-top-nav (toggleSideNav)="onToggleSideNav()"></app-top-nav>
-        <div class="content-container">
+        <app-top-nav (toggleSideNav)="onToggleSideNav()" [userActions]="userActions"></app-top-nav>
+        <div class="ivd-content-container" *ngIf="isNotProfilePage(); else profilePage">
             <div class="breadcrumb-wrapper">
                 <app-breadcrumbs></app-breadcrumbs>
             </div>
@@ -12,3 +12,6 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+<ng-template #profilePage>
+    <router-outlet></router-outlet>
+</ng-template>

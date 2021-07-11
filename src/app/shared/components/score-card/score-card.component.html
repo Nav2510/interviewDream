@@ -1,0 +1,13 @@
+<div class="ivd-score-card">
+  <h2>interviewDream Score</h2>
+  <ul>
+    <li *ngFor="let item of score">
+      <div class="score-wrapper">
+<span class="ivd-score-label">{{item.label}}</span>
+<mat-progress-bar class="ivd-score-progress" [value]="item.value*10">
+</mat-progress-bar>
+      </div>
+    </li>
+  </ul>
+  <a href="" class="ivd-test-link">give test again</a>
+</div>

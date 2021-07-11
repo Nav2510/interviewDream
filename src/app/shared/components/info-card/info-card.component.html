@@ -22,5 +22,5 @@
             <span><app-star-rating [rating]="cardInfo.difficulty"></app-star-rating></span>
         </div>
     </div>
-    <a class="ivd-info-card-link" href="">{{(cardType === 'paper') ? 'Open Paper' : 'Open Test'}}</a>
+    <a class="ivd-info-card-link" [routerLink]="cardInfo.id">{{(cardType === 'paper') ? 'Open Paper' : 'Open Test'}}</a>
 </div>

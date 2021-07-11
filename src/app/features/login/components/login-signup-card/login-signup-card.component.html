@@ -1,0 +1,59 @@
+<div class="ivd-login-signup-card">
+  <div class="easy-login-container">
+    <img class="login-image" src="/assets/images/bgImages/login.svg" alt="">
+    <a mat-icon-button routerLink="/" class="back-btn">
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+    <div class="action-wrapper">
+      <h3>Get Started</h3>
+      <button mat-button>Sign in with Google+</button>
+      <button mat-button>Sign in with Facebook</button>
+    </div>
+  </div>
+  <div class="login-form-container">
+    <div class="login-register-wrapper">
+      <button mat-button [ngClass]="{'selected': !isRegister}" (click)="switchToLogin()">Log In</button>
+      <button mat-button [ngClass]="{'selected': isRegister}" (click)="switchToRegister()">Register</button>
+    </div>
+    <div class="form-wrapper">
+      <h3>{{isRegister ? 'Register' : 'Log In'}}</h3>
+      <form [formGroup]="model" (ngSubmit)="onSubmit()">
+        <div class="ivd-input-wrapper">
+          <label class="ivd-label">Email</label>
+          <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
+            <input matInput id="email" type="text" formControlName="email">
+          </mat-form-field>
+        </div>
+        <div class="ivd-input-wrapper">
+          <ng-container *ngIf="isRegister">
+            <label class="ivd-label">Username</label>
+            <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
+              <input matInput id="username" type="text" formControlName="username">
+            </mat-form-field>
+          </ng-container>
+        </div>
+        <div class="ivd-input-wrapper">
+          <label class="ivd-label">Password</label>
+          <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
+            <input matInput id="password" type="password" formControlName="password" autocomplete="on">
+          </mat-form-field>
+        </div>
+        <div class="ivd-input-wrapper">
+          <ng-container *ngIf="isRegister">
+            <label class="ivd-label">Confirm Password</label>
+            <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
+              <input matInput id="confirmPassword" type="password"
+                formControlName="confirmPassword" autocomplete="on">
+            </mat-form-field>
+          </ng-container>
+        </div>
+        <button mat-button class="submit-btn" type="submit">{{isRegister ? 'Create An Account': 'Sign In'}}</button>
+        <div class="link-wrapper">
+          <a class="ivd-link login-register-link float-left" (click)="onForgetPassword()" *ngIf="!isRegister" >Forgot Password?</a>
+          <a class="ivd-link login-register-link float-right" (click)="onToggleLoginRegister()" >{{isRegister? 'Already have an Account?' : 'Not a
+            Member yet?'}}</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

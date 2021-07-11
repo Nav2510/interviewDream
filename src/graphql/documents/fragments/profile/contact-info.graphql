@@ -1,0 +1,8 @@
+fragment ContactInfo on ContactInfo {
+  email
+  facebookId
+  gmailId
+  mobNo
+  skypeId
+  website
+}

@@ -23,8 +23,9 @@
             </div>
         </button>
         <mat-menu class="ivd-menu" #menu="matMenu">
-            <button class="ivd-menu-item" mat-menu-item>Profile</button>
-            <button class="ivd-menu-item" mat-menu-item>Logout</button>
+            <ng-container *ngFor="let action of userActions">
+                <button class="ivd-menu-item" mat-menu-item (click)="onUserAction(action)">{{action.label}}</button>
+            </ng-container>
         </mat-menu>
     </div>
 </div>

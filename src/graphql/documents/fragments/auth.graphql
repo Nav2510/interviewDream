@@ -1,0 +1,5 @@
+fragment Auth on AuthenticationData {
+  accessToken
+  expiresIn
+  userId
+}
