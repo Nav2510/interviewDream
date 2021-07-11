@@ -41,7 +41,7 @@
         "array-callback-return": "error",
         "dot-notation":"warn",
         "eqeqeq":"error",
-        "no-magic-numbers":["error", {"ignore": [0, -1]}],
+        "no-magic-numbers":["error", {"ignore": [0, -1, 1]}],
         "no-multi-spaces": "warn",
         "no-unused-expressions":"warn",
         "no-unused-vars":"warn",
