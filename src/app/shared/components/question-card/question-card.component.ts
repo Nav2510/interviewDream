@@ -6,7 +6,7 @@ import { QuestionModel } from './question.model';
 @Component({
   selector: 'app-question-card',
   templateUrl: './question-card.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionCardComponent {
   @Input() question: QuestionModel;

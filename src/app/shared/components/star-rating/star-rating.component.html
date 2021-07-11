@@ -1,9 +1,9 @@
 <div class="star-wrapper">
 <ng-container *ngFor="let star of starList; let i = index">
     <span [ngSwitch]="star">
-            <img class="rating-star" *ngSwitchCase="'complete'" src="/assets/icons/star-complete.svg">
-            <img class="rating-star" *ngSwitchCase="'half'" src="/assets/icons/star-half.svg">
-            <img class="rating-star" *ngSwitchCase="'empty'" src="/assets/icons/star-empty.svg">
+            <img class="rating-star" *ngSwitchCase="'complete'" src="/assets/icons/star-complete.svg" alt="complete star">
+            <img class="rating-star" *ngSwitchCase="'half'" src="/assets/icons/star-half.svg" alt="half star">
+            <img class="rating-star" *ngSwitchCase="'empty'" src="/assets/icons/star-empty.svg" alt="empty star">
         </span>
     </ng-container>
 </div>

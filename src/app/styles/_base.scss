@@ -135,9 +135,6 @@ hr {
   .mat-select-placeholder {
     color: $dark-theme-font-color-faded;
   }
-  .mat-form-field-infix {
-    border-top: 0px;
-  }
   .mat-select-value {
     color: $dark-theme-font-color;
   }
@@ -155,6 +152,7 @@ hr {
     margin-bottom: -1px;
   }
   .mat-form-field-infix {
+    border-top: 0px;
     padding: 12px 0 8px 0 !important;
   }
   .mat-select-arrow {
@@ -355,8 +353,7 @@ hr {
   line-height: 20px;
   .ivd-card-content {
     margin-top: -7px;
-  }
-  .ivd-card-content {
+
     .ivd-card-title {
       font-weight: $font-medium;
       margin-bottom: 13px;
@@ -730,7 +727,6 @@ hr {
       background: rgba(0, 0, 0, 0.15);
       cursor: pointer;
       color: $dark-theme-font-color-light;
-      cursor: pointer;
     }
   }
   .mat-accordion .mat-expansion-panel:last-of-type {

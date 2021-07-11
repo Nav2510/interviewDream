@@ -24,8 +24,6 @@ export class PaperComponent implements OnInit {
     author: 'Navdeep Singh',
   };
 
-  constructor() {}
-
   ngOnInit() {
     this.questions = questions;
     this.editPaperModel = paperForm;
