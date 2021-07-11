@@ -17,6 +17,7 @@ import { BreadCrumbService } from './breadcrumbs.service';
 export class BreadcrumbsComponent implements OnInit, OnDestroy {
   breadcrumbList: BreadcrumbModel[];
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private readonly breadcrumbService: BreadCrumbService) {}
 
   private subscription = new Subscription();
@@ -26,8 +27,8 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
       this.breadcrumbService.latestBreadcrumb.subscribe(
         (breadcrumbList: BreadcrumbModel[]) => {
           this.breadcrumbList = breadcrumbList;
-        }
-      )
+        },
+      ),
     );
   }
 

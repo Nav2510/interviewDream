@@ -1,13 +1,13 @@
 import { ProfileInfoCardModel } from '../components/profile-info-card/profile-info-card.model';
 
-const summary: ProfileInfoCardModel = {
+const SUMMARY: ProfileInfoCardModel = {
   title: 'summary',
   summary:
     // tslint:disable-next-line: max-line-length
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quasi facilis voluptates soluta alias blanditiis? Alias, odit quod? Nihil unde corrupti nulla labore tempore cupiditate voluptate aliquam quibusdam voluptas atque.',
 };
 
-const basic: ProfileInfoCardModel = {
+const BASIC: ProfileInfoCardModel = {
   title: 'basic Info',
   list: [
     {
@@ -33,7 +33,7 @@ const basic: ProfileInfoCardModel = {
   ],
 };
 
-const education: ProfileInfoCardModel = {
+const EDUCATION: ProfileInfoCardModel = {
   title: 'education and work information',
   list: [
     {
@@ -54,7 +54,7 @@ const education: ProfileInfoCardModel = {
   ],
 };
 
-const additional: ProfileInfoCardModel = {
+const ADDITIONAL: ProfileInfoCardModel = {
   title: 'additional information',
   list: [
     {
@@ -75,7 +75,7 @@ const additional: ProfileInfoCardModel = {
   ],
 };
 
-const contact: ProfileInfoCardModel = {
+const CONTACT: ProfileInfoCardModel = {
   title: 'contact information',
   list: [
     {
@@ -101,10 +101,10 @@ const contact: ProfileInfoCardModel = {
   ],
 };
 
-export const profile = {
-  summary,
-  basic,
-  education,
-  additional,
-  contact,
+export const PROFILE = {
+  summary: SUMMARY,
+  basic: BASIC,
+  education: EDUCATION,
+  additional: ADDITIONAL,
+  contact: CONTACT,
 };

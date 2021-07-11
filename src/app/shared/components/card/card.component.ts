@@ -12,6 +12,7 @@ export class CardComponent {
   @Input() card: CardModel;
   @Input() animations: boolean;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private readonly router: Router) {}
 
   onClick(): void {

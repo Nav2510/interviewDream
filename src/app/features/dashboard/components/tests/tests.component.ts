@@ -16,5 +16,7 @@ export class TestsComponent implements OnInit {
     this.tests = tests;
   }
 
-  onFilterChange(event: Event): void {}
+  onFilterChange(event: Event): void {
+    console.log(event);
+  }
 }
