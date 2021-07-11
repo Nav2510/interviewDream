@@ -1,7 +1,8 @@
-import { IInfoCardModel } from '../models/info-card.model';
+import { InfoCardModel } from '../components/info-card/info-card.model';
 
-export const tests: IInfoCardModel[] = [
+export const tests: InfoCardModel[] = [
   {
+    id: 918,
     label: 'Basic of Algorithms',
     description:
       // tslint:disable-next-line: max-line-length
@@ -13,6 +14,7 @@ export const tests: IInfoCardModel[] = [
     maxTime: 20,
   },
   {
+    id: 9187,
     label: 'Advanced Data-structures',
     description:
       // tslint:disable-next-line: max-line-length
@@ -24,6 +26,7 @@ export const tests: IInfoCardModel[] = [
     maxTime: 20,
   },
   {
+    id: 2871,
     label: 'Java',
     // tslint:disable-next-line: max-line-length
     description:
@@ -35,6 +38,7 @@ export const tests: IInfoCardModel[] = [
     maxTime: 100,
   },
   {
+    id: 1181,
     label: 'Database',
     description:
       // tslint:disable-next-line: max-line-length

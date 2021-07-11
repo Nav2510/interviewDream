@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { IFilterValueModel } from '../../shared/models/filter-value.model';
+import { IFilterValueModel } from '../../shared/components/advance-search/filter-value.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +11,8 @@ import { IFilterValueModel } from '../../shared/models/filter-value.model';
 export class DashboardComponent {
   showSideNav = true;
 
-  constructor(private router: Router) {}
+  // eslint-disable-next-line no-unused-vars
+  constructor(private readonly router: Router) {}
 
   onToggleSideNav() {
     this.showSideNav = !this.showSideNav;
@@ -22,5 +23,7 @@ export class DashboardComponent {
     return !url.includes('profile');
   }
 
-  onFilterChange(value: IFilterValueModel) {}
+  onFilterChange(value: IFilterValueModel) {
+    console.log(value);
+  }
 }

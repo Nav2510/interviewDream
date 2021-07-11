@@ -15,7 +15,7 @@
 
     <div class="paper-wrapper">
       <div *ngFor="let question of questions; let i = index" class="question-wrapper">
-        <app-question-card [question]="question" [index]="i"></app-question-card>
+        <app-question-card [question]="question" [index]="i" highlightAnswer="true"></app-question-card>
       </div>
     </div>
   </div>

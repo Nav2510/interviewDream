@@ -11,6 +11,7 @@ export class LoginSignupCardComponent {
   isRegister = true;
   model: FormGroup = this.buildForm();
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private router: Router) {}
 
   onSubmit() {

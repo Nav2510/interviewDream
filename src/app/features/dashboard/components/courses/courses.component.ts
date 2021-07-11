@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { courses } from '../../../../shared/mocks/courses';
-import { ICardModel } from '../../../../shared/models/card.model';
+import { COURSES } from '../../../../shared/mocks/courses';
+import { CardModel } from '../../../../shared/components/card/card.model';
 
 @Component({
   selector: 'app-courses',
@@ -9,12 +9,13 @@ import { ICardModel } from '../../../../shared/models/card.model';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  courses: ICardModel[];
-  constructor() {}
+  courses: CardModel[];
 
   ngOnInit() {
-    this.courses = courses;
+    this.courses = COURSES;
   }
 
-  onFilterChange(event: Event): void {}
+  onFilterChange(event: Event): void {
+    console.log(event);
+  }
 }

@@ -1,12 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 
-import { StarRatingTypeEnum } from '../../enums/star-rating-type.enum';
+import { StarRatingTypeEnum } from './star-rating-type.enum';
 
-const TOTAL_STARS = 5
+const TOTAL_STARS = 5;
 @Component({
   selector: 'app-star-rating',
   templateUrl: './star-rating.component.html',
-  styleUrls: ['./star-rating.component.scss']
+  styleUrls: ['./star-rating.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StarRatingComponent implements OnInit {
   @Input() rating: number;
@@ -15,12 +21,12 @@ export class StarRatingComponent implements OnInit {
   starList: string[];
 
   ngOnInit() {
-    this.starList = this.createList(this.rating)
+    this.starList = this.createList(this.rating);
   }
 
   createList(rating: number): string[] {
     const starList: string[] = [];
-    const completeStar: number = Math.floor(rating)
+    const completeStar: number = Math.floor(rating);
     const hasHalfStar: boolean = rating % completeStar !== 0;
     const emptyStar: number = Math.floor(TOTAL_STARS - rating);
     for (let i = 0; i < completeStar; i++) {
@@ -30,7 +36,7 @@ export class StarRatingComponent implements OnInit {
       starList.push(StarRatingTypeEnum.Half);
     }
     for (let i = 0; i < emptyStar; i++) {
-      starList.push(StarRatingTypeEnum.Empty)
+      starList.push(StarRatingTypeEnum.Empty);
     }
     return starList;
   }

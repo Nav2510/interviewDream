@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { testForm } from '../../../../shared/mocks/create-test-form';
 import { questions } from '../../../../shared/mocks/questions';
-import { IConfigModel } from '../../../../shared/models/filter-config.model';
-import { IQuestionModel } from '../../../../shared/models/question.model';
+import { ConfigModel } from '../../../../shared/components/dynamic-form/config.model';
+import { QuestionModel } from '../../../../shared/components/question-card/question.model';
 
 @Component({
   selector: 'app-test',
@@ -11,8 +11,8 @@ import { IQuestionModel } from '../../../../shared/models/question.model';
   styleUrls: ['./test.component.scss'],
 })
 export class TestComponent implements OnInit {
-  questions: IQuestionModel[];
-  editTestModel: IConfigModel[];
+  questions: QuestionModel[];
+  editTestModel: ConfigModel[];
   editMode = false;
   test = {
     title: 'Practice Test 1',
@@ -23,8 +23,6 @@ export class TestComponent implements OnInit {
     type: 'Single Correct Answer',
     author: 'Navdeep Singh',
   };
-
-  constructor() {}
 
   ngOnInit() {
     this.questions = questions;

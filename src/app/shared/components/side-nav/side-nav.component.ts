@@ -1,29 +1,30 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { sideNav } from '../../mocks/side-nav';
-import { IListModel } from '../../models/list.model';
+import { SIDE_NAV_CONTENT } from './side-nav';
+import { SideNavModel } from './side-nav.model';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideNavComponent {
   private selectedListIndex = -1;
   private selectedSubListIndex = -1;
   private expandedList = -1;
 
-  list: IListModel[] = sideNav;
+  list: SideNavModel[] = SIDE_NAV_CONTENT;
   isOpen = true;
 
-  constructor(private router: Router) {}
+  // eslint-disable-next-line no-unused-vars
+  constructor(private readonly router: Router) {}
 
   onClickListItem(listIndex: number, route: string) {
     if (route) {
       this.selectedListIndex = listIndex;
+      this.router.navigate([route]);
     }
-    this.router.navigate([route]);
   }
 
   toggleExpand(index: number) {

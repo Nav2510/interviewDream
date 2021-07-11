@@ -1,31 +1,38 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
-import { Subscription } from 'rxjs'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { IBreadcrumbModel } from '../../models/breadcrumb.model'
-import { BreadCrumbService } from '../../services/breadcrumbs.service'
+import { BreadcrumbModel } from './breadcrumb.model';
+import { BreadCrumbService } from './breadcrumbs.service';
 
 @Component({
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbsComponent implements OnInit, OnDestroy {
+  breadcrumbList: BreadcrumbModel[];
 
-  breadcrumbList: IBreadcrumbModel[]
+  // eslint-disable-next-line no-unused-vars
+  constructor(private readonly breadcrumbService: BreadCrumbService) {}
 
-  constructor( private breadcrumbService: BreadCrumbService ) { }
-
-  private subscription = new Subscription()
+  private subscription = new Subscription();
 
   ngOnInit(): void {
     this.subscription.add(
-      this.breadcrumbService.latestBreadcrumb.subscribe((breadcrumbList: IBreadcrumbModel[]) => {
-        this.breadcrumbList = breadcrumbList
-    }))
+      this.breadcrumbService.latestBreadcrumb.subscribe(
+        (breadcrumbList: BreadcrumbModel[]) => {
+          this.breadcrumbList = breadcrumbList;
+        },
+      ),
+    );
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
   }
-
 }
