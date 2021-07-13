@@ -1,0 +1,37 @@
+<div class="ivd-footer">
+  <div class="footer-content">
+    <div class="subscribe-wrapper">
+      <div class="subscribe-title">
+        Subscribe to InterviewDream via Email
+      </div>
+      <div class="subscribe-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto modi ut
+        culpa.</div>
+      <form class="subscribe-form">
+        <mat-form-field class="ivd-form-field" appearance="outline">
+          <input matInput type="text" placeholder="Email Address" id="email"
+            [formControl]="emailControl">
+        </mat-form-field>
+        <button mat-flat-button class="ivd-btn btn-accent subscribe-btn">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-links">
+      <div class="ivd-list" *ngFor="let list of footerLinks">
+        <div class="ivd-list-item" *ngFor="let item of list">
+          <a href="item.url">{{item.label}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="copyright">
+      &copy; interviewDream 2021
+    </div>
+    <div class="social-link">
+      <div class="social-link-wrapper" *ngFor="let link of socialLinks">
+        <a href="link.url">
+          <i class="fa fa-{{link.icon}}" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
