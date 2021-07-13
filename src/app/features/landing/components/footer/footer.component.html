@@ -6,13 +6,13 @@
       </div>
       <div class="subscribe-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto modi ut
         culpa.</div>
-      <div class="subscribe-form">
+      <form class="subscribe-form">
         <mat-form-field class="ivd-form-field" appearance="outline">
           <input matInput type="text" placeholder="Email Address" id="email"
-            [formControlName]="emailControl">
+            [formControl]="emailControl">
         </mat-form-field>
         <button mat-flat-button class="ivd-btn btn-accent subscribe-btn">Subscribe</button>
-      </div>
+      </form>
     </div>
     <div class="footer-links">
       <div class="ivd-list" *ngFor="let list of footerLinks">
