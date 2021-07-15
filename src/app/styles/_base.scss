@@ -384,8 +384,9 @@ hr {
 
 .ivd-card-animation:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.14);
   box-shadow: 0px 5px 12px #040e1c;
+  z-index: 10;
 }
 
 // login
@@ -1066,9 +1067,14 @@ hr {
   justify-content: space-between;
   align-items: center;
   height: 73px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.24);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.44);
   padding: 0 124px;
+  animation: ivd-fade-in-increase-height 0.5s ease-in-out forwards;
   .action-wrapper {
     a {
       margin-left: 85px;
@@ -1081,9 +1087,9 @@ hr {
 
 // landing-banner
 .ivd-banner {
-  margin-top: -73px;
   height: 100vh;
   position: relative;
+  width: 100%;
   display: flex;
   z-index: -1;
   justify-content: space-between;
@@ -1094,6 +1100,7 @@ hr {
     position: absolute;
     overflow: hidden;
     img {
+      width: 100%;
       transform: translate(-5px, -5px);
       filter: brightness(50%) blur(3px);
     }
@@ -1106,7 +1113,14 @@ hr {
       margin-bottom: 90px;
       line-height: 50px;
       font-size: 30px;
+      .quotes-wrapper {
+        display: inline-block;
+        opacity: 0;
+        animation: ivd-fade-in-move-right 0.5s ease-in-out 0.3s forwards;
+      }
       .author {
+        opacity: 0;
+        animation: ivd-fade-in-move-left 0.5s ease-in-out 0.3s forwards;
         float: right;
       }
     }
@@ -1114,6 +1128,8 @@ hr {
       font-size: 38px;
       line-height: 61px;
       color: $dark-theme-font-color-light;
+      opacity: 0;
+      animation: ivd-fade-in 0.5s ease-in-out 2s forwards;
     }
   }
   .images-container {
@@ -1128,6 +1144,16 @@ hr {
       margin: 0 20px;
       img {
         height: 100%;
+        opacity: 0;
+      }
+      .image-0 {
+        animation: ivd-fade-in 0.5s ease-in-out 1s forwards;
+      }
+      .image-1 {
+        animation: ivd-fade-in 0.5s ease-in-out 1.2s forwards;
+      }
+      .image-2 {
+        animation: ivd-fade-in 0.5s ease-in-out 1.5s forwards;
       }
     }
   }
@@ -1164,34 +1190,166 @@ hr {
 
 // create-account
 .ivd-create-account {
-  padding: 17px 80px 29px 80px;
+  padding: 29px 80px;
   background-color: $dark-theme-primary-color-light;
   display: flex;
   flex-direction: column;
   align-items: center;
-  .main-title {
-    font-size: 30px;
-    color: $dark-theme-font-color-light;
-    text-transform: uppercase;
-    margin-bottom: 21px;
-  }
+  justify-content: center;
+  height: 442px;
+  box-sizing: border-box;
+  overflow-x: hidden;
   .card-wrapper {
     display: flex;
+    position: relative;
+    .main-title {
+      pointer-events: none;
+      font-size: 30px;
+      color: $dark-theme-font-color-light;
+      text-transform: uppercase;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -70px;
+    }
     .account-card {
       margin: auto 10px;
-      padding: 25px 45px 34px 45px;
       background-color: $dark-theme-primary-color;
-      .title {
-        font-size: 22px;
-        text-align: center;
-        color: $dark-theme-font-color-light;
-        margin-bottom: 21px;
+      width: 100%;
+      display: flex;
+      position: relative;
+      max-height: 268px;
+      .background-bar {
+        display: block;
+        height: 100%;
+        width: 0;
+        position: absolute;
+        background-color: $dark-theme-primary-color;
+        left: 50%;
+        transform: translateX(-50%);
       }
-      .description {
-        font-size: 18px;
-        color: $dark-theme-font-color;
-        text-align: justify;
-        line-height: 30px;
+      .image-wrapper {
+        z-index: 10;
+        height: 350px;
+        width: 350px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        opacity: 0;
+        transform: translateY(-50%) scale(0);
+        img {
+          height: 100%;
+        }
+      }
+      .register-btn {
+        padding: 6px 60px;
+        opacity: 0;
+        text-transform: uppercase;
+        margin-top: 10px;
+        letter-spacing: 0.1px;
+        color: $dark-theme-font-color-light;
+      }
+      .card-content-wrapper {
+        padding: 25px 45px 34px 45px;
+        z-index: 1;
+        max-height: 268px;
+        overflow-y: hidden;
+        .title {
+          font-size: 22px;
+          text-align: center;
+          color: $dark-theme-font-color-light;
+          margin-bottom: 21px;
+          width: 100%;
+          text-transform: capitalize;
+        }
+        .description {
+          font-size: 18px;
+          color: $dark-theme-font-color;
+          text-align: justify;
+          line-height: 40px;
+        }
+      }
+    }
+    .student-card {
+      .image-wrapper {
+        right: -350px;
+      }
+    }
+    .instructor-card {
+      .image-wrapper {
+        left: -350px;
+      }
+    }
+  }
+}
+// create-account-transitions
+.ivd-create-account {
+  .card-wrapper {
+    .main-title {
+      transition: opacity 0.4s ease-in-out;
+    }
+    .account-card {
+      transition: width 0.5s 0.2s ease-in-out, opacity 0.5s ease-in-out;
+      .image-wrapper {
+        transition: transform 0.5s 0.9s ease-in-out, opacity 0.2s ease-in-out,
+          box-shadow 0.2s ease-in-out;
+      }
+      .register-btn {
+        transition: opacity 0.5s ease-in;
+      }
+    }
+    &:hover {
+      .main-title {
+        opacity: 0;
+      }
+      .account-card {
+        opacity: 0;
+      }
+    }
+    .account-card {
+      .background-bar {
+        transition: width 1.4s 0s ease-in-out;
+      }
+      .card-content-wrapper {
+        .title {
+          width: 100%;
+          transition: width 0.4s ease;
+        }
+      }
+      &:hover {
+        width: 200%;
+        opacity: 1;
+        .background-bar {
+          width: 150vw;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .image-wrapper {
+          transform: translateY(-50%) scale(1);
+          opacity: 1;
+          box-shadow: 0 0 15px 3px $dark-theme-primary-color-lighter;
+        }
+        .register-btn {
+          opacity: 1;
+        }
+      }
+    }
+    .student-card:hover {
+      .title {
+        width: 244px;
+      }
+      .image-wrapper {
+        right: -350px;
+        opacity: 1;
+      }
+    }
+    .instructor-card:hover {
+      .title {
+        width: 262px;
+      }
+      .image-wrapper {
+        left: -350px;
+        opacity: 1;
       }
     }
   }
@@ -1370,19 +1528,39 @@ hr {
 //
 // animations
 //
-@keyframes ivd-side-nav-expand-anim {
+@keyframes ivd-fade-in {
   from {
-    height: 0px;
-  }
-  to {
-    height: 180px;
-  }
-}
-@keyframes ivd-side-nav-opacity-anim {
-  from {
-    opacity: 0.7;
+    opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes ivd-fade-in-move-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ivd-fade-in-move-left {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ivd-fade-in-increase-height {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 73px;
   }
 }
