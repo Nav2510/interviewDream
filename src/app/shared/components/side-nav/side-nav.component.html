@@ -1,4 +1,7 @@
 <div class="ivd-side-nav">
+  <a [routerLink]="['/']" class="logo">
+    <img class="logo-img" src="../../../../assets/icons/logo-dark.svg" alt="" >
+  </a>
   <mat-accordion>
     <ng-container *ngFor="let item of list; let listIndex = index">
       <mat-expansion-panel 

@@ -1,7 +1,21 @@
-<div class="card-container">
-    <ng-container *ngFor="let item of items">
-        <app-card [card]="item" [animations]="true"></app-card>
-    </ng-container>
-    <hr>
-    <a class="ivd-btn btn-primary" routerLink="/login">Login</a>
+<app-nav-bar></app-nav-bar>
+<app-banner></app-banner>
+<div class="ivd-top-courses">
+  <div class="title">top courses</div>
+  <div class="card-container">
+    <div class="card-wrapper" *ngFor="let course of courses;">
+      <app-card [card]="course" animations="true"></app-card>
+    </div>
+  </div>
+  <div class="courses-link">
+    <a href="">view all courses</a>
+  </div>
 </div>
+<app-create-account></app-create-account>
+<div class="ivd-inspiration">
+  <div class="title">What is InterviewDream?</div>
+  <div class="description">InterviewDream gives you both "FAST TRACK" and "BEST WAY" to get you ready by series of questions. InterviewDream also
+  allows you to get familiar with online test section of various companies by providing mock tests available.</div>
+</div>
+<app-subscribe></app-subscribe>
+<app-footer></app-footer>
