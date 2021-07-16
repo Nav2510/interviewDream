@@ -9,6 +9,11 @@ For design review prototype screens, navigate to
 1. [InterviewDream - LoFi](https://xd.adobe.com/view/a6675294-38d4-4caf-5576-295ab6a706b8-d056/)
 2. [InterviewDream - HiFi](https://xd.adobe.com/view/9da6497f-fc2c-4135-6344-c04a3b94c1ea-eb97/)
 
+## Deployed Site Link
+
+1. https://interviewdreamv2.firebaseapp.com/
+2. https://interviewdreamv2.web.app/
+
 ## InterviewDream - backend
 
 InterviewDream backend is build on node.js with express framework and Apollo Graphql server. Please refer to [InterviewDream - backend](https://github.com/Nav2510/interviewDream-backend) for the InterviewDream backend github repository.
