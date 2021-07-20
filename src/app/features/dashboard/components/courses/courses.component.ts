@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { map } from 'rxjs/operators';
 
-import { COURSES } from '../../../../shared/mocks/courses';
-import { CardModel } from '../../../../shared/components/card/card.model';
+import { CoursesGQL } from '../../../../../graphql/documents/queries/courses/courses.graphql-gen';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss'],
 })
-export class CoursesComponent implements OnInit {
-  courses: CardModel[];
+export class CoursesComponent {
+  courseData$ = this.coursesGQL
+    .fetch()
+    .pipe(map((response) => response.data.courses));
 
-  ngOnInit() {
-    this.courses = COURSES;
-  }
+  // eslint-disable-next-line no-unused-vars
+  constructor(private readonly coursesGQL: CoursesGQL) {}
 
   onFilterChange(event: Event): void {
     console.log(event);

@@ -1,0 +1,5 @@
+query courses {
+  courses {
+    ...CourseData
+  }
+}

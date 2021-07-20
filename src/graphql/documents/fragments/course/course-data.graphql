@@ -1,0 +1,6 @@
+fragment CourseData on CourseData {
+  numberOfCourses
+  courses {
+    ...Courses
+  }
+}

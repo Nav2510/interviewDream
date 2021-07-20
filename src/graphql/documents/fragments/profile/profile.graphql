@@ -1,6 +1,6 @@
 fragment Profile on Profile {
   _id
-  bgImage
+  bgImagePath
   contactInfo {
     ...ContactInfo
   }
@@ -15,7 +15,7 @@ fragment Profile on Profile {
   personalInfo {
     ...PersonalInfo
   }
-  profileImage
+  profileImagePath
   publicProfileUrl
   username
 }

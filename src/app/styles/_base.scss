@@ -1460,7 +1460,7 @@ hr {
   .footer-bar {
     background-color: $dark-theme-primary-color;
     display: flex;
-    padding: 19px 46px;
+    padding: 8px 46px;
     justify-content: space-between;
     .copyright {
       display: flex;
@@ -1469,14 +1469,75 @@ hr {
     }
     .social-link {
       display: flex;
-      .social-link-wrapper {
-        margin-left: 28px;
-        a {
-          color: $dark-theme-font-color-light;
-        }
-      }
     }
   }
+}
+
+// social icons list
+.icon-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  .icon-item {
+    margin-left: 18px;
+  }
+}
+.icon-link {
+  display: inline-flex;
+  font-size: 18px;
+  text-decoration: none;
+  color: $social-icon;
+  width: 30px;
+  height: 30px;
+  transition: 0.5s linear;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+
+.icon-link:hover {
+  color: #fff;
+}
+
+.icon-link i {
+  margin: auto;
+}
+
+.icon-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
+}
+
+.icon-link:hover::before {
+  transform: scale(1);
+}
+
+.icon-item:nth-child(1) a:hover:before {
+  background: $social-instagram;
+}
+
+.icon-item:nth-child(2) a:hover:before {
+  background: $social-linkedin;
+}
+
+.icon-item:nth-child(3) a:hover:before {
+  background: $social-github;
+}
+
+.icon-item:nth-child(4) a:hover:before {
+  background: $social-google-plus;
 }
 
 // subscribe
