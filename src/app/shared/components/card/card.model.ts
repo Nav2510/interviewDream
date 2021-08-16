@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+import { Courses } from '../../../../graphql/generated/graphql.types';
 import { Adapter } from '../../../core/adapter';
 
 /* eslint-disable no-unused-vars */
@@ -9,7 +10,8 @@ export class CardModel {
     public description: string,
     public title: string,
     public price: number,
-    public tagList: string[],
+    public tags: string[],
+    public categories: string[],
     public link: string,
   ) {}
 }
@@ -18,14 +20,15 @@ export class CardModel {
   providedIn: 'root',
 })
 export class CardAdapter implements Adapter<CardModel> {
-  adapt(item: any): CardModel {
+  adapt(item: Courses): CardModel {
     return new CardModel(
       item.bgImagePath,
       item.description,
       item.title,
       item.price,
       item.tags,
-      '/dashboard/papers',
+      item.categories,
+      `/dashboard/courses/${item._id}`,
     );
   }
 }

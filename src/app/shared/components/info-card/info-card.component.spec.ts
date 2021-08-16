@@ -23,7 +23,7 @@ describe('InfoCardComponent', () => {
       difficulty: 1,
       label: 'test_label',
       numberOfQuestions: 1,
-      tagList: [],
+      tags: [],
       maxScore: 0,
       maxTime: 1,
     };

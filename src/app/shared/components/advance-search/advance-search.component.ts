@@ -7,6 +7,10 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
+import {
+  CourseCategoryEnum,
+  CourseTagEnum,
+} from '../../../../graphql/generated/graphql.types';
 import { ConfigModel } from '../dynamic-form/config.model';
 import { IFilterValueModel } from './filter-value.model';
 
@@ -40,20 +44,28 @@ export class AdvanceSearchComponent implements OnInit {
       name: 'tags',
       type: 'dropdown',
       placeholder: 'Select',
-      defaultValue: ['all'],
+      defaultValue: [],
       classes: ['ivd-col-2'],
       options: [
         {
-          label: 'All',
-          value: 'all',
-        },
-        {
           label: 'Best Seller',
-          value: 'best-seller',
+          value: CourseTagEnum.BestSeller,
         },
         {
           label: 'Top Rated',
-          value: 'top-rated',
+          value: CourseTagEnum.TopRated,
+        },
+        {
+          label: 'Hot',
+          value: CourseTagEnum.Hot,
+        },
+        {
+          label: 'Popular',
+          value: CourseTagEnum.Popular,
+        },
+        {
+          label: 'New',
+          value: CourseTagEnum.New,
         },
       ],
     },
@@ -62,17 +74,33 @@ export class AdvanceSearchComponent implements OnInit {
       name: 'categories',
       type: 'dropdown',
       placeholder: 'Select',
-      defaultValue: ['all'],
+      defaultValue: [],
       classes: ['ivd-col-2'],
       // TODO: Check for grouped dropdown with title
       options: [
         {
-          label: 'All',
-          value: 'all',
+          label: 'Algorithm',
+          value: CourseCategoryEnum.Algorithm,
         },
         {
-          label: 'Data Structure',
-          value: 'data-structure',
+          label: 'Backend',
+          value: CourseCategoryEnum.Backend,
+        },
+        {
+          label: 'Java',
+          value: CourseCategoryEnum.Java,
+        },
+        {
+          label: 'Language',
+          value: CourseCategoryEnum.Language,
+        },
+        {
+          label: 'Node',
+          value: CourseCategoryEnum.Node,
+        },
+        {
+          label: 'Web',
+          value: CourseCategoryEnum.Web,
         },
       ],
     },
@@ -81,13 +109,9 @@ export class AdvanceSearchComponent implements OnInit {
       name: 'difficulty',
       type: 'dropdown',
       placeholder: 'Select',
-      defaultValue: ['all'],
+      defaultValue: [],
       classes: ['ivd-col-2'],
       options: [
-        {
-          label: 'All',
-          value: 'all',
-        },
         {
           label: '1',
           value: '1',
@@ -135,33 +159,37 @@ export class AdvanceSearchComponent implements OnInit {
   setChips(): void {
     this.selectedItems = [];
     for (const [key, valueList] of Object.entries(this.filterModel.value)) {
+      let chipList: ChipModel[] = [];
       if (typeof valueList === 'object') {
-        let chipList: ChipModel[] = [];
-        chipList = (valueList as string[])
-          .filter((value) => {
-            return value !== 'all';
-          })
-          .map((value) => {
-            return {
-              label:
-                this.createChipLabel(key, 'key') +
-                ' : ' +
-                this.createChipLabel(value, 'value'),
-              mappedField: key,
-              value,
-            };
-          });
-        this.selectedItems.push(...chipList);
+        chipList = (valueList as string[]).map((value) => {
+          return {
+            label: `${this.createChipLabel(
+              key,
+              'key',
+            )} : ${this.createChipLabel(value, 'value')}`,
+            mappedField: key,
+            value,
+          };
+        });
+      } else if (valueList && typeof valueList === 'string') {
+        chipList.push({
+          label: `${this.createChipLabel(key, 'key')} : ${this.createChipLabel(
+            valueList as string,
+            'value',
+          )}`,
+          mappedField: key,
+          value: valueList as string,
+        });
       }
+      this.selectedItems.push(...chipList);
     }
   }
 
   createChipLabel(value: string, type: 'key' | 'value'): string {
     if (type === 'key') {
-      const charactersToRemove = 4;
-      return this.capitalize(value).slice(0, charactersToRemove);
+      return this.capitalize(value);
     } else {
-      let fragList = value.split('-');
+      let fragList = value.split('_');
       fragList = fragList.map((frag) => {
         return this.capitalize(frag);
       });
@@ -172,16 +200,26 @@ export class AdvanceSearchComponent implements OnInit {
   capitalize(value: string): string {
     const charactersToRemove = 1;
     const firstletter = value.charAt(0).toUpperCase();
-    const remainingStr = value.slice(charactersToRemove, value.length);
+    const remainingStr = value
+      .toLowerCase()
+      .slice(charactersToRemove, value.length);
     return firstletter + remainingStr;
   }
 
   onChipClose(mappedField: string, value: string) {
-    const modelValue: { [key: string]: string[] } = this.filterModel.value;
-    const filterValue = modelValue[mappedField].filter(
-      (item) => item !== value,
-    );
+    const modelValue: { [key: string]: string[] | string } =
+      this.filterModel.value;
+
+    let filterValue;
+    if (typeof modelValue[mappedField] === 'object') {
+      filterValue = (modelValue[mappedField] as string[]).filter(
+        (item) => item !== value,
+      );
+    } else if (typeof modelValue[mappedField] === 'string') {
+      filterValue = '';
+    }
     this.filterModel.patchValue({ [mappedField]: filterValue });
     this.setChips();
+    this.filterChangeEvent.next(this.filterModel.value);
   }
 }

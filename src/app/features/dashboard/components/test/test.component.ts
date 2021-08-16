@@ -18,7 +18,7 @@ export class TestComponent implements OnInit {
     title: 'Practice Test 1',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    tagList: ['data-structures', 'algorithms'],
+    tags: ['data-structures', 'algorithms'],
     difficulty: 2.3,
     type: 'Single Correct Answer',
     author: 'Navdeep Singh',

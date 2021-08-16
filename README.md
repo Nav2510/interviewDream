@@ -14,6 +14,10 @@ For design review prototype screens, navigate to
 1. https://interviewdreamv2.firebaseapp.com/
 2. https://interviewdreamv2.web.app/
 
+## Account flow
+
+https://drive.google.com/file/d/1Hjn4ZH0BDHp6-ok928HziyiL4dzZQzVP/view?usp=sharing
+
 ## InterviewDream - backend
 
 InterviewDream backend is build on node.js with express framework and Apollo Graphql server. Please refer to [InterviewDream - backend](https://github.com/Nav2510/interviewDream-backend) for the InterviewDream backend github repository.
