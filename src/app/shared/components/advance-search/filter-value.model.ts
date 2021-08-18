@@ -1,3 +1,3 @@
 export interface IFilterValueModel {
-    [key: string]: string[]
+  [key: string]: string[] | string;
 }

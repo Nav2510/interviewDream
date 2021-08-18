@@ -25,7 +25,7 @@ describe('CardComponent', () => {
       imagePath: 'test_path',
       link: 'test_link',
       price: 0,
-      tagList: [],
+      tags: [],
       title: 'test_title',
     };
     fixture.detectChanges();

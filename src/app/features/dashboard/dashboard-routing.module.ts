@@ -18,6 +18,14 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'courses/:id',
+        canLoad: [AuthGuard],
+        loadChildren: () =>
+          import('./components/papers/papers.module').then(
+            (module) => module.PapersModule,
+          ),
+      },
+      {
         path: 'profile',
         canLoad: [AuthGuard],
         loadChildren: () =>

@@ -26,12 +26,12 @@
     <div class="copyright">
       &copy; InterviewDream 2021
     </div>
-    <div class="social-link">
-      <div class="social-link-wrapper" *ngFor="let link of socialLinks">
-        <a href="link.url">
+    <ul class="icon-list social-link-wrapper">
+      <li class="icon-item" *ngFor="let link of socialLinks">
+        <a class="icon-link" href="link.url">
           <i class="fa fa-{{link.icon}}" aria-hidden="true"></i>
         </a>
-      </div>
+      </li>
+    </ul>
     </div>
-  </div>
 </div>
