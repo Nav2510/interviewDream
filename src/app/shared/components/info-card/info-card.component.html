@@ -4,7 +4,7 @@
     <div class="ivd-info-title">{{cardInfo.label}}</div>
     <p class="ivd-info-description">{{cardInfo.description}}</p>
     <div class="ivd-tags-wrapper">
-        <span class="ivd-tag ivd-tag-circle" *ngFor="let tag of cardInfo.tagList">
+        <span class="ivd-tag ivd-tag-circle" *ngFor="let tag of cardInfo.tags">
             {{tag | uppercase}}
         </span>
     </div>
@@ -22,5 +22,5 @@
             <span><app-star-rating [rating]="cardInfo.difficulty"></app-star-rating></span>
         </div>
     </div>
-    <a class="ivd-info-card-link" [routerLink]="cardInfo.id">{{(cardType === 'paper') ? 'Open Paper' : 'Open Test'}}</a>
+    <a class="ivd-info-card-link" [routerLink]="cardInfo.link">{{(cardType === 'paper') ? 'Open Paper' : 'Open Test'}}</a>
 </div>

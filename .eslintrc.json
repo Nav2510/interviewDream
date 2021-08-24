@@ -44,7 +44,7 @@
         "no-magic-numbers":["error", {"ignore": [0, -1, 1]}],
         "no-multi-spaces": "warn",
         "no-unused-expressions":"warn",
-        "no-unused-vars":"warn",
+        "no-unused-vars":"off",
         "no-shadow":"warn",
         "array-bracket-spacing": "warn",
         "block-spacing":"warn",

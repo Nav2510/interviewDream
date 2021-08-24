@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { QuestionTypeEnum } from './question-type.enum';
 
 import { QuestionModel } from './question.model';
 
@@ -17,11 +18,11 @@ export class QuestionCardComponent {
   isExpansionOpened = false;
 
   isSingleCorrect() {
-    return this.question.type === 'single_correct';
+    return this.question.type === QuestionTypeEnum.SingleCorrect;
   }
 
   isMultipleCorrect() {
-    return this.question.type === 'multiple_correct';
+    return this.question.type === QuestionTypeEnum.MultipleCorrect;
   }
 
   onCheckboxChange(event: MatCheckboxChange) {

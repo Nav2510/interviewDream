@@ -1,0 +1,6 @@
+fragment QuestionData on QuestionData {
+  numberOfQuestions
+  questions {
+    ...Question
+  }
+}

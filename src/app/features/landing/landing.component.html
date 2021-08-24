@@ -3,7 +3,7 @@
 <div class="ivd-top-courses">
   <div class="title">top courses</div>
   <div class="card-container">
-    <div class="card-wrapper" *ngFor="let course of courses;">
+    <div class="card-wrapper" *ngFor="let course of courses$ | async;">
       <app-card [card]="course" animations="true"></app-card>
     </div>
   </div>

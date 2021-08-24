@@ -1,9 +1,9 @@
 import { QuestionModel } from '../components/question-card/question.model';
 
-export const questions: QuestionModel[] = [
+export const QUESTIONS: QuestionModel[] = [
   {
-    id: '2281',
-    statement:
+    _id: '2281',
+    description:
       // tslint:disable-next-line: max-line-length
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     difficulty: 4,
@@ -12,7 +12,8 @@ export const questions: QuestionModel[] = [
     numberOfOptions: 4,
     marks: 20,
     subCategories: ['Array'],
-    type: 'multiple_correct',
+    type: 'MULTIPLE_CORRECT',
+    hasExplanation: true,
     explanation:
       // tslint:disable-next-line: max-line-length
       'Lorem ipsum dolor sit amet, consecturu adipising elit, Lorem ipsum dolor sit amet, consecturu adipising elit, Lorem ipsum dolor sit amet, consecturu adipising elit, Lorem ipsum dolor sit amet, consecturu adipising elit,',
@@ -39,16 +40,17 @@ export const questions: QuestionModel[] = [
     ],
   },
   {
-    id: '2281',
-    statement:
+    _id: '2281',
+    description:
       'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     difficulty: 4,
     categories: ['Data structure'],
     order: 2,
+    hasExplanation: true,
     numberOfOptions: 4,
     marks: 20,
     subCategories: ['Array', 'Algorithm'],
-    type: 'single_correct',
+    type: 'SINGLE_CORRECT',
     explanation: '',
     options: [
       {

@@ -1,6 +1,6 @@
 import { ConfigModel } from '../components/dynamic-form/config.model';
 
-export const testForm: ConfigModel[] = [
+export const TEST_FORM: ConfigModel[] = [
   {
     label: 'Title',
     name: 'title',

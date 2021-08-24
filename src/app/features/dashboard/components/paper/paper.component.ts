@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
-import { paperForm } from '../../../../shared/mocks/create-paper-form';
-import { questions } from '../../../../shared/mocks/questions';
+import { PAPER_FORM } from '../../../../shared/mocks/create-paper-form';
 import { ConfigModel } from '../../../../shared/components/dynamic-form/config.model';
-import { QuestionModel } from '../../../../shared/components/question-card/question.model';
+import { PaperByIdGQL } from '../../../../../graphql/documents/queries/papers/paper-by-id.graphql-gen';
+import { Paper } from '../../../../../graphql/generated/graphql.types';
 
 @Component({
   selector: 'app-paper',
@@ -11,22 +14,26 @@ import { QuestionModel } from '../../../../shared/components/question-card/quest
   styleUrls: ['./paper.component.scss'],
 })
 export class PaperComponent implements OnInit {
-  questions: QuestionModel[];
   editPaperModel: ConfigModel[];
   editMode = false;
-  paper = {
-    title: 'Practice Paper 1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    tagList: ['data-structures', 'algorithms'],
-    difficulty: 2.3,
-    type: 'Single Correct Answer',
-    author: 'Navdeep Singh',
-  };
+  paperDetails$: Observable<Paper>;
+
+  constructor(
+    private readonly paperById: PaperByIdGQL,
+    private readonly route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
-    this.questions = questions;
-    this.editPaperModel = paperForm;
+    this.paperDetails$ = this.paperById
+      .fetch({
+        paperId: this.route.snapshot.params.paperId,
+      })
+      .pipe(
+        map((response) => {
+          return response.data.paper;
+        }),
+      );
+    this.editPaperModel = PAPER_FORM;
   }
 
   onEditSave() {

@@ -1,0 +1,5 @@
+fragment Option on Option {
+  isAnswer
+  label
+  value
+}

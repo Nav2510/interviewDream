@@ -67,17 +67,20 @@ export class AuthService {
     return of(true);
   }
 
+  getToken(): string | null {
+    const token = localStorage.getItem('id_token');
+    return token ? token : null;
+  }
+
   isLoggedIn() {
     return this.validateToken();
   }
 
   private validateToken(): boolean {
-    const token = localStorage.getItem('id_token');
     const expiredAt = localStorage.getItem('expires_at');
 
     if (new Date() < new Date(expiredAt)) {
       // TODO: Validate token from backend
-      console.log(token);
       return true;
     }
     return false;
