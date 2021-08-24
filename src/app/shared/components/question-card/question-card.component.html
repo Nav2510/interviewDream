@@ -9,7 +9,7 @@
                 </div>
                 <div class="ivd-qstn-content-wrapper">
                     <div class="ivd-qstn-desc">
-                        {{question.statement}}
+                        {{question.description}}
                     </div>
                     <div class="ivd-qstn-options-wrapper">
                         <ng-container *ngIf="isSingleCorrect()">
@@ -17,7 +17,7 @@
                                 <div class="ivd-qstn-options" *ngFor="let option of question.options">
                                     <mat-radio-button 
                                     class="ivd-radio-button" 
-                                    [name]="question.id"
+                                    [name]="question._id"
                                     [value]="option.value"
                                     labelPosition="right"
                                     [checked]="option.isAnswer"

@@ -1,0 +1,10 @@
+fragment Papers on Papers {
+  _id
+  author
+  categories
+  description
+  difficulty
+  rating
+  title
+  type
+}

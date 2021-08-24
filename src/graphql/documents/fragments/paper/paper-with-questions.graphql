@@ -1,0 +1,13 @@
+fragment PaperWithQuestions on Paper {
+  _id
+  author
+  categories
+  description
+  difficulty
+  rating
+  title
+  questions {
+    ...Question
+  }
+  type
+}

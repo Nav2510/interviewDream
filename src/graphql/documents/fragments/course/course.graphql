@@ -1,0 +1,11 @@
+fragment Courses on Courses {
+  _id
+  bgImagePath
+  categories
+  description
+  price
+  rating
+  tags
+  title
+  author
+}

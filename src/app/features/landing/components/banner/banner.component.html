@@ -1,22 +1,29 @@
 <div class="ivd-banner">
   <div class="banner-image">
-    <img src="{{bannerImage}}" alt="">
+    <img src="{{ bannerImage }}" alt="" />
   </div>
   <div class="content-container">
     <div class="inspirational-quotes">
-      “In order to create an engaging learning experience, the role of instructor is optional, but the role of learner
-      is
-      essential.”
-      <br>
+      <span class="quotes-wrapper">
+        “In order to create an engaging learning experience, the role of
+        instructor is optional, but the role of learner is essential.”
+      </span>
+      <br />
       <span class="author">- Bernard Bull</span>
     </div>
-    <div class="offers">
-      Sign up to get best courses starting for just $20
-    </div>
+    <div class="offers">Sign up to get best courses starting for just $20</div>
   </div>
   <div class="images-container">
-    <div class="images-wrapper" *ngFor="let image of imageList">
-      <img src="{{image}}" alt="banner images">
+    <div class="images-wrapper" *ngFor="let image of imageList; let i = index;">
+      <img class="image-{{i}}" src="{{ image }}" alt="banner images" />
+    </div>
+  </div>
+  <div class="show-more">
+    <div class="show-more-text">
+      explore more
+    </div>
+    <div class="show-more-icon">
+      <mat-icon>arrow_forward_ios</mat-icon>
     </div>
   </div>
 </div>
