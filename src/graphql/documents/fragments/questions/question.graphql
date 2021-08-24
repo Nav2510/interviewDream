@@ -1,0 +1,14 @@
+fragment Question on Question {
+  _id
+  categories
+  description
+  difficulty
+  explanation
+  hasExplanation
+  marks
+  options {
+    ...Option
+  }
+  order
+  type
+}

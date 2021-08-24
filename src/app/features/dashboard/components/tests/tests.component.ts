@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { tests } from '../../../../shared/mocks/tests';
+import { TESTS } from '../../../../shared/mocks/tests';
 import { InfoCardModel } from '../../../../shared/components/info-card/info-card.model';
 
 @Component({
@@ -12,7 +12,7 @@ export class TestsComponent implements OnInit {
   tests: InfoCardModel[];
 
   ngOnInit() {
-    this.tests = tests;
+    this.tests = TESTS;
   }
 
   onFilterChange(event: Event): void {

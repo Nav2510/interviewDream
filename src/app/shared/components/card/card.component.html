@@ -12,8 +12,13 @@ class="ivd-card"
         <div class="ivd-card-description">
             {{card.description}}
         </div>
-        <div class="ivd-card-price">
-            {{card.price | currency}}
+        <div class="ivd-price-author">
+            <div class="ivd-card-price">
+                {{card.price | currency}}
+            </div>
+            <div class="ivd-author">
+                {{card.author}}
+            </div>
         </div>
         <div class="ivd-tags-wrapper">
             <span class="ivd-tag" *ngFor="let tag of card.tags">

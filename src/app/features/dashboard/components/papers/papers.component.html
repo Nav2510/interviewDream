@@ -2,7 +2,7 @@
 
 <div class="papers-container">
   <div class="papers-wrapper">
-    <div *ngFor="let paper of papers" class="paper-wrapper">
+    <div *ngFor="let paper of papers$ | async" class="paper-wrapper">
       <app-info-card [cardInfo]="paper" cardType="paper" [animations]="true"></app-info-card>
     </div>
   </div>

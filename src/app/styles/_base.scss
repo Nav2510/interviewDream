@@ -367,13 +367,21 @@ hr {
       margin-bottom: 10px;
       height: 70px;
     }
+    .ivd-price-author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .ivd-card-price {
       font-weight: $font-regular;
       font-size: 18px;
       line-height: 22px;
     }
+    .ivd-author {
+      color: $dark-theme-font-color;
+    }
     .ivd-tags-wrapper {
-      margin-top: 30px;
+      margin-top: 20px;
     }
   }
 }

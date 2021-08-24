@@ -1,8 +1,8 @@
 import { InfoCardModel } from 'src/app/shared/components/info-card/info-card.model';
 
-export const papers: InfoCardModel[] = [
+export const PAPERS: InfoCardModel[] = [
   {
-    id: 3298,
+    id: '3298',
     label: 'Java Error handling',
     description:
       // tslint:disable-next-line: max-line-length
@@ -10,9 +10,10 @@ export const papers: InfoCardModel[] = [
     difficulty: 3,
     numberOfQuestions: 20,
     tags: ['Java', 'Error'],
+    link: '',
   },
   {
-    id: 29282,
+    id: '29282',
     label: 'Sorting',
     description:
       // tslint:disable-next-line: max-line-length
@@ -20,9 +21,10 @@ export const papers: InfoCardModel[] = [
     difficulty: 4.5,
     numberOfQuestions: 20,
     tags: ['Algorithms', 'sort', 'javascript'],
+    link: '',
   },
   {
-    id: 28281,
+    id: '28281',
     label: 'Graphql',
     // tslint:disable-next-line: max-line-length
     description:
@@ -30,5 +32,6 @@ export const papers: InfoCardModel[] = [
     difficulty: 3.4,
     numberOfQuestions: 20,
     tags: ['Graphwl', 'javascript'],
+    link: '',
   },
 ];
