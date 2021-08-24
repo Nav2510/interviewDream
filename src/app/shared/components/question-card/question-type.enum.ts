@@ -1,9 +1,6 @@
-export type QuestionTypeEnum =
-  | 'single_correct'
-  | 'multiple_correct'
-  | 'input'
+export type QuestionTypeEnum = 'SINGLE_CORRECT' | 'MULTIPLE_CORRECT' | 'INPUT';
 export const QuestionTypeEnum = {
-  SingleCorrect: 'single_correct',
-  MultipleCorrect: 'multiple_correct',
-  Input: 'input',
-}
+  SingleCorrect: 'SINGLE_CORRECT',
+  MultipleCorrect: 'MULTIPLE_CORRECT',
+  Input: 'INPUT',
+};

@@ -1,0 +1,5 @@
+query getPapersByCourseId($courseId: ID!) {
+  getPapersByCourseId(courseId: $courseId) {
+    ...PaperData
+  }
+}

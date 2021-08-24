@@ -1,0 +1,5 @@
+query paperById($paperId: ID!) {
+  paper(id: $paperId) {
+    ...PaperWithQuestions
+  }
+}

@@ -1,0 +1,6 @@
+fragment PaperData on PaperData {
+  numberOfPapers
+  papers {
+    ...Papers
+  }
+}

@@ -7,4 +7,5 @@ fragment Courses on Courses {
   rating
   tags
   title
+  author
 }

@@ -12,6 +12,7 @@ export class CardModel {
     public price: number,
     public tags: string[],
     public categories: string[],
+    public author: string,
     public link: string,
   ) {}
 }
@@ -28,6 +29,7 @@ export class CardAdapter implements Adapter<CardModel> {
       item.price,
       item.tags,
       item.categories,
+      item.author,
       `/dashboard/courses/${item._id}`,
     );
   }

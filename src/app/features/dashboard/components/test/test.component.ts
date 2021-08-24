@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { testForm } from '../../../../shared/mocks/create-test-form';
-import { questions } from '../../../../shared/mocks/questions';
+import { TEST_FORM } from '../../../../shared/mocks/create-test-form';
+import { QUESTIONS } from '../../../../shared/mocks/questions';
 import { ConfigModel } from '../../../../shared/components/dynamic-form/config.model';
 import { QuestionModel } from '../../../../shared/components/question-card/question.model';
 
@@ -25,8 +25,8 @@ export class TestComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.questions = questions;
-    this.editTestModel = testForm;
+    this.questions = QUESTIONS;
+    this.editTestModel = TEST_FORM;
   }
 
   onEditSave() {

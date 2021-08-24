@@ -18,7 +18,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'courses/:id',
+        path: 'courses/:courseId',
         canLoad: [AuthGuard],
         loadChildren: () =>
           import('./components/papers/papers.module').then(
