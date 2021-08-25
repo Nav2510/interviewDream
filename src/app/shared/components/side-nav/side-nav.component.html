@@ -6,11 +6,12 @@
     <ng-container *ngFor="let item of list; let listIndex = index">
       <mat-expansion-panel 
       [hideToggle]="!item.subList" 
+      [disabled]="item.disabled"
       >
         <mat-expansion-panel-header 
         #panelH
         [ngClass]="{'ivd-selected': isListSelected(listIndex)}"
-        (click)="onClickListItem(listIndex, item.route); !item.subList && panelH._toggle()"
+        (click)="onClickListItem(listIndex, item); !item.subList && panelH._toggle()"
         collapsedHeight="40px" 
         expandedHeight="40px" >
           <mat-panel-title>
@@ -19,9 +20,9 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div class="ivd-sub-list-item"
-        [ngClass]="{'ivd-selected': isSubSelected(listIndex, subIndex)}"
+        [ngClass]="{'ivd-selected': isSubSelected(listIndex, subIndex), 'disabled': subItem.disabled}"
         *ngFor="let subItem of item.subList; let subIndex = index"
-        (click)="onClickSubListItem(listIndex, subIndex, subItem.route)"
+        (click)="onClickSubListItem(listIndex, subIndex, subItem)"
         >
           {{subItem.label}}
         </div>

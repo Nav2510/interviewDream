@@ -1,21 +1,21 @@
-<div class="profile-container">
-  <app-profile-main-info></app-profile-main-info>
+<div class="profile-container" *ngIf="{edit: (queryParams$ | async).edit} as queryParams">
+  <app-profile-main-info [showEdit]="queryParams.edit"></app-profile-main-info>
   <div class="ivd-content-container">
     <div class="row-1">
       <div class="column-11">
-        <app-profile-info-card [card]="summary"></app-profile-info-card>
+        <app-profile-info-card [showEdit]="queryParams.edit" [card]="summary"></app-profile-info-card>
         <div class="row-2">
           <div class="column-21">
             <div class="row-3">
-              <app-profile-info-card [card]="basic"></app-profile-info-card>
+              <app-profile-info-card [showEdit]="queryParams.edit" [card]="basic"></app-profile-info-card>
             </div>
-            <app-profile-info-card [card]="education"></app-profile-info-card>
+            <app-profile-info-card [showEdit]="queryParams.edit" [card]="education"></app-profile-info-card>
           </div>
           <div class="column-22">
             <div class="row-3">
-              <app-profile-info-card [card]="additional"></app-profile-info-card>
+              <app-profile-info-card [showEdit]="queryParams.edit" [card]="additional"></app-profile-info-card>
             </div>
-            <app-profile-info-card [card]="contact"></app-profile-info-card>
+            <app-profile-info-card [showEdit]="queryParams.edit" [card]="contact"></app-profile-info-card>
           </div>
         </div>
       </div>

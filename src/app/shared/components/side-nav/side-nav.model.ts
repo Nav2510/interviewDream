@@ -4,11 +4,17 @@ export interface SideNavModel {
   name: string;
   order: number;
   route?: string;
+  disabled: boolean;
   selected?: boolean;
-  subList?: Array<{
-    label: string;
-    name: string;
-    route: string;
-    order: number;
-  }>;
+  queryParams?: { [key: string]: any };
+  subList?: Array<SideNavSubItemModel>;
+}
+
+export interface SideNavSubItemModel {
+  label: string;
+  name: string;
+  order: number;
+  route: string;
+  disabled: boolean;
+  queryParams?: { [key: string]: any };
 }

@@ -752,6 +752,15 @@ hr {
       color: $dark-theme-font-color-light;
     }
   }
+  .ivd-sub-list-item.disabled {
+    color: $dark-theme-font-color-faded;
+  }
+  .ivd-sub-list-item.disabled:hover {
+    color: $dark-theme-font-color-faded !important;
+    background-color: $dark-theme-primary-color-light;
+    pointer-events: none;
+    cursor: none;
+  }
   .mat-accordion .mat-expansion-panel:last-of-type {
     border-radius: 0px;
   }
@@ -761,6 +770,14 @@ hr {
     &:hover {
       background-color: $dark-theme-accent-color !important;
     }
+  }
+  .mat-expansion-panel-header[aria-disabled='true'] {
+    color: $dark-theme-font-color-faded;
+  }
+  .mat-expansion-panel-header[aria-disabled='true']:hover {
+    color: $dark-theme-font-color-faded !important;
+    background-color: $dark-theme-primary-color-light;
+    pointer-events: none;
   }
 }
 
@@ -874,6 +891,10 @@ hr {
   background-color: $dark-theme-primary-color-light;
   position: relative;
   padding: 7px 26px 25px 8px;
+  .ivd-summary {
+    line-height: 25px;
+    letter-spacing: 0.13px;
+  }
   .ivd-list-item {
     display: flex;
     margin-bottom: 18px;
@@ -894,15 +915,13 @@ hr {
     font-size: 13px;
     font-weight: $font-regular;
   }
-  .ivd-edit-btn {
+  .ivd-icon-btn {
     position: absolute;
     right: 7px;
     top: 4px;
   }
   .ivd-submit-btn {
-    position: absolute;
-    right: 7px;
-    top: 4px;
+    right: 40px;
   }
   mat-icon {
     font-size: 17px;
@@ -919,6 +938,15 @@ hr {
     }
     .mat-form-field-wrapper {
       margin: 0;
+    }
+    .summary-form {
+      width: 100%;
+      textarea {
+        font-size: 16px;
+        max-height: 93px;
+        min-height: 93px;
+        line-height: 25px;
+      }
     }
   }
 }

@@ -7,6 +7,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'home',
     route: 'dashboard/home',
     order: 100,
+    disabled: true,
   },
   {
     icon: 'message',
@@ -14,6 +15,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'message',
     route: 'dashboard/message',
     order: 200,
+    disabled: true,
   },
   {
     icon: 'notifications',
@@ -21,24 +23,29 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'notifications',
     route: 'dashboard/notfifications',
     order: 300,
+    disabled: true,
   },
   {
     icon: 'person',
     label: 'Profile',
     name: 'profile',
     order: 400,
+    disabled: false,
     subList: [
       {
         label: 'Public profile',
         name: 'publicProfile',
         route: 'dashboard/profile',
         order: 100,
+        disabled: false,
       },
       {
         label: 'Edit profile',
         name: 'editProfile',
-        route: 'profile/edit',
+        route: 'dashboard/profile?edit=true',
+        queryParams: { edit: true },
         order: 200,
+        disabled: false,
       },
     ],
   },
@@ -47,18 +54,21 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     label: 'Courses',
     name: 'courses',
     order: 500,
+    disabled: false,
     subList: [
       {
         label: 'All courses',
         name: 'allCourses',
         route: 'dashboard/courses',
         order: 100,
+        disabled: false,
       },
       {
         label: 'My courses',
         name: 'myCourses',
         route: 'dashboard/my-courses',
         order: 200,
+        disabled: true,
       },
     ],
   },
@@ -67,30 +77,35 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     label: 'QA & Papers',
     name: 'QAAndPapers',
     order: 700,
+    disabled: false,
     subList: [
       {
         label: 'All papers',
         name: 'allPapers',
         route: 'dashboard/papers',
         order: 100,
+        disabled: false,
       },
       {
         label: 'Create practice paper',
         name: 'createPracticePaper',
         route: 'dashboard/papers/id',
         order: 200,
+        disabled: true,
       },
       {
         label: 'Edit practice paper',
         name: 'editPracticePaper',
         route: 'dashboard/papers/edit',
         order: 300,
+        disabled: true,
       },
       {
         label: 'All questions',
         name: 'allQuestions',
         route: 'dashboard/questions/all',
         order: 400,
+        disabled: true,
       },
     ],
   },
@@ -99,24 +114,28 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     label: 'Online Tests',
     name: 'onlineTests',
     order: 800,
+    disabled: false,
     subList: [
       {
         label: 'All tests',
         name: 'allTests',
         route: 'dashboard/tests',
         order: 100,
+        disabled: true,
       },
       {
         label: 'Create test',
         name: 'createTest',
         route: 'dashboard/test/create',
         order: 200,
+        disabled: true,
       },
       {
         label: 'Edit test',
         name: 'editTest',
         route: 'dashboard/test/edit',
         order: 300,
+        disabled: true,
       },
     ],
   },
@@ -126,6 +145,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'payment',
     route: 'payment',
     order: 900,
+    disabled: true,
   },
   {
     icon: 'settings',
@@ -133,6 +153,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'account',
     route: 'account',
     order: 1000,
+    disabled: true,
   },
   {
     icon: 'group',
@@ -140,6 +161,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'administration',
     route: 'admin',
     order: 1100,
+    disabled: true,
   },
   {
     icon: 'help',
@@ -147,6 +169,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'help',
     route: 'help',
     order: 1200,
+    disabled: true,
   },
   {
     icon: 'logout',
@@ -154,5 +177,6 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     name: 'logout',
     route: 'logout',
     order: 1300,
+    disabled: true,
   },
 ];

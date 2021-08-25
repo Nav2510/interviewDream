@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SIDE_NAV_CONTENT } from './side-nav';
-import { SideNavModel } from './side-nav.model';
+import { SideNavModel, SideNavSubItemModel } from './side-nav.model';
 
 @Component({
   selector: 'app-side-nav',
@@ -20,10 +20,10 @@ export class SideNavComponent {
   // eslint-disable-next-line no-unused-vars
   constructor(private readonly router: Router) {}
 
-  onClickListItem(listIndex: number, route: string) {
-    if (route) {
+  onClickListItem(listIndex: number, item: SideNavModel) {
+    if (item.route) {
       this.selectedListIndex = listIndex;
-      this.router.navigate([route]);
+      this.router.navigate([item.route], { queryParams: item.queryParams });
     }
   }
 
@@ -31,10 +31,14 @@ export class SideNavComponent {
     this.expandedList = this.expandedList !== index ? index : -1;
   }
 
-  onClickSubListItem(listIndex: number, subIndex: number, route: string) {
+  onClickSubListItem(
+    listIndex: number,
+    subIndex: number,
+    subItem: SideNavSubItemModel,
+  ) {
     this.selectedListIndex = listIndex;
     this.selectedSubListIndex = subIndex;
-    this.router.navigate([route]);
+    this.router.navigate([subItem.route], { queryParams: subItem.queryParams });
   }
 
   isListSelected(listIndex: number) {
