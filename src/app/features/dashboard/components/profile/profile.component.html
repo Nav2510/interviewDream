@@ -1,21 +1,24 @@
-<div class="profile-container" *ngIf="{edit: (queryParams$ | async).edit} as queryParams">
-  <app-profile-main-info [showEdit]="queryParams.edit"></app-profile-main-info>
+<div class="profile-container" *ngIf="{
+  edit: (queryParams$ | async).edit,
+  profile: (profile$ | async)
+} as stream$">
+  <app-profile-main-info [showEdit]="stream$.edit"></app-profile-main-info>
   <div class="ivd-content-container">
     <div class="row-1">
       <div class="column-11">
-        <app-profile-info-card [showEdit]="queryParams.edit" [card]="summary"></app-profile-info-card>
+        <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="summary"></app-profile-info-card>
         <div class="row-2">
           <div class="column-21">
             <div class="row-3">
-              <app-profile-info-card [showEdit]="queryParams.edit" [card]="basic"></app-profile-info-card>
+              <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="stream$?.profile?.basicInfo"></app-profile-info-card>
             </div>
-            <app-profile-info-card [showEdit]="queryParams.edit" [card]="education"></app-profile-info-card>
+            <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="stream$?.profile?.educationInfo"></app-profile-info-card>
           </div>
           <div class="column-22">
             <div class="row-3">
-              <app-profile-info-card [showEdit]="queryParams.edit" [card]="additional"></app-profile-info-card>
+              <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="stream$?.profile?.personalInfo"></app-profile-info-card>
             </div>
-            <app-profile-info-card [showEdit]="queryParams.edit" [card]="contact"></app-profile-info-card>
+            <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="stream$?.profile?.contactInfo"></app-profile-info-card>
           </div>
         </div>
       </div>

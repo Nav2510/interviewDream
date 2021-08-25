@@ -1,0 +1,5 @@
+query profileSubInfo {
+  profile {
+    ...ProfileSubInfo
+  }
+}

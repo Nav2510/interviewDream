@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -17,6 +19,10 @@ import { ProfileInfoCardModel } from './profile-info-card.model';
 export class ProfileInfoCardComponent implements OnInit {
   @Input() card: ProfileInfoCardModel;
   @Input() showEdit: boolean;
+
+  @Output() save = new EventEmitter<{
+    [key: string]: { [key: string]: any };
+  }>();
 
   edit = false;
   model: FormGroup;
@@ -34,11 +40,11 @@ export class ProfileInfoCardComponent implements OnInit {
 
   buildForm(): void {
     const formObj = {};
-    if (this.card.summary) {
+    if (this.card?.summary) {
       // eslint-disable-next-line dot-notation
       formObj['summary'] = new FormControl(this.card.summary);
     }
-    if (this.card.list) {
+    if (this.card?.list) {
       this.card.list.forEach((config) => {
         formObj[config.label] = new FormControl(config.value);
       });
@@ -47,12 +53,13 @@ export class ProfileInfoCardComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('submit');
+    const output = {};
+    output[this.card.title] = this.model.value;
     this.edit = false;
+    this.save.emit(output);
   }
 
   onCancel(): void {
-    console.log('cancel');
     this.edit = false;
   }
 }
