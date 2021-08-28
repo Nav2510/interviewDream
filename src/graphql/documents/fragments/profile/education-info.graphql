@@ -2,4 +2,5 @@ fragment EducationInfo on EducationInfo {
   college
   school
   workplace
+  workMail
 }
