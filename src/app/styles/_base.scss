@@ -659,7 +659,7 @@ hr {
     padding: 0 30px 10px 30px;
     img {
       margin-left: 20px;
-      height: 23px;
+      height: 30px;
     }
   }
 }
@@ -800,6 +800,7 @@ hr {
   }
   .ivd-score-label {
     width: 40%;
+    text-transform: capitalize;
   }
   .ivd-test-link {
     text-transform: uppercase;

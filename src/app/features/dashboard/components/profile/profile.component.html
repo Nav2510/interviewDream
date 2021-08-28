@@ -2,11 +2,11 @@
   edit: (queryParams$ | async).edit,
   profile: (profile$ | async)
 } as stream$">
-  <app-profile-main-info [showEdit]="stream$.edit"></app-profile-main-info>
+  <app-profile-main-info [showEdit]="stream$.edit" [profileData]="profileMainInfo$ | async"></app-profile-main-info>
   <div class="ivd-content-container">
     <div class="row-1">
       <div class="column-11">
-        <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="summary"></app-profile-info-card>
+        <app-profile-info-card (save)="onSave($event)" [showEdit]="stream$.edit" [card]="stream$?.profile?.summary"></app-profile-info-card>
         <div class="row-2">
           <div class="column-21">
             <div class="row-3">
@@ -24,7 +24,7 @@
       </div>
       <div class="column-12">
         <div class="score-wrapper">
-          <app-score-card></app-score-card>
+          <app-score-card [score]="score$ | async"></app-score-card>
         </div>
       </div>
     </div>

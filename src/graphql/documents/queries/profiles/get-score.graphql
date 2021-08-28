@@ -1,0 +1,8 @@
+query getScore {
+  profile {
+    interviewDreamScore {
+      category
+      score
+    }
+  }
+}

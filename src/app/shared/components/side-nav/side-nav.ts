@@ -175,8 +175,8 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     icon: 'logout',
     label: 'Logout',
     name: 'logout',
-    route: 'logout',
+    method: true,
     order: 1300,
-    disabled: true,
+    disabled: false,
   },
 ];

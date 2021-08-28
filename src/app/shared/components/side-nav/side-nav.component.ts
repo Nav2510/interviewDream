@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 import { SIDE_NAV_CONTENT } from './side-nav';
 import { SideNavModel, SideNavSubItemModel } from './side-nav.model';
@@ -18,12 +19,22 @@ export class SideNavComponent {
   isOpen = true;
 
   // eslint-disable-next-line no-unused-vars
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly authService: AuthService,
+  ) {}
 
   onClickListItem(listIndex: number, item: SideNavModel) {
     if (item.route) {
       this.selectedListIndex = listIndex;
       this.router.navigate([item.route], { queryParams: item.queryParams });
+    }
+    if (item.method) {
+      this.authService.logout().subscribe((isLoggedOut) => {
+        if (isLoggedOut) {
+          this.router.navigate(['/login']);
+        }
+      });
     }
   }
 

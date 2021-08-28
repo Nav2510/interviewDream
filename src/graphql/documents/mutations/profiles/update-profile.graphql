@@ -1,5 +1,6 @@
 mutation updateProfile($profileInput: UserInputData!) {
   updateUserProfile(userInput: $profileInput) {
+    summary
     ...ProfileSubInfo
   }
 }
