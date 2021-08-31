@@ -10,6 +10,14 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
+        path: 'chat',
+        canLoad: [AuthGuard],
+        loadChildren: () =>
+          import('./components/chatbox/chatbox.module').then(
+            (module) => module.ChatboxModule,
+          ),
+      },
+      {
         path: 'courses',
         canLoad: [AuthGuard],
         loadChildren: () =>

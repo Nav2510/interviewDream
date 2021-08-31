@@ -171,6 +171,140 @@ hr {
   }
 }
 
+// avatar
+.ivd-avatar {
+  height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  display: inline-block;
+  position: relative;
+  .ivd-content {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .ivd-online {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: $dark-theme-online-color;
+    border-radius: 50%;
+    border: 2px solid $dark-theme-font-color-light;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+}
+.ivd-avatar.class0 {
+  background-color: dimgrey;
+}
+.ivd-avatar.class1 {
+  background-color: steelblue;
+}
+.ivd-avatar.class2 {
+  background-color: blueviolet;
+}
+.ivd-avatar.class3 {
+  background-color: goldenrod;
+}
+.ivd-avatar.class4 {
+  background-color: teal;
+}
+.ivd-avatar.class5 {
+  background-color: sienna;
+}
+.ivd-avatar.class6 {
+  background-color: olive;
+}
+.ivd-avatar.class7 {
+  background-color: navy;
+}
+.ivd-avatar.class8 {
+  background-color: darkcyan;
+}
+
+// contact-list
+.ivd-contact-list {
+  .list {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+  .list-item {
+    padding: 10px 0px 10px 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    cursor: pointer;
+    .action-wrapper {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+    &:hover {
+      color: $dark-theme-font-color-light;
+      background-color: $dark-theme-primary-color-light;
+      .action-wrapper {
+        opacity: 1;
+      }
+    }
+  }
+  .avatar {
+    margin-right: 15px;
+  }
+  .left-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    .ivd-fullname {
+      font-size: 18px;
+      margin-bottom: 3px;
+      font-weight: $font-medium;
+    }
+    .ivd-username {
+      color: $dark-theme-font-color-faded;
+    }
+  }
+}
+
+// autocomplete
+.ivd-autocomplete {
+  width: 100%;
+}
+.ivd-autocomplete-panel {
+  background: $dark-theme-primary-color-lighter;
+  border-radius: 0px !important;
+  .ivd-autocomplete-options {
+    color: $dark-theme-font-color;
+    line-height: 26px;
+    height: 70px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    .mat-option-text {
+      display: flex;
+      flex-direction: column;
+      .ivd-fullname {
+        font-size: 18px;
+        font-weight: $font-medium;
+      }
+      .ivd-username {
+        color: $dark-theme-font-color-faded;
+      }
+    }
+    &:hover {
+      color: $dark-theme-font-color-light;
+      background-color: $dark-theme-hover-color;
+    }
+  }
+}
+
 // button
 .ivd-btn.btn-accent {
   border-radius: 0px;
@@ -1432,6 +1566,17 @@ hr {
         opacity: 1;
       }
     }
+  }
+}
+
+// chatbox
+.ivd-chatbox {
+  display: flex;
+  .ivd-chat-left-panel {
+    width: 30%;
+  }
+  .ivd-chat-content {
+    width: 70%;
   }
 }
 

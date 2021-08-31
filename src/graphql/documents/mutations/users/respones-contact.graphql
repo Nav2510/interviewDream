@@ -1,0 +1,5 @@
+mutation responseContact($id: ID!, $response: Boolean) {
+  reponseRequest(id: $id, response: $response) {
+    ...NormalResponse
+  }
+}
