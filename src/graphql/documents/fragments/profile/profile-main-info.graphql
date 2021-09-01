@@ -1,0 +1,15 @@
+fragment ProfileMainInfo on Profile {
+  email
+  designation
+  currentLocation
+  username
+  contactInfo {
+    instagram
+    gmail
+    github
+    linkedin
+  }
+  basicInfo {
+    fullName
+  }
+}

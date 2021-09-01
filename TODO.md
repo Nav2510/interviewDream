@@ -1,5 +1,9 @@
 # TODO
 
+##Fixes
+
+1. Use custom pipe for Profile info
+
 ## Improvement required
 
 From Mamta

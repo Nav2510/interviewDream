@@ -1,0 +1,5 @@
+query fetchAddedContacts {
+  fetchAddedContacts {
+    ...User
+  }
+}

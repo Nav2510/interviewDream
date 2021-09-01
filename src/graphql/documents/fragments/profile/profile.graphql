@@ -1,21 +1,14 @@
-fragment Profile on Profile {
-  _id
-  bgImagePath
+fragment ProfileSubInfo on Profile {
+  basicInfo {
+    ...BasicInfo
+  }
   contactInfo {
     ...ContactInfo
   }
   educationInfo {
     ...EducationInfo
   }
-  email
-  interviewDreamScore {
-    category
-    score
-  }
   personalInfo {
     ...PersonalInfo
   }
-  profileImagePath
-  publicProfileUrl
-  username
 }

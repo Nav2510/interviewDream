@@ -1,0 +1,5 @@
+fragment NormalResponse on NormalResponse {
+  status
+  code
+  msg
+}
