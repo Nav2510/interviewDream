@@ -1,0 +1,37 @@
+<div class="ivd-chatbox">
+  <div class="ivd-chat-left-panel">
+    <app-contact-search></app-contact-search>
+    <app-contact-list (selected)="onUserSelected($event)"></app-contact-list>
+  </div>
+  <div class="ivd-chat-content">
+    <ng-container *ngIf="selectedUser._id; else noChat">
+      <h4 class="user-name">
+        <app-avatar class="avatar" [large]="true" [name]="selectedUser.fullName"></app-avatar>
+        {{selectedUser.fullName}}
+      </h4>
+      <div class="message-area-wrapper">
+        <app-messages-area [messages]="(selectedOnlineUser$ | async)?.messages"></app-messages-area>
+      </div>
+      <div class="action-wrapper">
+        <!-- <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline"> -->
+          <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()" [(ngModel)]="chatModel">
+        <!-- </mat-form-field> -->
+        <button class="ivd-btn btn-accent ivd-dynamic-form-field" (click)="onSendMessage()" mat-flat-button>
+          Send
+          <mat-icon class="ivd-btn-icon">send</mat-icon>
+        </button>
+      </div>
+      </ng-container>
+  </div>
+</div>
+
+<ng-template #noChat>
+  <div class="no-chat-wrapper">
+    <div class="content-wrapper">
+      <img src="../../../../../assets/icons/chat-dark.svg" alt="chat-icon">
+      <span class="message">
+        Please select a Chat to continue.
+      </span>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,53 @@
+<ng-container *ngIf="{
+  request: requests$ | async,
+  contacts: contacts$ | async,
+  onlineUsers: onlineUsers$ | async
+} as stream$">
+  <div class="ivd-contact-list">
+    <div class="ivd-requests" *ngIf="stream$.request?.length">
+      <h4 class="header">Contact requests({{stream$.request?.length}})</h4>
+      <ul class='list'>
+        <li class="list-item" *ngFor="let request of stream$.request">
+          <app-avatar class="avatar" [name]="request.fullName"></app-avatar>
+          <div class="left-content">
+            <div class="content-wrapper">
+              <span class="ivd-fullname">
+                {{request.fullName}}
+              </span>
+              <span class="ivd-username">
+                ({{request.username}})
+              </span>
+            </div>
+            <div class="action-wrapper">
+              <button mat-icon-button class="ivd-icon-btn ivd-check-btn" type="button" (click)="response(request, true)">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button mat-icon-button class="ivd-icon-btn ivd-edit-btn" type="button" (click)="response(request, false)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="ivd-contacts" *ngIf="stream$.contacts?.length">
+      <h4 class="header">Contacts({{stream$.contacts?.length}})</h4>
+      <ul class='list'>
+        <li class="list-item" [ngClass]="{'selected': contact._id === selectedUser?._id}" *ngFor="let contact of stream$.contacts" (click)="onSelecteUser(contact)">
+          <app-avatar class="avatar" [name]="contact.fullName" [online]="isOnline(contact._id, stream$.onlineUsers)"></app-avatar>
+          <div class="left-content" *ngIf="{isNew: isNew(contact._id, stream$.onlineUsers)} as isNewObject">
+            <div class="content-wrapper" [ngClass]="{'is-new': isNewObject.isNew}">
+              <span class="ivd-fullname">
+                {{contact.fullName}}
+              </span>
+              <span class="ivd-username">
+                ({{contact.username}})
+              </span>
+            </div>
+            <span class="ivd-new-msg" *ngIf="isNewObject.isNew"></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>

@@ -11,11 +11,11 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'message',
-    label: 'Messages',
-    name: 'message',
-    route: 'dashboard/message',
+    label: 'Chat',
+    name: 'chat',
+    route: 'dashboard/chat',
     order: 200,
-    disabled: true,
+    disabled: false,
   },
   {
     icon: 'notifications',

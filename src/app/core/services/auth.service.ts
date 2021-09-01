@@ -31,6 +31,7 @@ export class AuthService {
           this.setToken(
             response.data.login.accessToken,
             response.data.login.expiresIn,
+            response.data.login.userId,
           );
         }
       }),
@@ -54,6 +55,7 @@ export class AuthService {
           this.setToken(
             response.data.register.accessToken,
             response.data.register.expiresIn,
+            response.data.register.userId,
           );
         }
       }),
@@ -69,7 +71,14 @@ export class AuthService {
 
   getToken(): string | null {
     const token = localStorage.getItem('id_token');
+
     return token ? token : null;
+  }
+
+  getLoggedUserId(): string | null {
+    const userId = localStorage.getItem('user_id');
+
+    return userId ? userId : null;
   }
 
   isLoggedIn() {
@@ -89,13 +98,15 @@ export class AuthService {
   private clearToken() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('user_id');
   }
 
-  private setToken(token: string, expiresIn: number) {
+  private setToken(token: string, expiresIn: number, userId: string) {
     const expiresTime = new Date();
 
     expiresTime.setSeconds(expiresTime.getSeconds() + expiresIn);
     localStorage.setItem('id_token', token);
+    localStorage.setItem('user_id', userId);
     localStorage.setItem('expires_at', expiresTime.toISOString());
   }
 }

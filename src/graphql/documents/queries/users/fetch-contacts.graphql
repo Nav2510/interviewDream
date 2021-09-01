@@ -1,0 +1,5 @@
+query fetchContact($name: String) {
+  fetchUserByNameOrUsername(name: $name) {
+    ...User
+  }
+}

@@ -171,6 +171,237 @@ hr {
   }
 }
 
+// avatar
+.ivd-avatar {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  position: relative;
+  .ivd-content {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .ivd-online {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: $dark-theme-online-color;
+    border-radius: 50%;
+    border: 2px solid $dark-theme-font-color-light;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+}
+.ivd-avatar.large {
+  height: 40px;
+  width: 40px;
+}
+.ivd-avatar.class0 {
+  background-color: dimgrey;
+}
+.ivd-avatar.class1 {
+  background-color: steelblue;
+}
+.ivd-avatar.class2 {
+  background-color: blueviolet;
+}
+.ivd-avatar.class3 {
+  background-color: goldenrod;
+}
+.ivd-avatar.class4 {
+  background-color: teal;
+}
+.ivd-avatar.class5 {
+  background-color: sienna;
+}
+.ivd-avatar.class6 {
+  background-color: olive;
+}
+.ivd-avatar.class7 {
+  background-color: navy;
+}
+.ivd-avatar.class8 {
+  background-color: darkcyan;
+}
+
+// messages-area
+.ivd-messages-area {
+  background-color: $dark-theme-primary-color-light;
+  padding: 0px 20px;
+  .list {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0 30px;
+  }
+  .list-item {
+    padding: 0px;
+    list-style-type: none;
+  }
+  .message-wrapper {
+    background-color: $dark-theme-primary-color-lighter;
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 5px 0px;
+    position: relative;
+    .content-wrapper {
+      font-size: 14px;
+      font-weight: $font-semi-bold;
+      margin-bottom: 4px;
+    }
+    .time-wrapper {
+      font-size: 10px;
+      color: $dark-theme-font-color-faded;
+      align-self: flex-end;
+    }
+  }
+  .message-wrapper.float-right {
+    background-color: $dark-theme-primary-color-lightest;
+    float: right;
+  }
+  .float-left::before {
+    content: '';
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    height: 0;
+    left: -30px;
+    border-bottom: 15px solid $dark-theme-primary-color-lighter;
+  }
+  .float-right::after {
+    content: '';
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    height: 0;
+    right: -30px;
+    border-bottom: 15px solid $dark-theme-primary-color-lightest;
+  }
+}
+
+// contact-list
+.ivd-contact-list {
+  h4 {
+    font-size: 15px;
+    padding-left: 10px;
+  }
+  .list {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+  .list-item {
+    padding: 7px 0px 7px 15px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    cursor: pointer;
+    .action-wrapper {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+      .mat-icon {
+        font-size: 18px;
+      }
+    }
+    &:hover {
+      color: $dark-theme-font-color-light;
+      background-color: $dark-theme-primary-color-light;
+      .action-wrapper {
+        opacity: 1;
+      }
+    }
+  }
+  .list-item.selected {
+    background-color: $dark-theme-primary-color-lighter;
+  }
+  .avatar {
+    margin-right: 10px;
+  }
+  .left-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-right: 20px;
+  }
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    .ivd-fullname {
+      font-size: 13px;
+      margin-bottom: 3px;
+      font-weight: $font-medium;
+    }
+    .ivd-username {
+      font-size: 10px;
+      color: $dark-theme-font-color-faded;
+    }
+  }
+  .content-wrapper.is-new {
+    .ivd-fullname {
+      font-weight: bold;
+      color: $dark-theme-font-color-light;
+    }
+    .ivd-username {
+      font-weight: bold;
+      color: $dark-theme-font-color-light;
+    }
+  }
+  .ivd-new-msg {
+    height: 15px;
+    width: 15px;
+    content: '';
+    display: inline-block;
+    background-color: $dark-theme-new-msg-color;
+    border-radius: 50%;
+  }
+}
+
+// autocomplete
+.ivd-autocomplete {
+  width: 100%;
+}
+.ivd-autocomplete-panel {
+  background: $dark-theme-primary-color-lighter;
+  border-radius: 0px !important;
+  .ivd-autocomplete-options {
+    color: $dark-theme-font-color;
+    line-height: 20px;
+    height: 50px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    .mat-option-text {
+      display: flex;
+      flex-direction: column;
+      .ivd-fullname {
+        font-size: 14px;
+        font-weight: $font-medium;
+      }
+      .ivd-username {
+        font-size: 12px;
+        color: $dark-theme-font-color-faded;
+      }
+    }
+    &:hover {
+      color: $dark-theme-font-color-light;
+      background-color: $dark-theme-hover-color;
+    }
+  }
+}
+
 // button
 .ivd-btn.btn-accent {
   border-radius: 0px;
@@ -339,10 +570,10 @@ hr {
 
 //dashboard
 .ivd-content-container {
-  padding: 25px;
+  padding: 15px;
   background-color: $dark-theme-primary-color;
-  margin: 15px;
-  min-height: calc(100vh - 123px);
+  margin: 10px;
+  min-height: calc(100vh - 93px);
 }
 
 // card
@@ -1003,6 +1234,21 @@ hr {
   }
 }
 
+// input
+.ivd-custom-input {
+  width: 100%;
+  background-color: #17263c;
+  border: 1px solid $dark-theme-primary-color-light;
+  border-radius: 0px;
+  outline: none;
+  color: $dark-theme-font-color;
+  padding: 10px;
+}
+.ivd-custom-input:focus {
+  background-color: #13233b;
+  border-color: $dark-theme-primary-color-lighter;
+}
+
 // ivd-menu
 .ivd-menu {
   border-radius: 0px 0px 2px 2px !important;
@@ -1433,6 +1679,66 @@ hr {
       }
     }
   }
+}
+
+// chatbox
+.ivd-chatbox {
+  display: flex;
+  height: calc(100vh - 125px);
+  .ivd-chat-left-panel {
+    width: 30%;
+    background-color: $dark-theme-primary-color-semi-light;
+  }
+  .ivd-chat-content {
+    width: 70%;
+    background: $dark-theme-primary-color-light;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .message-area-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .user-name {
+      border-bottom: 1px solid $dark-theme-primary-color;
+      padding: 10px 10px;
+      align-items: center;
+      display: flex;
+      .avatar {
+        margin-right: 10px;
+      }
+    }
+    .action-wrapper {
+      display: flex;
+      .ivd-form-field {
+        width: 100%;
+      }
+    }
+    .no-chat-wrapper {
+      margin: auto;
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          width: 200px;
+          height: 200px;
+        }
+        .message {
+          font-size: 16px;
+          font-weight: $font-semi-bold;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+.ivd-contact-search {
+  display: flex;
 }
 
 // inspiration

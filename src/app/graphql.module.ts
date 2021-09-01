@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
+import { environment } from '../environments/environment';
 
-const uri = 'https://interviewdream-backend.herokuapp.com/graphql';
+const uri = environment.graphqlURI;
 // tslint:disable-next-line: no-any
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {

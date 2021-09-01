@@ -11,31 +11,31 @@
         <img class="profile-image" src="assets/images/avatar/avatar.JPG" alt="">
       </div>
       <div class="user-name-wrapper">
-        <h2>{{profileData.fullName}}</h2>
-        <h4>({{profileData.username | titlecase}})</h4>
+        <h2>{{profileData?.fullName}}</h2>
+        <h4>({{profileData?.username | titlecase}})</h4>
       </div>
       </div>
       <div class="work-detail-wrapper">
         <ul>
           <li>
-            <mat-icon>people</mat-icon>{{profileData.designation}}
+            <mat-icon>people</mat-icon>{{profileData?.designation}}
           </li>
           <li>
-            <mat-icon>place</mat-icon>{{profileData.currentLocation}}
+            <mat-icon>place</mat-icon>{{profileData?.currentLocation}}
           </li>
           <li>
-            <mat-icon>email</mat-icon>{{profileData.email}}
+            <mat-icon>email</mat-icon>{{profileData?.email}}
           </li>
         </ul>
     </div>
     <div class="social-link-wrapper">
-      <a [href]="profileData.github">
+      <a [href]="profileData?.github">
         <img src="assets/icons/github.svg" alt="github">
       </a>
-      <a [href]="profileData.instagram">
+      <a [href]="profileData?.instagram">
         <img src="assets/icons/instagram.svg" alt="instagram">
       </a>
-      <a [href]="profileData.linkedin">
+      <a [href]="profileData?.linkedin">
         <img src="assets/icons/linkedin.svg" alt="linkedin">
       </a>
     </div>

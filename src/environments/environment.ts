@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  graphqlURI: 'http://localhost:8080/graphql',
+  socketURI: 'http://localhost:8080',
 };
 
 /*

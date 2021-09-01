@@ -1,0 +1,5 @@
+mutation requestContact($id: ID!) {
+  requestContact(id: $id) {
+    ...NormalResponse
+  }
+}
