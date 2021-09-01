@@ -101,16 +101,23 @@ export class SocketService {
     timestamp: string,
     fromUserSocket: string,
   ): void {
-    this.onlineUsersSource.map((onlineUser) => {
+    this.onlineUsersSource = this.onlineUsersSource.map((onlineUser) => {
       if (onlineUser.socketId === fromUserSocket) {
         const messageList = [...onlineUser.messages];
         messageList.push(
           new Message(msg, new Date(timestamp), onlineUser.userId),
         );
-        onlineUser.messages = messageList;
+        const updatedUser = new OnlineUser(
+          onlineUser.socketId,
+          onlineUser.userId,
+          messageList,
+          onlineUser.isOnline,
+          onlineUser.hasNewMsg,
+        );
         if (fromUserSocket !== this.selectedOnlineUser?.socketId) {
-          onlineUser.hasNewMsg = true;
+          updatedUser.hasNewMsg = true;
         }
+        return updatedUser;
       }
       return onlineUser;
     });

@@ -22,10 +22,10 @@ export class AvatarComponent {
 
   getClass(): string {
     const numberOfClasses = 9;
-    const randomColor = Math.floor(Math.random() * numberOfClasses);
-    let classString = `class${randomColor}`;
+    const color = Math.floor(this.name.length % numberOfClasses);
+    let classString = `class${color}`;
     if (this.large) {
-      classString = `large class${randomColor}`;
+      classString = `large class${color}`;
     }
     return classString;
   }
