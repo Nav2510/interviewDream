@@ -25,10 +25,10 @@ export class MainInfoAdapter implements Adapter<MainInfoModel> {
       item.designation,
       item.currentLocation,
       item.username,
-      item.contactInfo.github,
-      item.contactInfo.linkedin,
-      item.contactInfo.instagram,
-      item.basicInfo.fullName,
+      item.contactInfo?.github,
+      item.contactInfo?.linkedin,
+      item.contactInfo?.instagram,
+      item.basicInfo?.fullName,
     );
   }
 }

@@ -13,6 +13,7 @@ import { ContactSearchComponent } from './components/contact-search/contact-sear
 import { MatMenuModule } from '@angular/material/menu';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { AvatarModule } from '../../../../shared/components/avatar/avatar.module';
+import { MessagesAreaComponent } from './components/messages-area/messages-area.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const MATERIALS = [
     ChatboxComponent,
     ContactSearchComponent,
     ContactListComponent,
+    MessagesAreaComponent,
   ],
   imports: [
     CommonModule,

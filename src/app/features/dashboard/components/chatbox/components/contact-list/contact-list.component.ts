@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnDestroy,
+  Output,
+} from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -6,17 +12,21 @@ import { ResponseContactGQL } from '../../../../../../../graphql/documents/mutat
 import { FetchAddedContactsGQL } from '../../../../../../../graphql/documents/queries/users/fetch-added-contacts.graphql-gen';
 import { FetchRequestsGQL } from '../../../../../../../graphql/documents/queries/users/fetch-requests.graphql-gen';
 import { User } from '../../../../../../../graphql/generated/graphql.types';
-import { OnlineUser, SocketService } from '../../services/socket.service';
+import { OnlineUser } from '../../models/online-user.model';
+import { SocketService } from '../../services/socket.service';
 
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactListComponent implements OnDestroy {
+  @Output() selected = new EventEmitter<User>();
+
   requests$: Observable<User[]> = this.fetchRequests();
   contacts$: Observable<User[]> = this.fetchContacts();
   onlineUsers$: Observable<OnlineUser[]> = this.socketService.onlineUsers$;
+  selectedUser: User;
 
   subscription = new Subscription();
 
@@ -28,9 +38,13 @@ export class ContactListComponent implements OnDestroy {
   ) {}
 
   isOnline(id: string, onlineUsers: OnlineUser[]): boolean {
-    return !!onlineUsers?.find((user) => {
+    return onlineUsers?.find((user) => {
       return id === user.userId;
-    });
+    })?.isOnline;
+  }
+
+  isNew(id: string, onlineUsers: OnlineUser[]): boolean {
+    return onlineUsers.find((user) => id === user.userId)?.hasNewMsg;
   }
 
   response(user: User, value: boolean): void {
@@ -45,6 +59,12 @@ export class ContactListComponent implements OnDestroy {
           this.contacts$ = this.fetchContacts();
         }
       });
+  }
+
+  onSelecteUser(user: User): void {
+    this.selectedUser = user;
+    this.selected.emit(user);
+    this.socketService.updateSelectedUser(user._id);
   }
 
   ngOnDestroy(): void {

@@ -8,13 +8,14 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AvatarComponent {
   @Input() name: string;
   @Input() online: boolean;
+  @Input() large: boolean = false;
 
   transform(name: string): string {
-    const nameList = name.split(' ');
+    const nameList = name?.split(' ');
     const twoCharacter = 2;
-    if (nameList.length === 1) {
+    if (nameList?.length === 1) {
       return nameList[0][0].toUpperCase();
-    } else if (nameList.length === twoCharacter) {
+    } else if (nameList?.length === twoCharacter) {
       return nameList[0][0].toUpperCase() + nameList[1][0].toUpperCase();
     }
   }
@@ -22,6 +23,10 @@ export class AvatarComponent {
   getClass(): string {
     const numberOfClasses = 9;
     const randomColor = Math.floor(Math.random() * numberOfClasses);
-    return `class${randomColor}`;
+    let classString = `class${randomColor}`;
+    if (this.large) {
+      classString = `large class${randomColor}`;
+    }
+    return classString;
   }
 }

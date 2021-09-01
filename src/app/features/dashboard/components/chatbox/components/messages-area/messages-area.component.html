@@ -1,0 +1,17 @@
+<div class="ivd-messages-area">
+  <ul class="list">
+    <li class="list-item" *ngFor="let message of messages">
+      <div class="message-wrapper" [ngClass]="{
+        'float-right': message.owner === currentUserId,
+        'float-left': message.owner !== currentUserId
+      }">
+        <span class="content-wrapper">
+          {{message.content}}
+        </span>
+        <span class="time-wrapper">
+          {{message.timestamp | date: 'MMM d, h:mm a'}}
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
