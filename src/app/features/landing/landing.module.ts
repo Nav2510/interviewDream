@@ -13,8 +13,15 @@ import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BannerComponent } from './components/banner/banner.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { NavbarActionsModule } from 'src/app/shared/components/navbar-actions/navbar-actions.module';
 
-const MATERIALS = [MatIconModule, MatInputModule, MatButtonModule];
+const MATERIALS = [
+  MatIconModule,
+  MatInputModule,
+  MatButtonModule,
+  MatMenuModule,
+];
 
 const routes: Routes = [
   {
@@ -36,6 +43,7 @@ const routes: Routes = [
     CommonModule,
     CardModule,
     ReactiveFormsModule,
+    NavbarActionsModule,
     RouterModule.forChild(routes),
     ...MATERIALS,
   ],

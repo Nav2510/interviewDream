@@ -1,6 +1,11 @@
 @import './variables';
 
 // Base scss
+
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 .main-container {
   background-color: $dark-theme-primary-color-dark;
@@ -8,6 +13,7 @@ body,
   margin: 0;
 }
 
+// Headings
 h1,
 h2,
 h3,
@@ -20,6 +26,7 @@ h6 {
   letter-spacing: 0.4px;
 }
 
+// horizontal row
 hr {
   border: none;
   border-bottom: 1px solid $dark-theme-primary-color-light;
@@ -72,7 +79,24 @@ hr {
   width: 100%;
 }
 
-// checkbox
+// ==========scroll bar=========
+::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: $color-disabled;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $dark-theme-primary-color-lighter !important; 
+  border-radius: 5px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $dark-theme-primary-color-lighter !important; 
+}
+
+// ============checkbox=========
 .mat-checkbox {
   .mat-checkbox-frame {
     border-color: $dark-theme-font-color;
@@ -236,6 +260,8 @@ hr {
 .ivd-messages-area {
   background-color: $dark-theme-primary-color-light;
   padding: 0px 20px;
+  overflow-y: auto;
+    max-height: calc(100vh - 235px);
   .list {
     display: flex;
     flex-direction: column;
@@ -297,6 +323,7 @@ hr {
 .ivd-contact-list {
   h4 {
     font-size: 15px;
+    margin-top: 10px;
     padding-left: 10px;
   }
   .list {
@@ -1194,10 +1221,12 @@ hr {
   mat-icon {
     font-size: 16px;
   }
+}
+
+// navbar-actions
   .ivd-info-wrapper {
     display: flex;
-  }
-  .ivd-user-btn,
+    .ivd-user-btn,
   .ivd-icon-btn {
     padding-left: 7px;
     padding-right: 7px;
@@ -1232,7 +1261,8 @@ hr {
       height: 100%;
     }
   }
-}
+  }
+  
 
 // input
 .ivd-custom-input {
@@ -1366,6 +1396,7 @@ hr {
   position: absolute;
   width: 100%;
   top: 0;
+  z-index: 100;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.24);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.44);
@@ -1387,6 +1418,18 @@ hr {
       color: $dark-theme-font-color-light;
     }
   }
+  .ivd-avatar-img-wrapper {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    border: 1.5px solid $dark-theme-font-color;
+    img {
+      width: auto;
+      object-fit: fill;
+      height: 100%;
+    }
+  }
 }
 
 // landing-banner
@@ -1395,7 +1438,6 @@ hr {
   position: relative;
   width: 100%;
   display: flex;
-  z-index: -1;
   justify-content: space-between;
   .banner-image {
     width: 100%;
@@ -1469,6 +1511,10 @@ hr {
     cursor: pointer;
     opacity: 0;
     animation: ivd-fade-in 0.5s ease-in-out 3.5s forwards;
+    .show-more-link {
+      color: $dark-theme-font-color;
+      text-decoration: none;
+    }
     &-text {
       text-transform: uppercase;
       font-weight: $font-medium;
@@ -1593,6 +1639,8 @@ hr {
           color: $dark-theme-font-color;
           text-align: justify;
           line-height: 40px;
+          max-height: 80px;
+          overflow: hidden;
         }
       }
     }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { LoginRouteEnum } from './enums/login-route.enum';
 import { LoginComponent } from './login.component';
 
 const routes: Routes = [
@@ -9,14 +10,21 @@ const routes: Routes = [
     component: LoginComponent,
     children: [
       {
-        path: 'login',
+        path: LoginRouteEnum.LOGIN,
         loadChildren: () =>
           import(
             './components/login-signup-card/login-signup-card.module'
           ).then((module) => module.LoginSignupCardModule),
       },
       {
-        path: 'select-account',
+        path: LoginRouteEnum.REGISTER,
+        loadChildren: () =>
+          import(
+            './components/login-signup-card/login-signup-card.module'
+          ).then((module) => module.LoginSignupCardModule),
+      },
+      {
+        path: LoginRouteEnum.SELECT_ACCOUNT,
         loadChildren: () =>
           import(
             './components/account-selector-card/account-selector-card.module'

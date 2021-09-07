@@ -1,24 +1,29 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../../../core/services/auth.service';
+import { LoginRouteEnum } from '../../enums/login-route.enum';
 
 @Component({
   selector: 'app-login-signup-card',
   templateUrl: './login-signup-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginSignupCardComponent {
+export class LoginSignupCardComponent implements OnInit{
   isRegister = true;
   model: FormGroup = this.buildForm();
 
   constructor(
-    // eslint-disable-next-line no-unused-vars
     private readonly router: Router,
-    // eslint-disable-next-line no-unused-vars
     private readonly authService: AuthService,
   ) {}
+
+  ngOnInit(): void {
+    const currentRoute = this.router.url;
+
+    this.isRegister = currentRoute.includes(LoginRouteEnum.REGISTER)
+  }
 
   onSubmit() {
     if (this.isRegister) {
