@@ -3,4 +3,5 @@ fragment User on User {
   email
   username
   fullName
+  role
 }

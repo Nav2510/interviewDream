@@ -412,7 +412,7 @@ hr {
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
     .mat-option-text {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       .ivd-fullname {
         font-size: 14px;
         font-weight: $font-medium;
@@ -420,6 +420,22 @@ hr {
       .ivd-username {
         font-size: 12px;
         color: $dark-theme-font-color-faded;
+      }
+      .menu-left-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .action-wrapper {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        .mat-icon {
+          font-size: 18px;
+        }
+      }
+      &:hover {
+        .action-wrapper {
+          opacity: 1;
+        }
       }
     }
     &:hover {
@@ -744,7 +760,7 @@ hr {
     }
     .form-wrapper {
       width: 70%;
-      margin: 100px auto 0 auto;
+      margin: 60px auto 0 auto;
       .ivd-input-wrapper {
         display: flex;
         flex-direction: column;
@@ -823,7 +839,7 @@ hr {
 
 // profile-main-info
 .ivd-profile-main-info {
-  padding: 15px;
+  padding: 10px;
   padding-bottom: 0px;
   .image-wrapper {
     box-sizing: border-box;

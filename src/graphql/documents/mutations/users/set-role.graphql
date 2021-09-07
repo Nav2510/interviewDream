@@ -1,0 +1,5 @@
+mutation setRole($role: RoleEnum!) {
+  setRole(role: $role) {
+    ...NormalResponse
+  }
+}

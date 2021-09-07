@@ -33,6 +33,14 @@
           </ng-container>
         </div>
         <div class="ivd-input-wrapper">
+          <ng-container *ngIf="isRegister">
+            <label class="ivd-label">Full Name</label>
+            <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
+              <input matInput id="fullName" type="text" formControlName="fullName">
+            </mat-form-field>
+          </ng-container>
+          </div>
+          <div class="ivd-input-wrapper">
           <label class="ivd-label">Password</label>
           <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
             <input matInput id="password" type="password" formControlName="password" autocomplete="on">

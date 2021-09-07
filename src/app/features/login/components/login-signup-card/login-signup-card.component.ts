@@ -32,6 +32,7 @@ export class LoginSignupCardComponent implements OnInit{
           this.model.value.email,
           this.model.value.password,
           this.model.value.username,
+          this.model.value.fullName
         )
         .subscribe((isValidated) => {
           if (isValidated) {
@@ -71,6 +72,7 @@ export class LoginSignupCardComponent implements OnInit{
       const formObj = {
         email: new FormControl(''),
         username: new FormControl(''),
+        fullName: new FormControl(''),
         password: new FormControl(''),
         confirmPassword: new FormControl(''),
       };

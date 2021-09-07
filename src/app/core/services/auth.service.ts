@@ -43,11 +43,13 @@ export class AuthService {
     email: string,
     password: string,
     username: string,
+    fullName: string,
   ): Observable<boolean> {
     const registerInput: RegisterInputData = {
       email,
       password,
       username,
+      fullName,
     };
     return this.registerGQL.mutate({ input: registerInput }).pipe(
       tap((response) => {

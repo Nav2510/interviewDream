@@ -13,9 +13,8 @@
         <app-messages-area [messages]="(selectedOnlineUser$ | async)?.messages"></app-messages-area>
       </div>
       <div class="action-wrapper">
-        <!-- <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline"> -->
-          <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()" [(ngModel)]="chatModel">
-        <!-- </mat-form-field> -->
+          <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()"
+            [(ngModel)]="chatModel">
         <button class="ivd-btn btn-accent ivd-dynamic-form-field" (click)="onSendMessage()" mat-flat-button>
           Send
           <mat-icon class="ivd-btn-icon">send</mat-icon>
