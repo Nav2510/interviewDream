@@ -4,11 +4,11 @@
   </div>
   <div class="main-content-wrapper">
     <div class="user-profile-wrapper">
-      <div class="edit-action" *ngIf="showEdit">
+      <div class="edit-action" *ngIf="showEdit" (click)="openProfilePicUpload()">
         <mat-icon>create</mat-icon>
       </div>
       <div class="user-image-wrapper">
-        <img class="profile-image" src="assets/images/avatar/avatar.JPG" alt="">
+        <img class="profile-image" [src]="profileData?.profileSrc" alt="">
       </div>
       <div class="user-name-wrapper">
         <h2>{{profileData?.fullName}}</h2>
@@ -41,3 +41,6 @@
     </div>
   </div>
 </div>
+<ng-template #profileUpload>
+  <app-file-upload></app-file-upload>
+</ng-template>

@@ -1,12 +1,19 @@
 <div class="ivd-contact-search">
-    <input class="ivd-custom-input" placeholder="Search Contact" id="contact" type="text" [formControl]="contactControl"
+    <input class="ivd-custom-input" placeholder="Search contact to add..." id="contact" type="text"
+      [formControl]="contactControl"
       [matAutocomplete]="auto">
     <mat-autocomplete class="ivd-autocomplete-panel" #auto="matAutocomplete">
-      <mat-option class="ivd-autocomplete-options" *ngFor="let user of (filteredOptions | async)" [value]="user.fullName"
-        (onSelectionChange)='getContact(user)'>
+      <mat-option class="ivd-autocomplete-options" *ngFor="let user of (filteredOptions | async)" [value]="user.fullName">
         <!-- TODO: Add (me) in case of logged in user -->
-        <span class="ivd-fullname">{{user.fullName}}</span>
-        <span class="ivd-username">{{user.username}}</span>
+        <div class="menu-left-content">
+          <span class="ivd-fullname">{{user.fullName}}</span>
+          <span class="ivd-username">{{user.username}}</span>
+        </div>
+        <div class="action-wrapper">
+          <button mat-icon-button class="ivd-icon-btn ivd-check-btn" type="button" (click)="sendRequest(user)">
+            <mat-icon>check</mat-icon>
+          </button>
+        </div>
       </mat-option>
     </mat-autocomplete>
 </div>

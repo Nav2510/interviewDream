@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 import { ResponseContactGQL } from '../../../../../../../graphql/documents/mutations/users/respones-contact.graphql-gen';
 import { FetchAddedContactsGQL } from '../../../../../../../graphql/documents/queries/users/fetch-added-contacts.graphql-gen';
@@ -27,6 +28,7 @@ export class ContactListComponent implements OnDestroy {
   contacts$: Observable<User[]> = this.fetchContacts();
   onlineUsers$: Observable<OnlineUser[]> = this.socketService.onlineUsers$;
   selectedUser: User;
+  readonly baseURI = environment.baseURI;
 
   subscription = new Subscription();
 

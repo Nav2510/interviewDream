@@ -2,6 +2,8 @@ fragment ProfileMainInfo on Profile {
   email
   designation
   currentLocation
+  profileImagePath
+  bgImagePath
   username
   contactInfo {
     instagram

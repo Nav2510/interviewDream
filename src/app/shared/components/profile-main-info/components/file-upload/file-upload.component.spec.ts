@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactSearchComponent } from './contact-search.component';
+import { FileUploadComponent } from './file-upload.component';
 
-describe('ContactSearchComponent', () => {
-  let component: ContactSearchComponent;
-  let fixture: ComponentFixture<ContactSearchComponent>;
+describe('FileUploadComponent', () => {
+  let component: FileUploadComponent;
+  let fixture: ComponentFixture<FileUploadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ContactSearchComponent],
+      declarations: [FileUploadComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactSearchComponent);
+    fixture = TestBed.createComponent(FileUploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -16,8 +16,10 @@ import {
 export class LandingComponent implements OnInit {
   courses$: Observable<CardModel[]>;
 
-  // eslint-disable-next-line no-unused-vars
-  constructor(private coursesGQL: CoursesGQL, private adapter: CardAdapter) {}
+  constructor(
+    private readonly coursesGQL: CoursesGQL,
+    private readonly adapter: CardAdapter,
+  ) {}
 
   ngOnInit(): void {
     const topFiveCourse = 5;

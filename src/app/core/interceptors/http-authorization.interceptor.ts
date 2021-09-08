@@ -10,8 +10,8 @@ import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class HttpAuthorizationInterceptor implements HttpInterceptor {
-  // eslint-disable-next-line no-unused-vars
   constructor(private authService: AuthService) {}
+
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler,
