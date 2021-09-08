@@ -8,7 +8,7 @@
     <button class="ivd-user-btn" mat-button [matMenuTriggerFor]="menu">
         <div class="ivd-user-wrapper">
             <div class="ivd-avatar-img-wrapper">
-                <img class="ivd-avatar-img" src="assets/images/avatar/avatar.JPG" alt="Avatar Image">
+                <img class="ivd-avatar-img" [src]="currentUser?.profileImagePath" alt="Avatar Image">
             </div>
             <span class="ivd-user">
                 {{currentUser?.username}}

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { AuthService } from 'src/app/core/services/auth.service';
 import { NavUserActionModel } from 'src/app/shared/components/top-nav/nav-user-actions.model';
+import { environment } from 'src/environments/environment';
 import { MeGQL } from 'src/graphql/documents/queries/users/me.graphql-gen';
 import { User } from 'src/graphql/generated/graphql.types';
 
@@ -15,9 +16,16 @@ import { User } from 'src/graphql/generated/graphql.types';
 })
 export class NavBarComponent implements OnInit {
   isLoggedIn: boolean;
-  currentUser$: Observable<User> = this.meGQL
-    .fetch()
-    .pipe(map((response) => response.data.me));
+  currentUser$: Observable<User> = this.meGQL.fetch().pipe(
+    map((response) => {
+      const currentUser = { ...response.data.me };
+      const profilePath = currentUser?.profileImagePath
+        ? environment.baseURI + '/' + currentUser.profileImagePath
+        : '../../../../assets/icons/user.svg';
+      currentUser.profileImagePath = profilePath;
+      return currentUser;
+    }),
+  );
   userActions: NavUserActionModel[] = [
     { label: 'Profile', type: 'url', url: '/dashboard/profile' },
     {

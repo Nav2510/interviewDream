@@ -5,10 +5,10 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { environment } from '../../../../environments/environment';
 import { MeGQL } from '../../../../graphql/documents/queries/users/me.graphql-gen';
 import { User } from '../../../../graphql/generated/graphql.types';
 import { NavUserActionModel } from './nav-user-actions.model';
@@ -22,9 +22,16 @@ export class TopNavComponent {
   @Input() userActions: NavUserActionModel[];
   @Output() toggleSideNav = new EventEmitter<void>();
 
-  currentUser$: Observable<User> = this.meGQL
-    .fetch()
-    .pipe(map((response) => response.data.me));
+  currentUser$: Observable<User> = this.meGQL.fetch().pipe(
+    map((response) => {
+      const currentUser = { ...response.data.me };
+      const profilePath = currentUser?.profileImagePath
+        ? environment.baseURI + '/' + currentUser.profileImagePath
+        : '../../../../assets/icons/user.svg';
+      currentUser.profileImagePath = profilePath;
+      return currentUser;
+    }),
+  );
 
   constructor(private readonly meGQL: MeGQL) {}
 

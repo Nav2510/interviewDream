@@ -20,7 +20,7 @@ import { ProfileMainInfoGQL } from '../../../../../graphql/documents/queries/pro
 import {
   MainInfoAdapter,
   MainInfoModel,
-} from '../../../../shared/components/profile-main-info/main-info.model';
+} from '../../../../shared/components/profile-main-info/models/main-info.model';
 
 @Component({
   selector: 'app-profile',

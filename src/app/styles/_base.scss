@@ -198,8 +198,8 @@ hr {
 // avatar
 .ivd-avatar {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: inline-block;
   position: relative;
   .ivd-content {
@@ -355,6 +355,18 @@ hr {
   .list-item.selected {
     background-color: $dark-theme-primary-color-lighter;
   }
+  .avatar-img-wrapper {
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    display: block;
+    margin-right: 10px;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+  }
   .avatar {
     margin-right: 10px;
   }
@@ -395,6 +407,30 @@ hr {
     display: inline-block;
     background-color: $dark-theme-new-msg-color;
     border-radius: 50%;
+  }
+}
+
+// dialog
+.mat-dialog-container {
+  background-color: $dark-theme-primary-color;
+  color: $dark-theme-font-color;
+  padding: 15px !important;
+  border-radius: 0px !important;
+  box-shadow: 0px 0px 10px $dark-theme-shadow-color-light;
+  overflow: hidden !important;
+}
+.ivd-dialog {
+  .ivd-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $dark-theme-primary-color-light;
+    text-transform: capitalize;
+  }
+  .ivd-dialog-footer {
+    float: right;
+    .ivd-btn {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -875,7 +911,7 @@ hr {
       height: 35px;
       border-radius: 50%;
       position: absolute;
-      right: 10px;
+      right: 25px;
       cursor: pointer;
 
       mat-icon {
@@ -1267,8 +1303,8 @@ hr {
   }
   .ivd-avatar-img-wrapper {
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 30px;
+    width: 30px;
     overflow: hidden;
     border: 1.5px solid $dark-theme-font-color;
     img {
@@ -1436,8 +1472,8 @@ hr {
   }
   .ivd-avatar-img-wrapper {
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 30px;
+    width: 30px;
     overflow: hidden;
     border: 1.5px solid $dark-theme-font-color;
     img {
@@ -1773,6 +1809,19 @@ hr {
       display: flex;
       .avatar {
         margin-right: 10px;
+      }
+      .avatar-img-wrapper {
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 4px;
+        margin-right: 10px;
+        overflow: hidden;
+        img {
+          height: 100%;
+        }
       }
     }
     .action-wrapper {
