@@ -1,0 +1,16 @@
+<div class="ivd-dialog">
+    <div class="ivd-dialog-header" mat-dialog-title>
+        <h4 class="ivd-header-title">{{data.title}}</h4>
+        <button mat-icon-button class="ivd-icon-btn ivd-check-btn" type="button" (click)="onCancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="ivd-dialog-content" mat-dialog-content>
+        <ng-container [ngTemplateOutlet]="data.template"></ng-container>
+    </div>
+    <div class="ivd-dialog-footer" mat-dialog-actions>
+        <button class="ivd-btn btn-accent cancel-action" mat-button (click)="onCancel()">{{data.cancelLabel}}</button>
+        <button class="ivd-btn btn-accent submit-action" mat-button [mat-dialog-close]="data" (click)="onSubmit()"
+            cdkFocusInitial>{{data.submitLabel}}</button>
+    </div>
+</div>

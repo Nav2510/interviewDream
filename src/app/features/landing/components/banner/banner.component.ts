@@ -12,4 +12,9 @@ export class BannerComponent {
     '../../../../../assets/images/bgImages/12.jpg',
     '../../../../../assets/images/bgImages/18.jpg',
   ];
+
+  onShowMore(): void {
+    // TODO: Fixed navigation issue
+    window.location.hash = "#aboutInterview";
+  }
 }

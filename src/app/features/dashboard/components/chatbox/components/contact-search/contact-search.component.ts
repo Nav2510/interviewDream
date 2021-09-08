@@ -22,7 +22,8 @@ export class ContactSearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const delayTime = 500;
+    const delayTime = 1000;
+
     this.filteredOptions = this.contactControl.valueChanges.pipe(
       debounceTime(delayTime),
       catchError((error) => this.handleError(error)),
@@ -39,7 +40,7 @@ export class ContactSearchComponent implements OnInit {
     return throwError(error);
   }
 
-  getContact(selectedUser: User): void {
+  sendRequest(selectedUser: User): void {
     // TODO: Handle already error
     this.requestContactGQL
       .mutate({ id: selectedUser._id })

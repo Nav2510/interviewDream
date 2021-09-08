@@ -1,6 +1,11 @@
 @import './variables';
 
 // Base scss
+
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 .main-container {
   background-color: $dark-theme-primary-color-dark;
@@ -8,6 +13,7 @@ body,
   margin: 0;
 }
 
+// Headings
 h1,
 h2,
 h3,
@@ -20,6 +26,7 @@ h6 {
   letter-spacing: 0.4px;
 }
 
+// horizontal row
 hr {
   border: none;
   border-bottom: 1px solid $dark-theme-primary-color-light;
@@ -72,7 +79,24 @@ hr {
   width: 100%;
 }
 
-// checkbox
+// ==========scroll bar=========
+::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: $color-disabled;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $dark-theme-primary-color-lighter !important; 
+  border-radius: 5px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $dark-theme-primary-color-lighter !important; 
+}
+
+// ============checkbox=========
 .mat-checkbox {
   .mat-checkbox-frame {
     border-color: $dark-theme-font-color;
@@ -174,8 +198,8 @@ hr {
 // avatar
 .ivd-avatar {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: inline-block;
   position: relative;
   .ivd-content {
@@ -236,6 +260,8 @@ hr {
 .ivd-messages-area {
   background-color: $dark-theme-primary-color-light;
   padding: 0px 20px;
+  overflow-y: auto;
+    max-height: calc(100vh - 235px);
   .list {
     display: flex;
     flex-direction: column;
@@ -297,6 +323,7 @@ hr {
 .ivd-contact-list {
   h4 {
     font-size: 15px;
+    margin-top: 10px;
     padding-left: 10px;
   }
   .list {
@@ -327,6 +354,18 @@ hr {
   }
   .list-item.selected {
     background-color: $dark-theme-primary-color-lighter;
+  }
+  .avatar-img-wrapper {
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    display: block;
+    margin-right: 10px;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
   }
   .avatar {
     margin-right: 10px;
@@ -371,6 +410,30 @@ hr {
   }
 }
 
+// dialog
+.mat-dialog-container {
+  background-color: $dark-theme-primary-color;
+  color: $dark-theme-font-color;
+  padding: 15px !important;
+  border-radius: 0px !important;
+  box-shadow: 0px 0px 10px $dark-theme-shadow-color-light;
+  overflow: hidden !important;
+}
+.ivd-dialog {
+  .ivd-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $dark-theme-primary-color-light;
+    text-transform: capitalize;
+  }
+  .ivd-dialog-footer {
+    float: right;
+    .ivd-btn {
+      text-transform: uppercase;
+    }
+  }
+}
+
 // autocomplete
 .ivd-autocomplete {
   width: 100%;
@@ -385,7 +448,7 @@ hr {
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
     .mat-option-text {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       .ivd-fullname {
         font-size: 14px;
         font-weight: $font-medium;
@@ -393,6 +456,22 @@ hr {
       .ivd-username {
         font-size: 12px;
         color: $dark-theme-font-color-faded;
+      }
+      .menu-left-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .action-wrapper {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        .mat-icon {
+          font-size: 18px;
+        }
+      }
+      &:hover {
+        .action-wrapper {
+          opacity: 1;
+        }
       }
     }
     &:hover {
@@ -717,7 +796,7 @@ hr {
     }
     .form-wrapper {
       width: 70%;
-      margin: 100px auto 0 auto;
+      margin: 60px auto 0 auto;
       .ivd-input-wrapper {
         display: flex;
         flex-direction: column;
@@ -796,7 +875,7 @@ hr {
 
 // profile-main-info
 .ivd-profile-main-info {
-  padding: 15px;
+  padding: 10px;
   padding-bottom: 0px;
   .image-wrapper {
     box-sizing: border-box;
@@ -832,7 +911,7 @@ hr {
       height: 35px;
       border-radius: 50%;
       position: absolute;
-      right: 10px;
+      right: 25px;
       cursor: pointer;
 
       mat-icon {
@@ -1194,10 +1273,12 @@ hr {
   mat-icon {
     font-size: 16px;
   }
+}
+
+// navbar-actions
   .ivd-info-wrapper {
     display: flex;
-  }
-  .ivd-user-btn,
+    .ivd-user-btn,
   .ivd-icon-btn {
     padding-left: 7px;
     padding-right: 7px;
@@ -1222,8 +1303,8 @@ hr {
   }
   .ivd-avatar-img-wrapper {
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 30px;
+    width: 30px;
     overflow: hidden;
     border: 1.5px solid $dark-theme-font-color;
     img {
@@ -1232,7 +1313,8 @@ hr {
       height: 100%;
     }
   }
-}
+  }
+  
 
 // input
 .ivd-custom-input {
@@ -1366,6 +1448,7 @@ hr {
   position: absolute;
   width: 100%;
   top: 0;
+  z-index: 100;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.24);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.44);
@@ -1387,6 +1470,18 @@ hr {
       color: $dark-theme-font-color-light;
     }
   }
+  .ivd-avatar-img-wrapper {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    border: 1.5px solid $dark-theme-font-color;
+    img {
+      width: auto;
+      object-fit: fill;
+      height: 100%;
+    }
+  }
 }
 
 // landing-banner
@@ -1395,7 +1490,6 @@ hr {
   position: relative;
   width: 100%;
   display: flex;
-  z-index: -1;
   justify-content: space-between;
   .banner-image {
     width: 100%;
@@ -1469,6 +1563,10 @@ hr {
     cursor: pointer;
     opacity: 0;
     animation: ivd-fade-in 0.5s ease-in-out 3.5s forwards;
+    .show-more-link {
+      color: $dark-theme-font-color;
+      text-decoration: none;
+    }
     &-text {
       text-transform: uppercase;
       font-weight: $font-medium;
@@ -1593,6 +1691,8 @@ hr {
           color: $dark-theme-font-color;
           text-align: justify;
           line-height: 40px;
+          max-height: 80px;
+          overflow: hidden;
         }
       }
     }
@@ -1709,6 +1809,19 @@ hr {
       display: flex;
       .avatar {
         margin-right: 10px;
+      }
+      .avatar-img-wrapper {
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 4px;
+        margin-right: 10px;
+        overflow: hidden;
+        img {
+          height: 100%;
+        }
       }
     }
     .action-wrapper {

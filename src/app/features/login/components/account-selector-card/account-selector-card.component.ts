@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SetRoleGQL } from 'src/graphql/documents/mutations/users/set-role.graphql-gen';
+import { RoleEnum } from 'src/graphql/generated/graphql.types';
 
 @Component({
   selector: 'app-account-selector-card',
@@ -7,15 +9,16 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountSelectorCardComponent {
-  accountType = {
-    student: 'student',
-    instructor: 'instructor',
-  };
+  readonly accountType = RoleEnum;
   // eslint-disable-next-line no-unused-vars
-  constructor(private router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly setRoleGQL: SetRoleGQL,
+  ) {}
 
-  onSelection(accountType) {
-    console.log(accountType);
-    this.router.navigate(['/dashboard/profile']);
+  onSelection(accountType: RoleEnum) {
+    this.setRoleGQL.mutate({ role: accountType }).subscribe((response) => {
+      this.router.navigate(['/dashboard/profile']);
+    });
   }
 }

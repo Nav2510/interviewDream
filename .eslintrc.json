@@ -45,7 +45,6 @@
         "no-multi-spaces": "warn",
         "no-unused-expressions":"warn",
         "no-unused-vars":"off",
-        "no-shadow":"warn",
         "array-bracket-spacing": "warn",
         "block-spacing":"warn",
         "comma-style":["warn", "last"],

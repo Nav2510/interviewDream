@@ -22,7 +22,7 @@ export class AvatarComponent {
 
   getClass(): string {
     const numberOfClasses = 9;
-    const color = Math.floor(this.name.length % numberOfClasses);
+    const color = Math.floor(this.name?.length % numberOfClasses);
     let classString = `class${color}`;
     if (this.large) {
       classString = `large class${color}`;
