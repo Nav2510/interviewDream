@@ -5,7 +5,8 @@
     <ul class="ivd-list" *ngIf="card.list">
       <li class="ivd-list-item" *ngFor="let item of card.list">
         <span class="ivd-label">{{item.label}}</span>
-        <span class="ivd-value">{{item.value | titlecase}}</span>
+        <span class="ivd-value" matTooltip="{{item.value | titlecase}}" matTooltipPosition="left">{{item.value |
+          titlecase}}</span>
       </li>
     </ul>
   </ng-container>

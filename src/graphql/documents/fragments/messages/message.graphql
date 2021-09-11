@@ -1,0 +1,5 @@
+fragment Message on Message {
+  content
+  timestamp
+  owner
+}

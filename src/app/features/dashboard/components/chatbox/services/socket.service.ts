@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
+import { GetMessagesGQL } from 'src/graphql/documents/queries/messages/get-messages.graphql-gen';
 
 import { AuthService } from '../../../../../core/services/auth.service';
 import { socketInstance } from '../../../../../socket';
@@ -16,7 +18,10 @@ export class SocketService {
   );
   private selectedOnlineUser: OnlineUser = {} as OnlineUser;
 
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly getmessageGQL: GetMessagesGQL,
+  ) {}
 
   get onlineUsers$(): Observable<OnlineUser[]> {
     return this.onlineUsersSource$.asObservable();
@@ -24,21 +29,40 @@ export class SocketService {
 
   updateSelectedUser(userId: string): void {
     let selectedUser: OnlineUser;
-    this.onlineUsersSource = this.onlineUsersSource.map((onlineUser) => {
-      if (onlineUser.userId === userId) {
-        selectedUser = onlineUser;
-        return new OnlineUser(
-          onlineUser.socketId,
-          onlineUser.userId,
-          onlineUser.messages,
-          onlineUser.isOnline,
-          false,
-        );
-      }
-      return onlineUser;
-    });
-    this.onlineUsersSource$.next(this.onlineUsersSource);
-    this.selectedOnlineUser = selectedUser;
+    this.getmessageGQL
+      .fetch({ fromID: userId })
+      .pipe(
+        take(1),
+        tap((response) => {
+          const fetchedMessages = response.data.getUserMessages;
+          this.onlineUsersSource = this.onlineUsersSource.map((onlineUser) => {
+            if (onlineUser.userId === userId) {
+              selectedUser = onlineUser;
+              return new OnlineUser(
+                onlineUser.socketId,
+                onlineUser.userId,
+                [
+                  ...fetchedMessages.map(
+                    (message) =>
+                      new Message(
+                        message.content,
+                        new Date(message.timestamp),
+                        message.owner,
+                      ),
+                  ),
+                  ...onlineUser.messages,
+                ],
+                onlineUser.isOnline,
+                false,
+              );
+            }
+            return onlineUser;
+          });
+          this.onlineUsersSource$.next(this.onlineUsersSource);
+          this.selectedOnlineUser = selectedUser;
+        }),
+      )
+      .subscribe();
   }
 
   initSocket(): void {
@@ -148,8 +172,8 @@ export class SocketService {
       return onlineUser;
     });
     this.onlineUsersSource$.next(this.onlineUsersSource);
-
     socketInstance.emit('private message', {
+      toUserId: userId,
       msgContent,
       toSocketId: socketId,
     });

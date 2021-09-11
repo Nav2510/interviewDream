@@ -355,16 +355,30 @@ hr {
   .list-item.selected {
     background-color: $dark-theme-primary-color-lighter;
   }
-  .avatar-img-wrapper {
-    height: 40px;
-    width: 40px;
-    min-width: 40px;
-    border-radius: 50%;
-    display: block;
+  .avatar-container {
+    position: relative;
     margin-right: 10px;
-    overflow: hidden;
-    img {
-      height: 100%;
+    .avatar-img-wrapper {
+      height: 40px;
+      width: 40px;
+      min-width: 40px;
+      border-radius: 50%;
+      display: block;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+    .ivd-online {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: $dark-theme-online-color;
+      border-radius: 50%;
+      border: 2px solid $dark-theme-font-color-light;
+      position: absolute;
+      top: -4px;
+      right: -4px;
     }
   }
   .avatar {
@@ -1263,6 +1277,9 @@ hr {
     letter-spacing: 0.3px;
     font-size: 13px;
     font-weight: $font-regular;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .ivd-icon-btn {
     position: absolute;
