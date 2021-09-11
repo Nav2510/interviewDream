@@ -425,6 +425,11 @@ hr {
     justify-content: space-between;
     border-bottom: 1px solid $dark-theme-primary-color-light;
     text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+  .ivd-dialog-content {
+    margin: 0;
+    padding: 0;
   }
   .ivd-dialog-footer {
     float: right;
@@ -528,6 +533,38 @@ hr {
 .ivd-btn-2.btn-danger {
   span {
     color: $color-danger;
+  }
+}
+.ivd-btn-3.btn-primary {
+  border-radius: 0px;
+  background-color: $dark-theme-primary-color-light;
+  border: 2px solid $color-primary;
+  span {
+    color: $dark-theme-font-color-light;
+  }
+}
+.ivd-btn-3.btn-accent {
+  border-radius: 0px;
+  background-color: $dark-theme-primary-color-light;
+  border: 2px solid $dark-theme-accent-color
+  span {
+    color: $dark-theme-font-color-light;
+  }
+}
+.ivd-btn-3.btn-success {
+  border-radius: 0px;
+  background-color: $dark-theme-primary-color-light;
+  border: 2px solid $color-success;
+  span {
+    color: $dark-theme-font-color-light;
+  }
+}
+.ivd-btn-3.btn-danger {
+  border-radius: 0px;
+  background-color: $dark-theme-primary-color-light;
+  border: 2px solid $color-danger;
+  span {
+    color: $dark-theme-font-color-light;
   }
 }
 // label
@@ -931,8 +968,9 @@ hr {
       border: 5px solid $dark-theme-font-color;
       overflow: hidden;
       .profile-image {
-        height: 100%;
-        width: auto;
+        height: 170px;
+        width: 170px;
+        object-fit: cover;
       }
     }
     .user-name-wrapper {
@@ -1308,9 +1346,9 @@ hr {
     overflow: hidden;
     border: 1.5px solid $dark-theme-font-color;
     img {
-      width: auto;
-      object-fit: fill;
-      height: 100%;
+      height: 30px;
+      width: 30px;
+      object-fit: cover;
     }
   }
   }
@@ -1472,14 +1510,12 @@ hr {
   }
   .ivd-avatar-img-wrapper {
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
     overflow: hidden;
     border: 1.5px solid $dark-theme-font-color;
     img {
-      width: auto;
-      object-fit: fill;
-      height: 100%;
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
     }
   }
 }
@@ -1607,6 +1643,83 @@ hr {
       color: $dark-theme-font-color;
       float: right;
       margin-right: 10px;
+    }
+  }
+}
+
+// file-upload
+.ivd-file-upload {
+  .file-input {
+    display: none;
+  }
+  .note {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  .upload-wrapper{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    .img-wrapper {
+      border: 3px dashed $dark-theme-primary-color-lighter;
+      border-radius: 50%;
+      height: 170px;
+      min-width: 170px;
+      position: relative;
+      width: 170px;
+      overflow: hidden;
+      .upload-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        mat-icon {
+          font-size: 45px;
+          height: 45px;
+          width: 45px;
+        }
+        span {
+          text-align: center;
+          font-size: 13px;
+          display: inline-block;
+          width: 100px;
+        }
+      }
+      img {
+      height: 170px;
+      width: 170px;
+      object-fit: cover;
+      }
+    }
+    .img-wrapper.file-over {
+      animation: ivd-shadow-glow 1.2s infinite;
+    }
+    .separator-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: stretch;
+      .bar {
+        border: 1px solid $dark-theme-primary-color-lighter;
+        flex-grow: 1;
+      }
+    }
+    .file-upload {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .file-name {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      .upload-btn {
+        border-color: $dark-theme-primary-color-lighter;
+      }
     }
   }
 }
@@ -2133,5 +2246,19 @@ hr {
   to {
     opacity: 1;
     height: 73px;
+  }
+}
+@keyframes ivd-shadow-glow {
+  0% {
+    box-shadow: none;
+  }
+
+  50% {
+    box-shadow: 0px 0px 10px 3px $dark-theme-primary-color-lighter;
+    background-color: $dark-theme-primary-color-dark;
+  }
+
+  100% {
+    box-shadow: none;
   }
 }

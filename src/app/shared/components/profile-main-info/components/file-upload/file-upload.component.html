@@ -1,14 +1,31 @@
-<input style="display: none;" type="file" class="file-input" (change)="onFileChanged($event)" #fileUpload>
-
-<div class="file-upload">
-
-    {{file?.name || "No file uploaded yet."}}
-
-    <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
-        <mat-icon>attach_file</mat-icon>
-    </button>
-</div>
-<button type="submit" (click)="onUpload()">Upload</button>
+<div class="ivd-file-upload">
+    <input class="file-input" type="file" (change)="onFileChanged($event)" #fileUpload>
+    <div class="note">Your profile photo will be visible to everyone.</div>
+    <div class="upload-wrapper">
+        <div class="img-wrapper" appDragAndDrop (fileDropped)="onFileDropped($event)">
+            <img *ngIf="file?.name; else uploadContentTemplate" [src]="uploadImageSrc" alt="uploaded image">
+            <ng-template #uploadContentTemplate>
+                <div class="upload-content">
+                    <mat-icon>file_upload</mat-icon>
+                    <span>Drag and drop your image here</span>
+                </div>
+            </ng-template>
+        </div>
+        <div class="separator-wrapper">
+            <span class="bar bar-one"></span>
+            <span>or</span>
+            <span class="bar bar-two"></span>
+        </div>
+        <div class="file-upload">
+            <span class="file-name">
+                {{file?.name || "No file uploaded yet."}}
+            </span>
+            <button mat-flat-button class="ivd-btn-3 btn-primary upload-btn" (click)="fileUpload.click()">
+                Upload from computer
+            </button>
+            </div>
+    </div>
+    </div>
 
 <!-- <div class="progress">
     <mat-progress-bar class="progress-bar" mode="determinate" [value]="uploadProgress" *ngIf="uploadProgress">
