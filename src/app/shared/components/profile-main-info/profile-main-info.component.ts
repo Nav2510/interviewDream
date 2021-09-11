@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,8 +7,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { environment } from 'src/environments/environment';
 
+import { AuthService } from 'src/app/core/services/auth.service';
+import { environment } from 'src/environments/environment';
+import { UrlPathEnum } from '../../enums/url-path.enum';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogData } from '../dialog/models/dialog-data.model';
 import { MainInfoModel } from './models/main-info.model';
@@ -22,7 +25,7 @@ export class ProfileMainInfoComponent {
   @Input() profileData: MainInfoModel;
   @ViewChild('profileUpload') template: TemplateRef<ProfileMainInfoComponent>;
 
-  fileName: string;
+  file: File;
   uploadProgress;
 
   constructor(private readonly dialog: MatDialog) {}
@@ -30,25 +33,19 @@ export class ProfileMainInfoComponent {
   openProfilePicUpload(): void {
     const dialogData: DialogData<ProfileMainInfoComponent> = {
       showCloseBtn: true,
-      title: 'update profile photo',
+      showFooter: true,
+      title: 'Change profile photo',
       cancelLabel: 'cancel',
       submitLabel: 'upload',
-      content: 'this is content',
       template: this.template,
-      submitMethod: this.onUpload,
     };
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '60%',
+    this.dialog.open(DialogComponent, {
+      width: '50%',
       data: dialogData,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      // console.log(result);
-      // console.log('The dialog was closed');
     });
   }
 
-  onUpload(): void {
-    // console.log('on upload');
+  onFileChanged(file: File): void {
+    this.file = file;
   }
 }

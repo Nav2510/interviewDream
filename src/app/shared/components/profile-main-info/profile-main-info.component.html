@@ -42,5 +42,5 @@
   </div>
 </div>
 <ng-template #profileUpload>
-  <app-file-upload></app-file-upload>
+  <app-file-upload (fileChanged)="onFileChanged($event)"></app-file-upload>
 </ng-template>

@@ -1,0 +1,5 @@
+query getMessages($fromID: ID!) {
+  getUserMessages(fromUserId: $fromID) {
+    ...Message
+  }
+}

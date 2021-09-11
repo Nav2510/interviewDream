@@ -1,27 +1,51 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UrlPathEnum } from 'src/app/shared/enums/url-path.enum';
 import { environment } from 'src/environments/environment';
+import { DialogService } from '../../../dialog/services/dialog.service';
 
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FileUploadComponent {
-  file: any;
+export class FileUploadComponent implements OnInit, OnDestroy {
+  @Output() fileChanged = new EventEmitter<File>();
 
-  // uploadProgress;
+  file: File;
+  uploadImageSrc = '';
+
+  private subscription = new Subscription();
 
   constructor(
+    private readonly cdr: ChangeDetectorRef,
     private readonly http: HttpClient,
     private readonly authService: AuthService,
+    private readonly dialogService: DialogService,
   ) {}
+
+  ngOnInit(): void {
+    this.subscription.add(
+      this.dialogService.submitClicked$.subscribe(() => {
+        this.onUpload();
+      }),
+    );
+  }
 
   onFileChanged(event): void {
     this.file = event.target.files[0];
+    this.readFile();
   }
 
   onUpload(): void {
@@ -43,5 +67,25 @@ export class FileUploadComponent {
       });
   }
 
-  cancelUpload(): void {}
+  onFileDropped(file: File): void {
+    this.file = file;
+    this.readFile();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  private readFile(): void {
+    if (this.file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        this.uploadImageSrc = reader.result as string;
+        this.fileChanged.next(this.file);
+        this.cdr.detectChanges();
+      };
+      reader.readAsDataURL(this.file);
+    }
+  }
 }
