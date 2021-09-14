@@ -19,9 +19,7 @@ export class CoursesComponent {
   courses$ = this.getCourses();
 
   constructor(
-    // eslint-disable-next-line no-unused-vars
     private readonly coursesGQL: CoursesGQL,
-    // eslint-disable-next-line no-unused-vars
     private readonly adapter: CardAdapter,
   ) {}
 

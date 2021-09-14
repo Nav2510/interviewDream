@@ -719,8 +719,11 @@ hr {
     .ivd-card-title {
       font-weight: $font-medium;
       margin-bottom: 13px;
-      font-size: 20px;
+      font-size: 18px;
       margin-top: -12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .ivd-card-description {
       font-weight: $font-regular;
@@ -1476,6 +1479,7 @@ hr {
     font-size: 12px;
     letter-spacing: 0.2px;
     text-decoration: none;
+    cursor: pointer;
     &:hover {
       text-decoration: underline;
     }
@@ -1483,6 +1487,7 @@ hr {
   .ivd-last-breadcrumb {
     color: $dark-theme-accent-color-light;
     &:hover {
+      cursor: text;
       text-decoration: none;
     }
   }

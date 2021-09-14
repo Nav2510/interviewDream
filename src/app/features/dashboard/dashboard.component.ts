@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service';
 
+import { AuthService } from '../../core/services/auth.service';
 import { IFilterValueModel } from '../../shared/components/advance-search/filter-value.model';
 import { NavUserActionModel } from '../../shared/components/top-nav/nav-user-actions.model';
 
@@ -24,9 +24,7 @@ export class DashboardComponent {
   ];
 
   constructor(
-    // eslint-disable-next-line no-unused-vars
     private readonly router: Router,
-    // eslint-disable-next-line no-unused-vars
     private readonly authService: AuthService,
   ) {}
 

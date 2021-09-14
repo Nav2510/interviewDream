@@ -1,9 +1,10 @@
  <div class="ivd-breadcrumb">
-    <ng-container *ngFor="let breadcrumb of breadcrumbList; let breadcrumbIndex = index">
+    <ng-container
+        *ngFor="let breadcrumb of breadcrumbs | async as breadcrumbList; let breadcrumbIndex = index">
         <a class="ivd-breadcrumb-link"
         [ngClass]="{'ivd-last-breadcrumb': breadcrumbIndex === breadcrumbList.length - 1}"
-        [routerLink]="breadcrumb.url">
-            <span class="ivd-breadcrumb-label">{{breadcrumb.label}}</span>
+        (click)="onLinkClick(breadcrumb, breadcrumbIndex === breadcrumbList.length - 1)">
+            <span class="ivd-breadcrumb-label" *ngIf="!isObjectId(breadcrumb.label)">{{breadcrumb.label | titlecase}}</span>
         </a>
         <mat-icon 
         *ngIf="breadcrumbIndex !== breadcrumbList.length - 1" 

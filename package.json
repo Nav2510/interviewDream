@@ -68,6 +68,7 @@
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "codelyzer": "^6.0.0",
+    "concurrently": "^6.2.1",
     "eslint": "^7.30.0",
     "graphql-cli": "^4.1.0",
     "jasmine-core": "~3.6.0",
