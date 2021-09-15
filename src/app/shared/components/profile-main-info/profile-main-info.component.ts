@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,9 +7,6 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { AuthService } from 'src/app/core/services/auth.service';
-import { environment } from 'src/environments/environment';
-import { UrlPathEnum } from '../../enums/url-path.enum';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogData } from '../dialog/models/dialog-data.model';
 import { MainInfoModel } from './models/main-info.model';
@@ -23,10 +19,12 @@ import { MainInfoModel } from './models/main-info.model';
 export class ProfileMainInfoComponent {
   @Input() showEdit: boolean;
   @Input() profileData: MainInfoModel;
-  @ViewChild('profileUpload') template: TemplateRef<ProfileMainInfoComponent>;
+  @ViewChild('backgroundUpload')
+  backgroundUploadTemplate: TemplateRef<ProfileMainInfoComponent>;
+  @ViewChild('profileUpload')
+  profileUploadTemplate: TemplateRef<ProfileMainInfoComponent>;
 
   file: File;
-  uploadProgress;
 
   constructor(private readonly dialog: MatDialog) {}
 
@@ -37,10 +35,25 @@ export class ProfileMainInfoComponent {
       title: 'Change profile photo',
       cancelLabel: 'cancel',
       submitLabel: 'upload',
-      template: this.template,
+      template: this.profileUploadTemplate,
     };
     this.dialog.open(DialogComponent, {
       width: '50%',
+      data: dialogData,
+    });
+  }
+
+  openBackgroundUpload(): void {
+    const dialogData: DialogData<ProfileMainInfoComponent> = {
+      showCloseBtn: true,
+      showFooter: true,
+      title: 'Change background photo',
+      cancelLabel: 'cancel',
+      submitLabel: 'Change Photo',
+      template: this.profileUploadTemplate,
+    };
+    this.dialog.open(DialogComponent, {
+      width: '60%',
       data: dialogData,
     });
   }

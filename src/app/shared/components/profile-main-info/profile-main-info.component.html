@@ -1,6 +1,9 @@
 <div class="ivd-profile-main-info">
   <div class="image-wrapper">
-    <img class="bg-image" src="assets/images/bgImages/8.jpg" alt="">
+    <img class="bg-image" [src]="profileData?.backgroundSrc" alt="">
+    <div class=" edit-action bg-btn" (click)="openBackgroundUpload()">
+      <mat-icon>create</mat-icon>
+    </div>
   </div>
   <div class="main-content-wrapper">
     <div class="user-profile-wrapper">
@@ -42,5 +45,8 @@
   </div>
 </div>
 <ng-template #profileUpload>
+  <app-profile-pic-upload (fileChanged)="onFileChanged($event)"></app-profile-pic-upload>
+</ng-template>
+<ng-template #backgroundUpload>
   <app-profile-pic-upload (fileChanged)="onFileChanged($event)"></app-profile-pic-upload>
 </ng-template>
