@@ -1,8 +1,9 @@
 # TODO
 
-##Fixes
+##Fixes Required
 
 1. Use custom pipe for Profile info
+2. Messages in chat are not visible until user is online
 
 ## Improvement required
 

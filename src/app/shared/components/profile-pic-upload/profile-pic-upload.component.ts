@@ -9,18 +9,21 @@ import {
   Output,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UrlPathEnum } from 'src/app/shared/enums/url-path.enum';
 import { environment } from 'src/environments/environment';
-import { DialogService } from '../../../dialog/services/dialog.service';
+import { UserImageGQL } from '../../../../graphql/documents/queries/users/user-image.graphql-gen';
+import { DialogService } from '../dialog/services/dialog.service';
+import { ProfilePicUploadService } from './services/profile-pic-upload.service';
 
 @Component({
-  selector: 'app-file-upload',
-  templateUrl: './file-upload.component.html',
+  selector: 'app-profile-pic-upload',
+  templateUrl: './profile-pic-upload.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FileUploadComponent implements OnInit, OnDestroy {
+export class ProfilePicUploadComponent implements OnInit, OnDestroy {
   @Output() fileChanged = new EventEmitter<File>();
 
   file: File;
@@ -33,6 +36,8 @@ export class FileUploadComponent implements OnInit, OnDestroy {
     private readonly http: HttpClient,
     private readonly authService: AuthService,
     private readonly dialogService: DialogService,
+    private readonly profilePicUploadService: ProfilePicUploadService,
+    private readonly userImageGQL: UserImageGQL,
   ) {}
 
   ngOnInit(): void {
@@ -62,8 +67,10 @@ export class FileUploadComponent implements OnInit, OnDestroy {
         formData,
         options,
       )
-      .subscribe((response) => {
-        console.log(response);
+      .pipe(take(1))
+      .subscribe((response: { filePath: string; message: string }) => {
+        const filePath = response.filePath;
+        this.profilePicUploadService.fileChanged$.next(filePath);
       });
   }
 

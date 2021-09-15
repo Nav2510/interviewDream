@@ -14,6 +14,7 @@ export class MainInfoModel {
     public instagram: string,
     public fullName: string,
     public profileSrc: string,
+    public backgroundSrc: string,
   ) {}
 }
 @Injectable({
@@ -24,6 +25,7 @@ export class MainInfoAdapter implements Adapter<MainInfoModel> {
     const profilePath = item.profileImagePath
       ? `${environment.baseURI}/${item.profileImagePath}`
       : '../../../../../assets/icons/user.svg';
+    const backgroundPath = `${environment.baseURI}/${item.bgImagePath}`;
     return new MainInfoModel(
       item.email,
       item.designation,
@@ -34,6 +36,7 @@ export class MainInfoAdapter implements Adapter<MainInfoModel> {
       item.contactInfo?.instagram,
       item.basicInfo?.fullName,
       profilePath,
+      backgroundPath,
     );
   }
 }

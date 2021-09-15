@@ -1,38 +1,90 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
-import { BreadcrumbModel } from './breadcrumb.model';
-import { BreadCrumbService } from './breadcrumbs.service';
+import { CourseNameGQL } from '../../../../graphql/documents/queries/courses/course-name.graphql-gen';
+import { PaperNameGQL } from '../../../../graphql/documents/queries/papers/paper-name.graphql-gen';
+import { BREADCRUMB_URL } from './contants/breadcrumbs.constant';
+import { BreadcrumbModel } from './models/breadcrumb.model';
 
 @Component({
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BreadcrumbsComponent implements OnInit, OnDestroy {
-  breadcrumbList: BreadcrumbModel[];
+export class BreadcrumbsComponent implements OnInit {
+  breadcrumbs = new BehaviorSubject<BreadcrumbModel[]>([]);
 
-  // eslint-disable-next-line no-unused-vars
-  constructor(private readonly breadcrumbService: BreadCrumbService) {}
-
-  private subscription = new Subscription();
+  constructor(
+    private readonly router: Router,
+    private readonly courseNameGQL: CourseNameGQL,
+    private readonly paperNameGQL: PaperNameGQL,
+  ) {}
 
   ngOnInit(): void {
-    this.subscription.add(
-      this.breadcrumbService.latestBreadcrumb.subscribe(
-        (breadcrumbList: BreadcrumbModel[]) => {
-          this.breadcrumbList = breadcrumbList;
-        },
-      ),
+    this.createBreadcrumbs(this.router.url);
+    this.router.events
+      .pipe(
+        map((navigation) => {
+          if (navigation instanceof NavigationEnd) {
+            this.createBreadcrumbs(navigation.url);
+          }
+        }),
+      )
+      .subscribe();
+  }
+
+  onLinkClick(breadcrumb: BreadcrumbModel, isLast: boolean): void {
+    if (!isLast) {
+      this.router.navigate([breadcrumb.url]);
+    }
+  }
+
+  private createBreadcrumbs(url: string): void {
+    const urlFragList = url.split('/');
+    urlFragList.shift();
+    const id = urlFragList[urlFragList.length - 1];
+    if (urlFragList.includes('courses')) {
+      if (id.match(/^[0-9a-fA-F]{24}$/)) {
+        this.courseNameGQL
+          .fetch({ id })
+          .pipe(take(1))
+          .subscribe((response) => {
+            const title = response.data.course.title;
+            urlFragList[urlFragList.length - 1] = title;
+            this.breadcrumbs.next(
+              urlFragList.map((fragment) => {
+                return { label: fragment, url: BREADCRUMB_URL[fragment] };
+              }),
+            );
+          });
+      }
+    }
+    if (urlFragList.includes('papers')) {
+      if (id.match(/^[0-9a-fA-F]{24}$/)) {
+        this.paperNameGQL
+          .fetch({ id })
+          .pipe(take(1))
+          .subscribe((response) => {
+            const title = response.data.paper.title;
+            urlFragList[urlFragList.length - 1] = title;
+            this.breadcrumbs.next(
+              urlFragList.map((fragment) => {
+                return { label: fragment, url: BREADCRUMB_URL[fragment] };
+              }),
+            );
+          });
+      }
+    }
+    this.breadcrumbs.next(
+      urlFragList.map((fragment) => {
+        return { label: fragment, url: BREADCRUMB_URL[fragment] };
+      }),
     );
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  isObjectId(label: string): boolean {
+    return !!label.match(/^[0-9a-fA-F]{24}$/);
   }
 }

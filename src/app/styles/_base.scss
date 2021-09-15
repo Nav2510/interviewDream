@@ -719,8 +719,11 @@ hr {
     .ivd-card-title {
       font-weight: $font-medium;
       margin-bottom: 13px;
-      font-size: 20px;
+      font-size: 18px;
       margin-top: -12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .ivd-card-description {
       font-weight: $font-regular;
@@ -928,17 +931,43 @@ hr {
 .ivd-profile-main-info {
   padding: 10px;
   padding-bottom: 0px;
+  .edit-action {
+    background-color: $dark-theme-font-color;
+    color: $dark-theme-primary-color-light;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+
+    mat-icon {
+      position: absolute;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
   .image-wrapper {
     box-sizing: border-box;
     height: 200px;
     width: 100%;
-    overflow: hidden;
-  }
-  .bg-image {
-    width: 100%;
-    height: auto;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .bg-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 15px;
+      font-weight: $font-semi-bold;
+    }
   }
   .main-content-wrapper {
     height: 100px;
@@ -955,26 +984,6 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .edit-action {
-      background-color: $dark-theme-font-color;
-      color: $dark-theme-primary-color-light;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      position: absolute;
-      right: 25px;
-      cursor: pointer;
-
-      mat-icon {
-        position: absolute;
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
     .user-image-wrapper {
       width: 170px;
       height: 170px;
@@ -1476,6 +1485,7 @@ hr {
     font-size: 12px;
     letter-spacing: 0.2px;
     text-decoration: none;
+    cursor: pointer;
     &:hover {
       text-decoration: underline;
     }
@@ -1483,6 +1493,7 @@ hr {
   .ivd-last-breadcrumb {
     color: $dark-theme-accent-color-light;
     &:hover {
+      cursor: text;
       text-decoration: none;
     }
   }
@@ -1735,7 +1746,9 @@ hr {
         margin-bottom: 10px;
       }
       .upload-btn {
+        padding: 10px;
         border-color: $dark-theme-primary-color-lighter;
+        color: $dark-theme-font-color;
       }
     }
   }

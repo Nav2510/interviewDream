@@ -8,11 +8,11 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { ProfileMainInfoComponent } from './profile-main-info.component';
 import { DialogModule } from '../dialog/dialog.module';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { AvatarModule } from '../avatar/avatar.module';
 import { DragAndDropModule } from '../../directives/drag-and-drop/drag-and-drop.module';
+import { ProfilePicUploadModule } from '../profile-pic-upload/profile-pic-upload.module';
 
-const COMPONENTS = [ProfileMainInfoComponent, FileUploadComponent];
+const COMPONENTS = [ProfileMainInfoComponent];
 
 const MATERIALS = [MatIconModule, MatProgressBarModule, MatButtonModule];
 
@@ -24,6 +24,7 @@ const MATERIALS = [MatIconModule, MatProgressBarModule, MatButtonModule];
     DialogModule,
     DragAndDropModule,
     HttpClientModule,
+    ProfilePicUploadModule,
     ReactiveFormsModule,
     ...MATERIALS,
   ],

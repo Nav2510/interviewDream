@@ -1,0 +1,5 @@
+query paperName($id: ID!) {
+  paper(id: $id) {
+    title
+  }
+}

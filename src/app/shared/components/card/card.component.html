@@ -7,7 +7,9 @@ class="ivd-card"
     <img mat-card-image class="ivd-card-image" [src]="card.imagePath" alt="card_barground_image">
     <mat-card-content class="ivd-card-content">
         <div class="ivd-card-title">
-            {{card.title | uppercase}}
+            <span matTooltip="{{card.title | titlecase}}" matTooltipPosition="below">
+                {{card.title | uppercase}}
+            </span>
         </div>
         <div class="ivd-card-description">
             {{card.description}}
