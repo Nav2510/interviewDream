@@ -23,9 +23,9 @@ export class MainInfoModel {
 export class MainInfoAdapter implements Adapter<MainInfoModel> {
   adapt(item: ProfileMainInfoFragment) {
     const profilePath = item.profileImagePath
-      ? `${environment.baseURI}/${item.profileImagePath}`
+      ? item.profileImagePath
       : '../../../../../assets/icons/user.svg';
-    const backgroundPath = `${environment.baseURI}/${item.bgImagePath}`;
+    const backgroundPath = item.bgImagePath;
     return new MainInfoModel(
       item.email,
       item.designation,

@@ -34,7 +34,7 @@ export class TopNavComponent implements OnInit {
   ngOnInit(): void {
     this.fetchData();
     this.profilePicUploadService.fileChanged$.subscribe((userImagePath) => {
-      const profilePath = environment.baseURI + '/' + userImagePath;
+      const profilePath = userImagePath;
       const user = this.currentUser$.getValue();
       const updatedUser = {
         ...user,
@@ -52,7 +52,7 @@ export class TopNavComponent implements OnInit {
         map((response) => {
           const currentUser = { ...response.data.me };
           const profilePath = currentUser?.profileImagePath
-            ? environment.baseURI + '/' + currentUser.profileImagePath
+            ? currentUser.profileImagePath
             : '../../../../assets/icons/user.svg';
           currentUser.profileImagePath = profilePath;
           return currentUser;
