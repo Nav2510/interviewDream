@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
     map((response) => {
       const currentUser = { ...response.data.me };
       const profilePath = currentUser?.profileImagePath
-        ? environment.baseURI + '/' + currentUser.profileImagePath
+        ? currentUser.profileImagePath
         : '../../../../assets/icons/user.svg';
       currentUser.profileImagePath = profilePath;
       return currentUser;
