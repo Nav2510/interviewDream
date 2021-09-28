@@ -37,7 +37,7 @@
           *ngFor="let contact of stream$.contacts" (click)="onSelecteUser(contact)">
           <div class="avatar-container" *ngIf="contact.profileImagePath; else avatar">
             <div class="avatar-img-wrapper">
-              <img [src]="baseURI+'/'+contact.profileImagePath" alt="profile image">
+              <img [src]="contact.profileImagePath" alt="profile image">
             </div>
             <span class="ivd-online" *ngIf="isOnline(contact._id, stream$.onlineUsers)"></span>
           </div>

@@ -24,7 +24,7 @@ export class CardModel {
 export class CardAdapter implements Adapter<CardModel> {
   adapt(item: Courses): CardModel {
     return new CardModel(
-      `${environment.baseURI}/${item.bgImagePath}`,
+      item.bgImagePath,
       item.description,
       item.title,
       item.price,

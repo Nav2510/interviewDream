@@ -7,7 +7,7 @@
     <ng-container *ngIf="selectedUser._id; else noChat">
       <h4 class="user-name">
         <div class="avatar-img-wrapper" *ngIf="selectedUser.profileImagePath; else avatar">
-          <img [src]="baseURI+'/'+selectedUser.profileImagePath" alt="profile image">
+          <img [src]="selectedUser.profileImagePath" alt="profile image">
         </div>
         <ng-template #avatar>
           <app-avatar class="avatar" [large]="true" [name]="selectedUser.fullName"></app-avatar>
