@@ -66,6 +66,14 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'help',
+        canLoad: [AuthGuard],
+        loadChildren: () =>
+          import('./components/help/help.module').then(
+            (module) => module.HelpModule,
+          ),
+      },
+      {
         path: 'tests/:testId',
         canLoad: [AuthGuard],
         loadChildren: () =>

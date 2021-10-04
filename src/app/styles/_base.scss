@@ -1989,8 +1989,14 @@ hr {
         }
         .message {
           font-size: 16px;
-          font-weight: $font-semi-bold;
+          font-weight: 600;
           margin-top: 20px;
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          span {
+            margin-bottom: 5px;
+          }
         }
       }
     }
