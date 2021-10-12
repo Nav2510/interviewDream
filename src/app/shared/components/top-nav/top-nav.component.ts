@@ -6,10 +6,9 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
-import { environment } from '../../../../environments/environment';
 import { MeGQL } from '../../../../graphql/documents/queries/users/me.graphql-gen';
 import { User } from '../../../../graphql/generated/graphql.types';
 import { ProfilePicUploadService } from '../profile-pic-upload/services/profile-pic-upload.service';

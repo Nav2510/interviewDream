@@ -13,6 +13,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "hi": {
+            "baseHref": "",
+            "translation": "src/locale/messages.hi.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -64,6 +73,11 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "hi": {
+              "localize": ["hi"],
+              "outputPath": "dist/locale-hi/",
+              "i18nMissingTranslation": "error"
             }
           },
           "defaultConfiguration": ""
@@ -76,6 +90,9 @@
           "configurations": {
             "production": {
               "browserTarget": "interviewDream:build:production"
+            },
+            "hi": {
+              "browserTarget": "interviewDream:build:hi"
             }
           }
         },

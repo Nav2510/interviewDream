@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+
 import { ProfileMainInfoFragment } from '../../../../../graphql/documents/fragments/profile/profile-main-info.graphql-gen';
 import { Adapter } from '../../../../core/adapter';
 
