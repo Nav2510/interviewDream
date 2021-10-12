@@ -18,7 +18,6 @@ export class SideNavComponent {
   list: SideNavModel[] = SIDE_NAV_CONTENT;
   isOpen = true;
 
-  // eslint-disable-next-line no-unused-vars
   constructor(
     private readonly router: Router,
     private readonly authService: AuthService,

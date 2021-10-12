@@ -7,7 +7,7 @@
     <ng-container *ngIf="selectedUser._id; else noChat">
       <h4 class="user-name">
         <div class="avatar-img-wrapper" *ngIf="selectedUser.profileImagePath; else avatar">
-          <img [src]="baseURI+'/'+selectedUser.profileImagePath" alt="profile image">
+          <img [src]="selectedUser.profileImagePath" alt="profile image">
         </div>
         <ng-template #avatar>
           <app-avatar class="avatar" [large]="true" [name]="selectedUser.fullName"></app-avatar>
@@ -15,7 +15,8 @@
         {{selectedUser.fullName}}
       </h4>
       <div class="message-area-wrapper">
-        <app-messages-area [messages]="(selectedOnlineUser$ | async)?.messages"></app-messages-area>
+        <app-messages-area [messages]="filterMessage((selectedOnlineUser$ | async)?.messages, previousMessages$ | async)">
+        </app-messages-area>
       </div>
       <div class="action-wrapper">
           <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()"
@@ -33,9 +34,12 @@
   <div class="no-chat-wrapper">
     <div class="content-wrapper">
       <img src="../../../../../assets/icons/chat-dark.svg" alt="chat-icon">
-      <span class="message">
-        Please select a Chat to continue.
-      </span>
+      <div class="message">
+        <span>Please select a Chat to continue.</span>
+        <span>
+          Don't worry, your messages are end-to-end encrypted.
+        </span>
+      </div>
     </div>
   </div>
 </ng-template>

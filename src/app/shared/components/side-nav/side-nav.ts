@@ -167,9 +167,9 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
     icon: 'help',
     label: 'Help',
     name: 'help',
-    route: 'help',
+    route: 'dashboard/help',
     order: 1200,
-    disabled: true,
+    disabled: false,
   },
   {
     icon: 'logout',
