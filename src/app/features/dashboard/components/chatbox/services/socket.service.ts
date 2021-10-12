@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { take, tap } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
 import { GetMessagesGQL } from 'src/graphql/documents/queries/messages/get-messages.graphql-gen';
+import { MessageFragment } from '../../../../../../graphql/documents/fragments/messages/message.graphql-gen';
 
 import { AuthService } from '../../../../../core/services/auth.service';
 import { socketInstance } from '../../../../../socket';
@@ -120,6 +121,24 @@ export class SocketService {
       console.log(this.onlineUsersSource);
     });
   }
+
+  getPreviousMessages(id: string): Observable<Message[]> {
+    return this.getmessageGQL
+      .fetch({ fromID: id })
+      .pipe(
+        map((response) =>
+          response.data.getUserMessages.map(
+            (message) =>
+              new Message(
+                message.content,
+                new Date(message.timestamp),
+                message.owner,
+              ),
+          ),
+        ),
+      );
+  }
+
   addMessageToUser(
     msg: string,
     timestamp: string,
@@ -147,6 +166,7 @@ export class SocketService {
     });
     this.onlineUsersSource$.next(this.onlineUsersSource);
   }
+
   getMessages(userId: string): Message[] {
     return this.onlineUsersSource.find(
       (onlineUser) => onlineUser.userId === userId,

@@ -15,7 +15,8 @@
         {{selectedUser.fullName}}
       </h4>
       <div class="message-area-wrapper">
-        <app-messages-area [messages]="(selectedOnlineUser$ | async)?.messages"></app-messages-area>
+        <app-messages-area [messages]="filterMessage((selectedOnlineUser$ | async)?.messages, previousMessages$ | async)">
+        </app-messages-area>
       </div>
       <div class="action-wrapper">
           <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()"
@@ -35,6 +36,9 @@
       <img src="../../../../../assets/icons/chat-dark.svg" alt="chat-icon">
       <span class="message" i18n="@@ivdChatbox__NoChatWrapperMessage">
         Please select a Chat to continue.
+      </span>
+      <span i18n="@@ivdChatbox__NoChatWrapperMessageEnd2End">
+        Don't worry, your messages are end-to-end encrypted.
       </span>
     </div>
   </div>
