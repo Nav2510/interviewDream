@@ -6,7 +6,7 @@ export const FOOTER_LINKS = [
     },
     {
       label: 'हिंदी',
-      url: 'https://interviewdream-hindi.firebaseapp.com/',
+      url: 'https://interviewdream-hi.web.app/',
     },
   ],
   [
