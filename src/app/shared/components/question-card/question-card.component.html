@@ -50,7 +50,7 @@
             </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="ivd-qstn-explanation-wrapper">
-            <h4 *ngIf="question.explanation">Explanation</h4>
+            <h4 *ngIf="question.explanation" i18n="@@ivdQstnCard__Explanation">Explanation</h4>
             {{(question.explanation)? question.explanation: 'Sorry no explanation avalable'}}
         </div>
     </mat-expansion-panel>

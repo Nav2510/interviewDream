@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment';
 
 import { Courses } from '../../../../graphql/generated/graphql.types';
 import { Adapter } from '../../../core/adapter';

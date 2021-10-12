@@ -21,7 +21,6 @@ import {
   MainInfoModel,
 } from '../../../../shared/components/profile-main-info/models/main-info.model';
 import { ProfilePicUploadService } from '../../../../shared/components/profile-pic-upload/services/profile-pic-upload.service';
-import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-profile',

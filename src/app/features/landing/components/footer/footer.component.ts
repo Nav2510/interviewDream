@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { FOOTTER_LINKS, SOCIAL_LINKS } from './footer.mock';
+import { FOOTER_LINKS, SOCIAL_LINKS } from './footer.mock';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +10,7 @@ import { FOOTTER_LINKS, SOCIAL_LINKS } from './footer.mock';
 })
 export class FooterComponent implements OnInit {
   emailControl: FormControl;
-  footerLinks = FOOTTER_LINKS;
+  footerLinks = FOOTER_LINKS;
   socialLinks = SOCIAL_LINKS;
 
   ngOnInit(): void {

@@ -4,8 +4,8 @@
   </div>
   <div class="action-wrapper">
     <ng-container *ngIf="!isLoggedIn; else userLoggedTemplate">
-      <a routerLink="/login">Log In</a>
-      <a routerLink="/register">Sign Up</a>
+      <a routerLink="/login" i18n="@@ivdNavBar__Login">Log In</a>
+      <a routerLink="/register" i18n="@@ivdNavBar__Signup">Sign Up</a>
       </ng-container>
   </div>
 </div>

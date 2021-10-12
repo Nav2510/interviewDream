@@ -7,8 +7,8 @@ import {
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MessageFragment } from '../../../../../graphql/documents/fragments/messages/message.graphql-gen';
 
+import { MessageFragment } from '../../../../../graphql/documents/fragments/messages/message.graphql-gen';
 import { User } from '../../../../../graphql/generated/graphql.types';
 import { Message } from './models/message.model';
 import { OnlineUser } from './models/online-user.model';
