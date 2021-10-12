@@ -1,11 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
 
 import { User } from 'src/graphql/generated/graphql.types';
 import { NavUserActionModel } from '../top-nav/nav-user-actions.model';

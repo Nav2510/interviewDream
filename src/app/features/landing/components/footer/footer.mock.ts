@@ -1,8 +1,13 @@
-export const FOOTTER_LINKS = [
+export const FOOTER_LINKS = [
   [
-    { label: '+91 444 444 4444' },
-    { label: 'singh.navdeep2510@gmail.com' },
-    { label: 'find a store' },
+    {
+      label: 'English',
+      url: 'https://interviewdreamv2.firebaseapp.com/',
+    },
+    {
+      label: 'हिंदी',
+      url: 'https://interviewdream-hindi.firebaseapp.com/',
+    },
   ],
   [
     { label: 'contact us' },

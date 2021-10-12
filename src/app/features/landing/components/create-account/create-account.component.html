@@ -1,6 +1,6 @@
 <div class="ivd-create-account">
   <div class="card-wrapper">
-    <div class="main-title">
+    <div class="main-title" i18n="@@ivdCreateAccount__MainTitle">
       create your account
     </div>
     <div class="account-card student-card">
@@ -9,9 +9,13 @@
           <img src="../../../../../assets/images/banners/subscribe.png" alt="student">
       </div>
       <div class="card-content-wrapper">
-        <div class="title">Create student account</div>
-        <div class="description">The world of web development is as wide as the internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed at creating, managing, and debugging the websites and applications that we increasingly rely on.</div>
-          <button mat-flat-button class="ivd-btn btn-accent register-btn" (click)="onRegister()">register</button>
+        <div class="title" i18n="@@ivdCreateAccount__StudentCardTitle">Create student account</div>
+        <div class="description" i18n="@@ivdCreateAccount__StudentCardDescription">The world of web development is as wide as
+          the
+          internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed
+          at creating, managing, and debugging the websites and applications that we increasingly rely on.</div>
+        <button mat-flat-button class="ivd-btn btn-accent register-btn" (click)="onRegister()"
+          i18n="@@ivdCreateAccount__StudentCardRegisterBtn">register</button>
       </div>
     </div>
     <div class="account-card instructor-card">
@@ -20,9 +24,13 @@
         <img src="../../../../../assets/images/banners/instructor.png" alt="student">
         </div>
       <div class="card-content-wrapper">
-        <div class="title">Create instructor account</div>
-        <div class="description">Publish the course you want, in the way you want, and always have of control your own content. Teach what you know and help learners explore their interests, gain new skills, and advance their careers.</div>
-          <button mat-flat-button class="ivd-btn btn-accent register-btn" (click)="onRegister()">register</button>
+        <div class="title" i18n="@@ivdCreateAccount__InstructorCardTitle">Create instructor account</div>
+        <div class="description" i18n="@@ivdCreateAccount__InstructorCardDescription">Publish the course you want, in the way
+          you
+          want, and always have of control your own content. Teach what you know and help learners explore their interests, gain
+          new skills, and advance their careers.</div>
+        <button mat-flat-button class="ivd-btn btn-accent register-btn" (click)="onRegister()"
+          i18n="@@ivdCreateAccount__InstructorCardRegisterBtn">register</button>
       </div>
     </div>
   </div>

@@ -37,7 +37,6 @@ export class ProfilePicUploadComponent implements OnInit, OnDestroy {
     private readonly authService: AuthService,
     private readonly dialogService: DialogService,
     private readonly profilePicUploadService: ProfilePicUploadService,
-    private readonly userImageGQL: UserImageGQL,
   ) {}
 
   ngOnInit(): void {

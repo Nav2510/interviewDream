@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 
 import { AuthService } from 'src/app/core/services/auth.service';
 import { NavUserActionModel } from 'src/app/shared/components/top-nav/nav-user-actions.model';
-import { environment } from 'src/environments/environment';
 import { MeGQL } from 'src/graphql/documents/queries/users/me.graphql-gen';
 import { User } from 'src/graphql/generated/graphql.types';
 

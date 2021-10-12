@@ -21,7 +21,6 @@ import {
   MainInfoModel,
 } from '../../../../shared/components/profile-main-info/models/main-info.model';
 import { ProfilePicUploadService } from '../../../../shared/components/profile-pic-upload/services/profile-pic-upload.service';
-import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-profile',
@@ -55,7 +54,7 @@ export class ProfileComponent implements OnInit {
       .fetch()
       .pipe(map((response) => this.mapProfileData(response.data.profile)));
     this.profilePicUploadService.fileChanged$.subscribe((userImagePath) => {
-      const profilePath = environment.baseURI + '/' + userImagePath;
+      const profilePath = userImagePath;
       const profileInfo = this.profileMainInfo$.getValue();
       const updatedProfileInfo: MainInfoModel = {
         ...profileInfo,

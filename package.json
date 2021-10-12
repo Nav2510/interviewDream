@@ -7,10 +7,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=5000 -o",
+    "start:hindi": "ng serve --port=5000 -o --configuration=hi",
     "start:ng:codegen": "concurrently \"npm run start\" \"npm run graphql:codegen:watch\"",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "build": "ng build",
+    "build:hindi": "ng build --configuration=hi",
     "build:prod": "npm run graphql:codegen && ng build --configuration production",
     "test": "ng test --code-coverage",
     "e2e": "ng e2e",
@@ -19,7 +21,8 @@
     "graphql:codegen": "graphql codegen",
     "graphql:codegen:watch": "graphql codegen --watch",
     "pipeline": "npm run lint && npm run graphql:codegen && npm run build",
-    "heroku-postbuild": "npm run build:prod"
+    "heroku-postbuild": "npm run build:prod",
+    "i18n:extract": "ng extract-i18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {
@@ -53,6 +56,7 @@
     "@angular/cli": "~12.0.5",
     "@angular/compiler-cli": "~12.0.5",
     "@angular/language-service": "~12.0.5",
+    "@angular/localize": "^12.0.5",
     "@graphql-cli/codegen": "1.17.24",
     "@graphql-cli/coverage": "2.1.0",
     "@graphql-cli/validate": "2.1.0",

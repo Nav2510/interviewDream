@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment';
 
 import { Courses } from '../../../../graphql/generated/graphql.types';
 import { Adapter } from '../../../core/adapter';
@@ -24,7 +23,7 @@ export class CardModel {
 export class CardAdapter implements Adapter<CardModel> {
   adapt(item: Courses): CardModel {
     return new CardModel(
-      `${environment.baseURI}/${item.bgImagePath}`,
+      `${item.bgImagePath}`,
       item.description,
       item.title,
       item.price,
