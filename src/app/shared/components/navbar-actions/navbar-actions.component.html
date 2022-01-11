@@ -1,11 +1,15 @@
 <div class="ivd-info-wrapper">
+    <button class="ivd-btn language-btn" mat-icon-button aria-label="Language switcher button"
+        [matMenuTriggerFor]="languageMenu">
+        en-US
+    </button>
     <button class="ivd-icon-btn" mat-icon-button aria-label="Icon button with a chat icon">
         <mat-icon>chat_bubble</mat-icon>
     </button>
     <button class="ivd-icon-btn" mat-icon-button aria-label="Icon button with a notification icon">
         <mat-icon>notifications</mat-icon>
     </button>
-    <button class="ivd-user-btn" mat-button [matMenuTriggerFor]="menu">
+    <button class="ivd-user-btn" mat-button [matMenuTriggerFor]="profileMenu">
         <div class="ivd-user-wrapper">
             <div class="ivd-avatar-img-wrapper">
                 <img class="ivd-avatar-img" [src]="currentUser?.profileImagePath" alt="Avatar Image">
@@ -16,9 +20,13 @@
             </span>
         </div>
     </button>
-    <mat-menu class="ivd-menu" #menu="matMenu">
-        <ng-container *ngFor="let action of actions">
-            <button class="ivd-menu-item" mat-menu-item (click)="onUserAction(action)">{{action.label}}</button>
-        </ng-container>
-    </mat-menu>
 </div>
+
+<mat-menu class="ivd-menu" #languageMenu="matMenu">
+    <a class="ivd-menu-item" *ngFor="let language of LANGUAGES | keyvalue" mat-menu-item
+        [routerLink]="'/'+language.value.code">{{language.value.label}}</a>
+</mat-menu>
+<mat-menu class="ivd-menu" #profileMenu="matMenu">
+    <button *ngFor="let action of actions" class="ivd-menu-item" mat-menu-item
+        (click)="onUserAction(action)">{{action.label}}</button>
+</mat-menu>

@@ -1342,12 +1342,13 @@ hr {
 }
 
 // navbar-actions
-  .ivd-info-wrapper {
+.ivd-info-wrapper {
     display: flex;
-    .ivd-user-btn,
+  .ivd-btn {
+    margin-right: 10px;
+  }
+  .ivd-user-btn,
   .ivd-icon-btn {
-    padding-left: 7px;
-    padding-right: 7px;
     mat-icon {
       font-size: 18px;
     }

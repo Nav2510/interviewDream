@@ -28,7 +28,7 @@
     </div>
     <ul class="icon-list social-link-wrapper">
       <li class="icon-item" *ngFor="let link of socialLinks">
-        <a class="icon-link" href="link.url">
+        <a class="icon-link" [href]="link.url">
           <i class="fa fa-{{link.icon}}" aria-hidden="true"></i>
         </a>
       </li>

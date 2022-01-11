@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TESTS } from '../../../../shared/mocks/tests';
+import { TESTS } from '../../../../shared/constants/tests.constant';
 import { InfoCardModel } from '../../../../shared/components/info-card/info-card.model';
 
 @Component({

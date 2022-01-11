@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { FOOTER_LINKS, SOCIAL_LINKS } from './footer.mock';
+import { FOOTER_LINKS, SOCIAL_LINKS } from './footer.constant';
 
 @Component({
   selector: 'app-footer',

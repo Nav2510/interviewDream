@@ -1,15 +1,22 @@
 {
   "hosting": {
-    "public": "dist/interviewDream",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/en-US/**",
+        "destination": "/en-US/index.html"
+      },
+      {
+        "source": "hi/**",
+        "destination": "/hi/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/en-US",
+        "type": 301
       }
     ]
   }

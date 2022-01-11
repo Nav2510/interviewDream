@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  baseURI: 'http://localhost:8080',
-  graphqlURI: 'http://localhost:8080/graphql',
-  socketURI: 'http://localhost:8080',
+  baseURI: 'https://interviewdream-backend.herokuapp.com',
+  graphqlURI: 'https://interviewdream-backend.herokuapp.com/graphql',
+  socketURI: 'https://interviewdream-backend.herokuapp.com',
 };
 
 /*
