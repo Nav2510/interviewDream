@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { map, take } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { PROFILE } from '../../../../shared/mocks/profile';
+import { PROFILE } from '../../../../shared/constants/profile.constant';
 import {
   ProfileInfoCardAdapter,
   ProfileInfoCardModel,

@@ -4,6 +4,10 @@
 
 1. Use custom pipe for Profile info
 2. Messages in chat are not visible until user is online
+3. Remove hardcoded profile summary from mock
+4. Update test and question component to fetch data from backend
+5. Create constants for all urls
+6. Change Google-plus icon to some other icon in homepage footer.
 
 ## Improvement required
 

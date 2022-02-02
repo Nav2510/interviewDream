@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 
-import { PAPER_FORM } from '../../../../shared/mocks/create-paper-form';
+import { PAPER_FORM } from '../../../../shared/constants/create-paper-form.constant';
 import { ConfigModel } from '../../../../shared/components/dynamic-form/config.model';
 import { PaperByIdGQL } from '../../../../../graphql/documents/queries/papers/paper-by-id.graphql-gen';
 import { Paper } from '../../../../../graphql/generated/graphql.types';

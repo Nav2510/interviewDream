@@ -1,7 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
-import { User } from 'src/graphql/generated/graphql.types';
+import { User } from '../../../../graphql/generated/graphql.types';
+import { LANGUAGES } from '../../constants/languages.constant';
 import { NavUserActionModel } from '../top-nav/nav-user-actions.model';
 
 @Component({
@@ -12,6 +17,8 @@ import { NavUserActionModel } from '../top-nav/nav-user-actions.model';
 export class NavbarActionsComponent {
   @Input() currentUser: User;
   @Input() actions: NavUserActionModel[];
+
+  readonly LANGUAGES = LANGUAGES;
 
   constructor(private readonly router: Router) {}
 

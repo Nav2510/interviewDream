@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TEST_FORM } from '../../../../shared/mocks/create-test-form';
-import { QUESTIONS } from '../../../../shared/mocks/questions';
+import { TEST_FORM } from '../../../../shared/constants/create-test-form.constant';
+import { QUESTIONS } from '../../../../shared/constants/questions.constant';
 import { ConfigModel } from '../../../../shared/components/dynamic-form/config.model';
 import { QuestionModel } from '../../../../shared/components/question-card/question.model';
 

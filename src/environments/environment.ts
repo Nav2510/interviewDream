@@ -7,6 +7,7 @@ export const environment = {
   baseURI: 'http://localhost:8080',
   graphqlURI: 'http://localhost:8080/graphql',
   socketURI: 'http://localhost:8080',
+  firebaseStorageURI: 'https://storage.googleapis.com/interviewdreamv2.appspot.com/',
 };
 
 /*
