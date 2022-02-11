@@ -22,7 +22,7 @@
           <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()"
             [(ngModel)]="chatModel">
         <button class="ivd-btn btn-accent ivd-dynamic-form-field" (click)="onSendMessage()" mat-flat-button>
-          <span i18n="@@ivdChatbox__SendBtn">Send</span>
+          <span>Send</span>
           <mat-icon class="ivd-btn-icon">send</mat-icon>
         </button>
       </div>
@@ -34,10 +34,10 @@
   <div class="no-chat-wrapper">
     <div class="content-wrapper">
       <img src="../../../../../assets/icons/chat-dark.svg" alt="chat-icon">
-      <span class="message" i18n="@@ivdChatbox__NoChatWrapperMessage">
+      <span class="message">
         Please select a Chat to continue.
       </span>
-      <span i18n="@@ivdChatbox__NoChatWrapperMessageEnd2End">
+      <span>
         Don't worry, your messages are end-to-end encrypted.
       </span>
     </div>

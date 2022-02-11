@@ -6,8 +6,8 @@
         <button class="ivd-btn btn-accent" (click)="onEditSave()" mat-flat-button>{{editMode ? 'Save Changes' : 'Edit
           Paper'}}</button>
         <ng-container *ngIf="editMode">
-          <button class="ivd-btn btn-accent" mat-flat-button i18n="@@ivdPaper__SelectQuestionBtn"> Select Question </button>
-          <button class="ivd-btn btn-accent" mat-flat-button i18n="@@ivdPaper__AddQuestionBtn"> Add Question </button>
+          <button class="ivd-btn btn-accent" mat-flat-button> Select Question </button>
+          <button class="ivd-btn btn-accent" mat-flat-button> Add Question </button>
         </ng-container>
       </div>
     </div>
@@ -40,13 +40,13 @@
     </span>
   </div>
   <ul class="paper-sub-details">
-    <li><span i18n="@@ivdPaper_PaperSubDetailsDifficulty">Difficulty</span><span>
+    <li><span>Difficulty</span><span>
         <app-star-rating [rating]="details.difficulty"></app-star-rating>
       </span></li>
-    <li><span i18n="@@ivdPaper__PaperSubDetailsType">Type</span><span>{{details.type}}</span></li>
-    <li><span i18n="@@ivdPaper__PaperSubDetailsAuthor">Author</span><span>{{details.author}}</span></li>
+    <li><span>Type</span><span>{{details.type}}</span></li>
+    <li><span>Author</span><span>{{details.author}}</span></li>
   </ul>
   <div class="rating-wrapper">
-    <h4 i18n="@@ivdPaper__RatingWrapper">rate this paper</h4>
+    <h4>rate this paper</h4>
   </div>
 </ng-template>

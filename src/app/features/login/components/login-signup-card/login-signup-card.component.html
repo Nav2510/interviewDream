@@ -5,30 +5,30 @@
       <mat-icon>arrow_back</mat-icon>
     </a>
     <div class="action-wrapper">
-      <h3 i18n="@@ivdLoginSignupCard__ActionWrapperTitle">Get Started</h3>
-      <button mat-button i18n="@@ivdLoginSignupCard__SignInWithGoogleBtn">Sign in with Google+</button>
-      <button mat-button i18n="@@ivdLoginSignupCard__SignInWithFacebookBtn">Sign in with Facebook</button>
+      <h3>Get Started</h3>
+      <button mat-button>Sign in with Google+</button>
+      <button mat-button>Sign in with Facebook</button>
     </div>
   </div>
   <div class="login-form-container">
     <div class="login-register-wrapper">
       <button mat-button [ngClass]="{'selected': !isRegister}" (click)="switchToLogin()"
-        i18n="@@ivdLoginSignupCard__LoginRegisterWrapperLoginBtn">Log In</button>
+      >Log In</button>
       <button mat-button [ngClass]="{'selected': isRegister}" (click)="switchToRegister()"
-        i18n="@@ivdLoginSignupCard__LoginRegisterWrapperRegisterBtn">Register</button>
+      >Register</button>
     </div>
     <div class="form-wrapper">
       <h3>{{isRegister ? 'Register' : 'Log In'}}</h3>
       <form [formGroup]="model" (ngSubmit)="onSubmit()">
         <div class="ivd-input-wrapper">
-          <label class="ivd-label" i18n="@@ivdLoginSignupCard__LabelEmail">Email</label>
+          <label class="ivd-label">Email</label>
           <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
             <input matInput id="email" type="text" formControlName="email">
           </mat-form-field>
         </div>
         <div class="ivd-input-wrapper">
           <ng-container *ngIf="isRegister">
-            <label class="ivd-label" i18n="@@ivdLoginSignupCard__LabelUsername">Username</label>
+            <label class="ivd-label">Username</label>
             <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
               <input matInput id="username" type="text" formControlName="username">
             </mat-form-field>
@@ -36,21 +36,21 @@
         </div>
         <div class="ivd-input-wrapper">
           <ng-container *ngIf="isRegister">
-            <label class="ivd-label" i18n="@@ivdLoginSignupCard__LabelFullName">Full Name</label>
+            <label class="ivd-label">Full Name</label>
             <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
               <input matInput id="fullName" type="text" formControlName="fullName">
             </mat-form-field>
           </ng-container>
           </div>
           <div class="ivd-input-wrapper">
-          <label class="ivd-label" i18n="@@ivdLoginSignupCard__LabelPassword">Password</label>
+          <label class="ivd-label">Password</label>
           <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
             <input matInput id="password" type="password" formControlName="password" autocomplete="on">
           </mat-form-field>
         </div>
         <div class="ivd-input-wrapper">
           <ng-container *ngIf="isRegister">
-            <label class="ivd-label" i18n="@@ivdLoginSignupCard__LabelConfirmPassword">Confirm Password</label>
+            <label class="ivd-label">Confirm Password</label>
             <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
               <input matInput id="confirmPassword" type="password"
                 formControlName="confirmPassword" autocomplete="on">
@@ -60,7 +60,7 @@
         <button mat-button class="submit-btn" type="submit">{{isRegister ? 'Create An Account': 'Sign In'}}</button>
         <div class="link-wrapper">
           <a class="ivd-link login-register-link float-left" (click)="onForgetPassword()" *ngIf="!isRegister"
-            i18n="@@ivdLoginSignupCard__ForgotPasswordLink">Forgot Password?</a>
+          >Forgot Password?</a>
           <a class="ivd-link login-register-link float-right" (click)="onToggleLoginRegister()" >{{isRegister? 'Already have an Account?' : 'Not a
             Member yet?'}}</a>
         </div>

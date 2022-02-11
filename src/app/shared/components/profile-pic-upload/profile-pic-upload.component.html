@@ -1,27 +1,26 @@
 <div class="ivd-file-upload">
     <input class="file-input" type="file" (change)="onFileChanged($event)" #fileUpload>
-    <div class="note" i18n="@@ivdFileUpload__Note">Your profile photo will be visible to everyone.</div>
+    <div class="note">Your profile photo will be visible to everyone.</div>
     <div class="upload-wrapper">
         <div class="img-wrapper" appDragAndDrop (fileDropped)="onFileDropped($event)">
             <img *ngIf="file?.name; else uploadContentTemplate" [src]="uploadImageSrc" alt="uploaded image">
             <ng-template #uploadContentTemplate>
                 <div class="upload-content">
                     <mat-icon>file_upload</mat-icon>
-                    <span i18n="@@ivdFileUpload__DragNDrop">Drag and drop your image here</span>
+                    <span>Drag and drop your image here</span>
                 </div>
             </ng-template>
         </div>
         <div class="separator-wrapper">
             <span class="bar bar-one"></span>
-            <span i18n="@@ivdFileUpload__Or">or</span>
+            <span>or</span>
             <span class="bar bar-two"></span>
         </div>
         <div class="file-upload">
             <span class="file-name">
                 {{file?.name || "No file uploaded yet."}}
             </span>
-            <button mat-flat-button class="ivd-btn-3 btn-primary upload-btn" (click)="fileUpload.click()"
-                i18n="ivdFileUpload__UploadBtn">
+            <button mat-flat-button class="ivd-btn-3 btn-primary upload-btn" (click)="fileUpload.click()">
                 Upload from computer
             </button>
             </div>
