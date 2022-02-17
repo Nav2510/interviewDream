@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SetRoleGQL } from 'src/graphql/documents/mutations/users/set-role.graphql-gen';
-import { RoleEnum } from 'src/graphql/generated/graphql.types';
+
+import { environment } from '../../../../../environments/environment';
+import { SetRoleGQL } from '../../../../../graphql/documents/mutations/users/set-role.graphql-gen';
+import { RoleEnum } from '../../../../../graphql/generated/graphql.types';
 
 @Component({
   selector: 'app-account-selector-card',
@@ -10,7 +12,9 @@ import { RoleEnum } from 'src/graphql/generated/graphql.types';
 })
 export class AccountSelectorCardComponent {
   readonly accountType = RoleEnum;
-  // eslint-disable-next-line no-unused-vars
+  readonly studentCardBg = `${environment.firebaseStorageURI}12.jpg`;
+  readonly instructorCardBg = `${environment.firebaseStorageURI}10.jpg`;
+
   constructor(
     private readonly router: Router,
     private readonly setRoleGQL: SetRoleGQL,

@@ -1,0 +1,187 @@
+{
+  "features": {
+    "dashboard": {
+      "chatbox": {
+        "chatIcon": "चैट आइकन",
+        "encryptionMsg": "चिंता न करें, आपके संदेश पूरी तरह से एन्क्रिप्ट किए गए है।",
+        "emptyChatMsg": "जारी रखने के लिए कृपया एक चैट चुनें।",
+        "profileImage": "प्रोफ़ाइल छवि",
+        "send": "भेजना",
+        "contactList": {
+          "contacts": "संपर्क",
+          "contactRequest": "संपर्क अनुरोध"
+        },
+        "contactSearch": {
+          "placeholder": "जोड़ने के लिए संपर्क खोजें..."
+        }
+      },
+      "paper": {
+        "saveChanges": "परिवर्तनों को सुरक्षित करें",
+        "editPaper": "पेपर संपादित करें",
+        "selectQuestion": "प्रश्न चुनें",
+        "addQuestion": "प्रश्न जोड़ें",
+        "difficulty": "कठिनाई",
+        "type": "टाइप",
+        "author": "लेखक",
+        "ratePaper": "इस पेपर को रेट करें"
+      }
+    },
+    "landing": {
+      "topCourses": "शीर्ष पाठ्यक्रम",
+      "viewAllCourses": "सभी पाठ्यक्रम देखें",
+      "whatIsInterviewDream": "InterviewDream क्या है?",
+      "interviewDescription": "InterviewDream आप दोनों को देता है \" फास्ट ट्रैक \" और \" सबसे अच्छा तरीका \" प्रश्नों की श्रृंखला द्वारा आपको तैयार करने के लिए। इंटरव्यूड्रीम आपको उपलब्ध मॉक टेस्ट प्रदान करके विभिन्न कंपनियों के ऑनलाइन टेस्ट सेक्शन से परिचित होने की अनुमति भी देता है।",
+      "banner": {
+        "quotes": "“एक आकर्षक सीखने का अनुभव बनाने के लिए, प्रशिक्षक की भूमिका वैकल्पिक है, लेकिन शिक्षार्थी की भूमिका आवश्यक है।”",
+        "author": "- बर्नार्ड बुल",
+        "offers": "केवल $20 . से शुरू होने वाले सर्वोत्तम पाठ्यक्रम प्राप्त करने के लिए साइन अप करें।",
+        "exploreMore": "और ज्यादा खोजें"
+      },
+      "createAccount": {
+        "createInstructorAccount": "प्रशिक्षक खाता बनाएं",
+        "createStudentAccount": "छात्र खाता बनाएं",
+        "createYourAccount": "अपना खाता बनाएँ",
+        "instructorDescription": "अपने इच्छित पाठ्यक्रम को प्रकाशित करें, जिस तरह से आप चाहते हैं, और हमेशा अपनी सामग्री पर नियंत्रण रखें। आप जो जानते हैं उसे सिखाएं और शिक्षार्थियों को उनकी रुचियों का पता लगाने, नए कौशल हासिल करने और अपने करियर को आगे बढ़ाने में मदद करें।",
+        "register": "रजिस्टर करें",
+        "studentDescription": "वेब विकास की दुनिया इंटरनेट जितनी ही विस्तृत है। हमारा अधिकांश सामाजिक और व्यावसायिक जीवन इंटरनेट पर चलता है, जो उन वेबसाइटों और अनुप्रयोगों को बनाने, प्रबंधित करने और डिबग करने के उद्देश्य से नए उद्योगों को प्रेरित करता है जिन पर हम तेजी से भरोसा करते हैं।"
+      },
+      "footer": {
+        "aboutInterviewDream": "interviewDream के बारे में",
+        "contactUs": "संपर्क करें",
+        "email": "मेल पता",
+        "faqs": "पूछे जाने वाले प्रश्न",
+        "orderingAndPayment": "आदेश और भुगतान",
+        "privacyPolicy": "गोपनीयता नीति",
+        "subscribe": "सदस्यता लें",
+        "subscribeDescription": "InterviewDream से नवीनतम ऑफ़र और अपडेट प्राप्त करने के लिए। नीचे दिए गए सब्सक्राइब बटन पर क्लिक करें।",
+        "subscribeTitle": "ईमेल के माध्यम से InterviewDream की सदस्यता लें।",
+        "termsAndConditions": "नियम और शर्तें",
+        "workWithUs": "हमारे साथ कार्य करें"
+      },
+      "navBar": {
+        "applicationLogo": "आवेदन लोगो",
+        "logIn": "लॉग इन करें",
+        "signUp": "साइन अप करें"
+      },
+      "subscribe": {
+        "title": "नवीनतम ऑफ़र प्राप्त करने के लिए हमारे न्यूज़लेटर की सदस्यता लें",
+        "description": "InterviewDream से अतिरिक्त लाभ और समाचार पत्र प्राप्त करने के लिए रजिस्टर करें",
+        "subscribe": "सदस्यता लें"
+      }
+    },
+    "login": {
+      "loginSignupCard": {
+        "alreadyHaveAccount": "क्या आपके पास पहले से एक खाता मौजूद है?",
+        "confirmPassword": "पासवर्ड की पुष्टि करें",
+        "createAnAccount": "खाता बनाएं",
+        "email": "ईमेल",
+        "facebookSignIn": "फेसबुक के साथ साइन इन करें",
+        "forgotPassword": "पासवर्ड भूल गए?",
+        "fullName": "पूरा नाम",
+        "getStarted": "आरंभ करें",
+        "googlePlusSignIn": "Google+ के साथ साइन इन करें",
+        "login": "लॉग इन करें",
+        "loginImageAlt": "लॉगिन छवि",
+        "notMember": "अभी तक एक सदस्य नहीं हूए?",
+        "password": "पासवर्ड",
+        "register": "रजिस्टर करें",
+        "signIn": "साइन इन करें",
+        "username": "उपयोगकर्ता नाम"
+      },
+      "accountSelectorCard": {
+        "title": "अपना खाता चुनें",
+        "student": "छात्र खाता",
+        "instructor": "प्रशिक्षक खाता"
+      }
+    }
+  },
+  "paperConfig": {
+    "algorithms": "एल्गोरिदम",
+    "all": "सभी",
+    "author": "लेखक",
+    "authorPlaceholder": "लेखक का नाम दर्ज करें...",
+    "categories": "श्रेणियाँ",
+    "categoriesPlaceholder": "पेपर् के लिए टैग चुनें...",
+    "dataStructure": "डेटा संरचना",
+    "description": "विवरण",
+    "descriptionPlaceholder": "पेपर का विवरण यहां दर्ज करें...",
+    "save": "सहेजें",
+    "title": "शीर्षक",
+    "titlePlaceholder": "कागज के लिए शीर्षक दर्ज करें...",
+    "type": "प्रकार",
+    "typePlaceholder": "कागज के लिए प्रकार चुनें..."
+  },
+  "shared": {
+    "advanceSearch": {
+      "algorithm": "एल्गोरिथम",
+      "backend": "बैकएंड",
+      "bestSeller": "सर्वश्रेष्ठ विक्रेता",
+      "categories": "श्रेणियाँ",
+      "difficulty": "कठिनाई",
+      "filter": "फिल्टर",
+      "hot": "हॉट",
+      "java": "Java",
+      "language": "लैंग्वेज",
+      "new": "नया",
+      "node": "Node",
+      "popular": "लोकप्रिय",
+      "select": "चयन",
+      "tags": "टैग",
+      "title": "शीर्षक",
+      "titlePlaceholder": "यहां कोई भी शीर्षक खोजें",
+      "topRated": "टॉप रेटेड",
+      "web": "वेब"
+    },
+    "breadcrumbs": {
+      "chat": "चेट",
+      "courses": "पाठ्यक्रम",
+      "dashboard": "डैशबोर्ड",
+      "papers": "पेपर्स"
+    },
+    "infoCard": {
+      "difficulty": "कठिनाई",
+      "maxTime": "अधिकतम समय",
+      "maxScore": "अधिकतम स्कोर",
+      "numberOfQuestions": "प्रश्नों की संख्या",
+      "openPaper": "पेपर खोलें",
+      "openTest": "परीक्षण खोलें"
+    },
+    "profileMainInfo": {
+      "cancel": "रद्द करें",
+      "changeProfilePhoto": "प्रोफाइल फोटो बदलें",
+      "upload": "अपलोड"
+    },
+    "profilePicUpload": {
+      "dragAndDrop": "अपनी छवि को यहां खींचें और छोड़ें",
+      "note": "आपकी प्रोफ़ाइल फ़ोटो सभी को दिखाई देगी।",
+      "noFileUploaded": "अभी तक कोई फ़ाइल अपलोड नहीं हुई है.",
+      "or": "या",
+      "uploadFromComputer": "कंप्यूटर से अपलोड करे"
+    },
+    "sideNav": {
+      "account": "खाता",
+      "administration": "प्रशासन",
+      "allCourses": "सभी पाठ्यक्रम",
+      "allPapers": "सभी पेपर्स",
+      "allQuestions": "सभी प्रश्न",
+      "allTests": "सभी परीक्षण",
+      "chat": "चेट",
+      "courses": "पाठ्यक्रम",
+      "createPracticePaper": "अभ्यास पेपर्स बनाएं",
+      "createTest": "परीक्षण बनाएं",
+      "editPracticePaper": "अभ्यास पेपर्स संपादित करें",
+      "editProfile": "प्रोफ़ाइल संपादित करें",
+      "editTest": "परीक्षण संपादित करें",
+      "help": "सहायता",
+      "home": "होम",
+      "logout": "लॉग आउट",
+      "myCourses": "मेरे पाठ्यक्रम",
+      "notifications": "सूचनाएं",
+      "profile": "प्रोफ़ाइल",
+      "publicProfile": "सार्वजानिक प्रोफ़ाइल",
+      "onlineTests": "ऑनलाइन परीक्षण",
+      "payment": "पेमेंट",
+      "QAAndPapers": "क्यू.ए. & पेपर्स"
+    }
+  }
+}

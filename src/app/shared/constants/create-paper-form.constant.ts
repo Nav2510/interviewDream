@@ -2,58 +2,58 @@ import { ConfigModel } from '../components/dynamic-form/config.model';
 
 export const PAPER_FORM: ConfigModel[] = [
   {
-    label: 'Title',
+    label: 'paperConfig.title',
     name: 'title',
     type: 'input',
     defaultValue: '',
-    placeholder: 'Enter the title for paper...',
+    placeholder: 'paperConfig.titlePlaceholder',
     classes: ['ivd-col-12'],
   },
   {
-    label: 'Description',
+    label: 'paperConfig.description',
     name: 'description',
     type: 'textarea',
-    placeholder: 'Enter description of the paper here',
+    placeholder: 'paperConfig.descriptionPlaceholder',
     classes: ['ivd-col-12'],
   },
   {
-    label: 'Categories',
+    label: 'paperConfig.categories',
     name: 'categories',
     type: 'dropdown',
-    placeholder: 'Select tags for paper...',
+    placeholder: 'paperConfig.categoriesPlaceholder',
     classes: ['ivd-col-12'],
     // TODO: Check for grouped dropdown with title
     options: [
       {
-        label: 'All',
+        label: 'paperConfig.all',
         value: 'all',
       },
       {
-        label: 'Data Structure',
+        label: 'paperConfig.dataStructure',
         value: 'data-structure',
       },
       {
-        label: 'Algorithms',
+        label: 'paperConfig.algorithms',
         value: 'algorithms',
       },
     ],
   },
   {
-    label: 'Type',
+    label: 'paperConfig.type',
     name: 'type',
     type: 'dropdown',
-    placeholder: 'Select type for paper...',
+    placeholder: 'paperConfig.typePlaceholder',
     classes: ['ivd-col-12', 'ivd-inline'],
   },
   {
-    label: 'Author',
+    label: 'paperConfig.author',
     name: 'author',
     type: 'input',
-    placeholder: 'Enter author name...',
+    placeholder: 'paperConfig.authorPlaceholder',
     classes: ['ivd-col-12', 'ivd-inline'],
   },
   {
-    label: 'Save',
+    label: 'paperConfig.save',
     name: 'save',
     type: 'button',
     classes: ['ivd-col-1-half'],

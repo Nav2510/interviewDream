@@ -1,12 +1,11 @@
 <div class="ivd-profile-info-card" *ngIf="card">
-  <h2>{{card.title}}</h2>
+  <h2>{{card.title | ivdTitlecase }}</h2>
   <ng-container *ngIf="!edit; else editFormTemp">
     <p class="ivd-summary">{{card.summary}}</p>
     <ul class="ivd-list" *ngIf="card.list">
       <li class="ivd-list-item" *ngFor="let item of card.list">
-        <span class="ivd-label">{{item.label}}</span>
-        <span class="ivd-value" matTooltip="{{item.value | titlecase}}" matTooltipPosition="right">{{item.value |
-          titlecase}}</span>
+        <span class="ivd-label">{{item.label | ivdTitlecase}}</span>
+        <span class="ivd-value" matTooltip="{{ item.value }}" matTooltipPosition="right">{{ item.value }}</span>
       </li>
     </ul>
   </ng-container>

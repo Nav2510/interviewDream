@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogData } from '../dialog/models/dialog-data.model';
@@ -26,15 +27,18 @@ export class ProfileMainInfoComponent {
 
   file: File;
 
-  constructor(private readonly dialog: MatDialog) {}
+  constructor(
+    private readonly dialog: MatDialog,
+    private translateService: TranslateService
+  ) {}
 
   openProfilePicUpload(): void {
     const dialogData: DialogData<ProfileMainInfoComponent> = {
       showCloseBtn: true,
       showFooter: true,
-      title: 'Change profile photo',
-      cancelLabel: 'cancel',
-      submitLabel: 'upload',
+      title: this.translateService.instant('shared.profileMainInfo.changeProfilePhoto'),
+      cancelLabel: this.translateService.instant('shared.profileMainInfo.cancel'),
+      submitLabel: this.translateService.instant('shared.profileMainInfo.upload'),
       template: this.profileUploadTemplate,
     };
     this.dialog.open(DialogComponent, {

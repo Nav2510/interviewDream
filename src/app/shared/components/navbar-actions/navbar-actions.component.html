@@ -1,8 +1,16 @@
-<div class="ivd-info-wrapper">
-    <button class="ivd-btn language-btn" mat-icon-button aria-label="Language switcher button"
+<div class="ivd-navbar-actions">
+    <button class="ivd-btn language-btn" mat-button aria-label="Language switcher button"
         [matMenuTriggerFor]="languageMenu">
-        en-US
+        {{currentLanguage.label}}
+        <mat-icon>expand_more</mat-icon>
     </button>
+    <ng-container *ngIf="!userLogged; else loggedActions">
+        <a routerLink="/login">{{ 'features.landing.navBar.logIn' | translate }}</a>
+        <a routerLink="/register">{{ 'features.landing.navBar.signUp' | translate }}</a>
+    </ng-container>
+</div>
+
+<ng-template #loggedActions>
     <button class="ivd-icon-btn" mat-icon-button aria-label="Icon button with a chat icon">
         <mat-icon>chat_bubble</mat-icon>
     </button>
@@ -20,11 +28,12 @@
             </span>
         </div>
     </button>
-</div>
+</ng-template>
 
-<mat-menu class="ivd-menu" #languageMenu="matMenu">
-    <a class="ivd-menu-item" *ngFor="let language of LANGUAGES | keyvalue" mat-menu-item
-        [routerLink]="'/'+language.value.code">{{language.value.label}}</a>
+<mat-menu class="ivd-menu ivd-language-menu" #languageMenu="matMenu">
+    <button class="ivd-menu-item" *ngFor="let language of LANGUAGES" mat-menu-item
+    (click)="changeLanguage(language)">
+        <span class="language-label">{{language.label}}</span>&nbsp;{{language.name}}</button>
 </mat-menu>
 <mat-menu class="ivd-menu" #profileMenu="matMenu">
     <button *ngFor="let action of actions" class="ivd-menu-item" mat-menu-item

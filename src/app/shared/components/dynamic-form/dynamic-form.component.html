@@ -3,24 +3,24 @@
     <div class="ivd-input-wrapper" [ngClass]="config.classes" *ngFor="let config of config">
       <ng-container [ngSwitch]="config.type">
         <!-- Input Type -->
-        <label class="ivd-label" *ngIf="config.type !== 'button'">{{config.label}}</label>
+        <label class="ivd-label" *ngIf="config.type !== 'button'">{{config.label | translate }}</label>
         <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline" *ngSwitchCase="'input'">
-          <input matInput placeholder="{{ config.placeholder }}" [id]="config.id" [type]="config.type"
+          <input matInput placeholder="{{ config.placeholder | translate }}" [id]="config.id" [type]="config.type"
             [formControlName]="config.name">
         </mat-form-field>
 
         <!-- Textarea Type -->
         <mat-form-field class="ivd-form-field ivd-dynamic-form-field"  *ngSwitchCase="'textarea'" appearance="outline">
-          <textarea matInput [formControlName]="config.name" placeholder="{{ config.placeholder }}" [id]="config.id" [type]="config.type"></textarea>
+          <textarea matInput [formControlName]="config.name" placeholder="{{ config.placeholder | translate }}" [id]="config.id" [type]="config.type"></textarea>
         </mat-form-field>
 
         <!-- Dropdown Type -->
         <mat-form-field class="ivd-form-field ivd-dynamic-form-field" *ngSwitchCase="'dropdown'" appearance="outline">
-          <mat-select panelClass="ivd-select-panel ivd-multiple" placeholder="{{ config.placeholder }}"
+          <mat-select panelClass="ivd-select-panel ivd-multiple" placeholder="{{ config.placeholder | translate }}"
             disableOptionCentering="true" [formControlName]="config.name" [id]="config.name" multiple>
             <mat-option [value]="option.value" *ngFor="let option of config.options">
               <div class="ivd-option-content">
-                {{option.label}}
+                {{ option.label | translate }}
               </div>
             </mat-option>
           </mat-select>
@@ -28,7 +28,7 @@
 
         <!-- Button Type -->
         <button class="ivd-btn btn-accent ivd-dynamic-form-field" *ngSwitchCase="'button'" mat-flat-button>
-          {{config.label}}
+          {{ config.label | translate }}
           <mat-icon *ngIf="config.icon" class="ivd-btn-icon">{{config.icon}}</mat-icon>
         </button>
       </ng-container>

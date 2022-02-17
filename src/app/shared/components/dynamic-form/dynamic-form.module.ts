@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { DynamicFormComponent } from './dynamic-form.component';
 
@@ -17,7 +18,7 @@ const MATERIALS = [
 
 @NgModule({
   declarations: [DynamicFormComponent],
-  imports: [CommonModule, ReactiveFormsModule, ...MATERIALS],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule, ...MATERIALS],
   exports: [DynamicFormComponent],
 })
 export class DynamicFormModule {}

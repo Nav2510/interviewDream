@@ -3,7 +3,7 @@ import { SideNavModel } from './side-nav.model';
 export const SIDE_NAV_CONTENT: SideNavModel[] = [
   {
     icon: 'home',
-    label: 'Home',
+    label: 'shared.sideNav.home',
     name: 'home',
     route: 'dashboard/home',
     order: 100,
@@ -11,7 +11,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'message',
-    label: 'Chat',
+    label: 'shared.sideNav.chat',
     name: 'chat',
     route: 'dashboard/chat',
     order: 200,
@@ -19,7 +19,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'notifications',
-    label: 'Notifications',
+    label: 'shared.sideNav.notifications',
     name: 'notifications',
     route: 'dashboard/notfifications',
     order: 300,
@@ -27,20 +27,20 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'person',
-    label: 'Profile',
+    label: 'shared.sideNav.profile',
     name: 'profile',
     order: 400,
     disabled: false,
     subList: [
       {
-        label: 'Public profile',
+        label: 'shared.sideNav.publicProfile',
         name: 'publicProfile',
         route: 'dashboard/profile',
         order: 100,
         disabled: false,
       },
       {
-        label: 'Edit profile',
+        label: 'shared.sideNav.editProfile',
         name: 'editProfile',
         route: 'dashboard/profile?edit=true',
         queryParams: { edit: true },
@@ -51,20 +51,20 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'description',
-    label: 'Courses',
+    label: 'shared.sideNav.courses',
     name: 'courses',
     order: 500,
     disabled: false,
     subList: [
       {
-        label: 'All courses',
+        label: 'shared.sideNav.allCourses',
         name: 'allCourses',
         route: 'dashboard/courses',
         order: 100,
         disabled: false,
       },
       {
-        label: 'My courses',
+        label: 'shared.sideNav.myCourses',
         name: 'myCourses',
         route: 'dashboard/my-courses',
         order: 200,
@@ -74,34 +74,34 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'description',
-    label: 'QA & Papers',
+    label: 'shared.sideNav.QAAndPapers',
     name: 'QAAndPapers',
     order: 700,
     disabled: false,
     subList: [
       {
-        label: 'All papers',
+        label: 'shared.sideNav.allPapers',
         name: 'allPapers',
         route: 'dashboard/papers',
         order: 100,
         disabled: false,
       },
       {
-        label: 'Create practice paper',
+        label: 'shared.sideNav.createPracticePaper',
         name: 'createPracticePaper',
         route: 'dashboard/papers/id',
         order: 200,
         disabled: true,
       },
       {
-        label: 'Edit practice paper',
+        label: 'shared.sideNav.editPracticePaper',
         name: 'editPracticePaper',
         route: 'dashboard/papers/edit',
         order: 300,
         disabled: true,
       },
       {
-        label: 'All questions',
+        label: 'shared.sideNav.allQuestions',
         name: 'allQuestions',
         route: 'dashboard/questions/all',
         order: 400,
@@ -111,27 +111,27 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'web_asset',
-    label: 'Online Tests',
+    label: 'shared.sideNav.onlineTests',
     name: 'onlineTests',
     order: 800,
     disabled: false,
     subList: [
       {
-        label: 'All tests',
+        label: 'shared.sideNav.allTests',
         name: 'allTests',
         route: 'dashboard/tests',
         order: 100,
         disabled: true,
       },
       {
-        label: 'Create test',
+        label: 'shared.sideNav.createTest',
         name: 'createTest',
         route: 'dashboard/test/create',
         order: 200,
         disabled: true,
       },
       {
-        label: 'Edit test',
+        label: 'shared.sideNav.editTest',
         name: 'editTest',
         route: 'dashboard/test/edit',
         order: 300,
@@ -141,7 +141,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'payment',
-    label: 'Payment',
+    label: 'shared.sideNav.payment',
     name: 'payment',
     route: 'payment',
     order: 900,
@@ -149,7 +149,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'settings',
-    label: 'Account',
+    label: 'shared.sideNav.account',
     name: 'account',
     route: 'account',
     order: 1000,
@@ -157,7 +157,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'group',
-    label: 'Administration',
+    label: 'shared.sideNav.administration',
     name: 'administration',
     route: 'admin',
     order: 1100,
@@ -165,7 +165,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'help',
-    label: 'Help',
+    label: 'shared.sideNav.help',
     name: 'help',
     route: 'dashboard/help',
     order: 1200,
@@ -173,7 +173,7 @@ export const SIDE_NAV_CONTENT: SideNavModel[] = [
   },
   {
     icon: 'logout',
-    label: 'Logout',
+    label: 'shared.sideNav.logout',
     name: 'logout',
     method: true,
     order: 1300,

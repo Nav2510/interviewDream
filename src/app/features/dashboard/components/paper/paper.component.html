@@ -3,11 +3,10 @@
     <div class="paper-header">
       <h2>{{paperDetails.title}}</h2>
       <div class="actions-wrapper">
-        <button class="ivd-btn btn-accent" (click)="onEditSave()" mat-flat-button>{{editMode ? 'Save Changes' : 'Edit
-          Paper'}}</button>
+        <button class="ivd-btn btn-accent" (click)="onEditSave()" mat-flat-button>{{editMode ? ('features.dashboard.paper.saveChanges' | translate) : ('features.dashboard.paper.editPaper' | translate) }}</button>
         <ng-container *ngIf="editMode">
-          <button class="ivd-btn btn-accent" mat-flat-button> Select Question </button>
-          <button class="ivd-btn btn-accent" mat-flat-button> Add Question </button>
+          <button class="ivd-btn btn-accent" mat-flat-button> {{ 'features.dashboard.paper.selectQuestion' | translate }} </button>
+          <button class="ivd-btn btn-accent" mat-flat-button> {{ 'features.dashboard.paper.addQuestion' | translate }} </button>
         </ng-container>
       </div>
     </div>
@@ -40,13 +39,13 @@
     </span>
   </div>
   <ul class="paper-sub-details">
-    <li><span>Difficulty</span><span>
+    <li><span>{{ 'features.dashboard.paper.difficulty' | translate }}</span><span>
         <app-star-rating [rating]="details.difficulty"></app-star-rating>
       </span></li>
-    <li><span>Type</span><span>{{details.type}}</span></li>
-    <li><span>Author</span><span>{{details.author}}</span></li>
+    <li><span>{{ 'features.dashboard.paper.type' | translate }}</span><span>{{details.type}}</span></li>
+    <li><span>{{ 'features.dashboard.paper.author' | translate }}</span><span>{{details.author}}</span></li>
   </ul>
   <div class="rating-wrapper">
-    <h4>rate this paper</h4>
+    <h4>{{ 'features.dashboard.paper.ratePaper' | translate }}</h4>
   </div>
 </ng-template>

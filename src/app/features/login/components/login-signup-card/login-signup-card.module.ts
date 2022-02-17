@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 import { LoginSignupCardComponent } from './login-signup-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [{ path: '', component: LoginSignupCardComponent }];
 
@@ -24,6 +25,7 @@ const MATERIALS = [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
+    TranslateModule,
     ...MATERIALS,
   ],
 })

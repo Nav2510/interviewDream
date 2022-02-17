@@ -1265,6 +1265,11 @@ hr {
   background-color: $dark-theme-primary-color-light;
   position: relative;
   padding: 7px 26px 25px 8px;
+  h2 {
+    margin-bottom: 18px;
+    font-size: 16px;
+    font-weight: 600;
+  }
   .ivd-summary {
     line-height: 25px;
     letter-spacing: 0.13px;
@@ -1279,12 +1284,10 @@ hr {
   .ivd-label {
     font-size: 13px;
     font-weight: $font-medium;
-    text-transform: capitalize;
     letter-spacing: 0.3px;
     width: 30%;
   }
   .ivd-value {
-    width: 70%;
     letter-spacing: 0.3px;
     font-size: 13px;
     font-weight: $font-regular;
@@ -1342,10 +1345,14 @@ hr {
 }
 
 // navbar-actions
-.ivd-info-wrapper {
-    display: flex;
+.ivd-navbar-actions {
+  display: flex;
+  align-items: center;
   .ivd-btn {
     margin-right: 10px;
+  }
+  .ivd-btn.language-btn {
+    height: 30px;
   }
   .ivd-user-btn,
   .ivd-icon-btn {
@@ -1380,7 +1387,13 @@ hr {
       object-fit: cover;
     }
   }
+}
+.ivd-menu.ivd-language-menu {
+  .language-label {
+    font-weight: $font-semi-bold;
+    min-width: 50px;
   }
+}
   
 
 // input

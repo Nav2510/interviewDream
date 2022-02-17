@@ -7,10 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { ChatboxComponent } from './chatbox.component';
 import { ContactSearchComponent } from './components/contact-search/contact-search.component';
-import { MatMenuModule } from '@angular/material/menu';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { AvatarModule } from '../../../../shared/components/avatar/avatar.module';
 import { MessagesAreaComponent } from './components/messages-area/messages-area.component';
@@ -23,28 +24,29 @@ const routes: Routes = [
 ];
 
 const MATERIALS = [
-  MatIconModule,
-  MatInputModule,
+  MatAutocompleteModule,
   MatButtonModule,
   MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
   MatMenuModule,
-  MatAutocompleteModule,
 ];
 
 @NgModule({
   declarations: [
     ChatboxComponent,
-    ContactSearchComponent,
     ContactListComponent,
+    ContactSearchComponent,
     MessagesAreaComponent,
   ],
   imports: [
-    CommonModule,
     AvatarModule,
-    ReactiveFormsModule,
+    CommonModule,
     FormsModule,
-    ...MATERIALS,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
+    TranslateModule,
+    ...MATERIALS,
   ],
 })
 export class ChatboxModule {}

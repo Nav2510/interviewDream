@@ -1,34 +1,34 @@
 <div class="ivd-login-signup-card">
   <div class="easy-login-container">
-    <img class="login-image" src="/assets/images/banners/login.svg" alt="">
+    <img class="login-image" src="/assets/images/banners/login.svg" alt="{{ 'features.login.loginSignupCard.loginImageAlt' | translate }}">
     <a mat-icon-button routerLink="/" class="back-btn">
       <mat-icon>arrow_back</mat-icon>
     </a>
     <div class="action-wrapper">
-      <h3>Get Started</h3>
-      <button mat-button>Sign in with Google+</button>
-      <button mat-button>Sign in with Facebook</button>
+      <h3>{{ 'features.login.loginSignupCard.getStarted' | translate }}</h3>
+      <button mat-button>{{ 'features.login.loginSignupCard.googlePlusSignIn' | translate }}</button>
+      <button mat-button>{{ 'features.login.loginSignupCard.facebookSignIn' | translate }}</button>
     </div>
   </div>
   <div class="login-form-container">
     <div class="login-register-wrapper">
       <button mat-button [ngClass]="{'selected': !isRegister}" (click)="switchToLogin()"
-      >Log In</button>
+      >{{ 'features.login.loginSignupCard.login' | translate }}</button>
       <button mat-button [ngClass]="{'selected': isRegister}" (click)="switchToRegister()"
-      >Register</button>
+      >{{ 'features.login.loginSignupCard.register' | translate }}</button>
     </div>
     <div class="form-wrapper">
-      <h3>{{isRegister ? 'Register' : 'Log In'}}</h3>
+      <h3>{{isRegister ? ('features.login.loginSignupCard.register' | translate) : ('features.login.loginSignupCard.login' | translate) }}</h3>
       <form [formGroup]="model" (ngSubmit)="onSubmit()">
         <div class="ivd-input-wrapper">
-          <label class="ivd-label">Email</label>
+          <label class="ivd-label">{{ 'features.login.loginSignupCard.login' | translate }}</label>
           <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
             <input matInput id="email" type="text" formControlName="email">
           </mat-form-field>
         </div>
         <div class="ivd-input-wrapper">
           <ng-container *ngIf="isRegister">
-            <label class="ivd-label">Username</label>
+            <label class="ivd-label">{{ 'features.login.loginSignupCard.username' | translate }}</label>
             <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
               <input matInput id="username" type="text" formControlName="username">
             </mat-form-field>
@@ -36,33 +36,36 @@
         </div>
         <div class="ivd-input-wrapper">
           <ng-container *ngIf="isRegister">
-            <label class="ivd-label">Full Name</label>
+            <label class="ivd-label">{{ 'features.login.loginSignupCard.fullName' | translate }}</label>
             <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
               <input matInput id="fullName" type="text" formControlName="fullName">
             </mat-form-field>
           </ng-container>
           </div>
           <div class="ivd-input-wrapper">
-          <label class="ivd-label">Password</label>
+          <label class="ivd-label">{{ 'features.login.loginSignupCard.password' | translate }}</label>
           <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
             <input matInput id="password" type="password" formControlName="password" autocomplete="on">
           </mat-form-field>
         </div>
         <div class="ivd-input-wrapper">
           <ng-container *ngIf="isRegister">
-            <label class="ivd-label">Confirm Password</label>
+            <label class="ivd-label">{{ 'features.login.loginSignupCard.confirmPassword' | translate }}</label>
             <mat-form-field class="ivd-form-field ivd-dynamic-form-field" appearance="outline">
               <input matInput id="confirmPassword" type="password"
                 formControlName="confirmPassword" autocomplete="on">
             </mat-form-field>
           </ng-container>
         </div>
-        <button mat-button class="submit-btn" type="submit">{{isRegister ? 'Create An Account': 'Sign In'}}</button>
+        <button mat-button class="submit-btn" type="submit">{{isRegister ? ('features.login.loginSignupCard.createAnAccount' | translate) : ('features.login.loginSignupCard.signIn' | translate) }}</button>
         <div class="link-wrapper">
           <a class="ivd-link login-register-link float-left" (click)="onForgetPassword()" *ngIf="!isRegister"
-          >Forgot Password?</a>
-          <a class="ivd-link login-register-link float-right" (click)="onToggleLoginRegister()" >{{isRegister? 'Already have an Account?' : 'Not a
-            Member yet?'}}</a>
+          >{{ 'features.login.loginSignupCard.forgotPassword' | translate }}</a>
+          <a class="ivd-link login-register-link float-right" (click)="onToggleLoginRegister()" >
+            {{ isRegister ? ('features.login.loginSignupCard.alreadyHaveAccount' | translate)
+             : 
+             ('features.login.loginSignupCard.notMember' | translate)
+            }}</a>
         </div>
       </form>
     </div>

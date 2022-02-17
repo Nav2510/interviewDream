@@ -1,7 +1,7 @@
 <div class="ivd-create-account">
   <div class="card-wrapper">
     <div class="main-title">
-      create your account
+      {{ 'features.landing.createAccount.createYourAccount' | translate }}
     </div>
     <div class="account-card student-card">
       <div class="background-bar"></div>
@@ -9,13 +9,10 @@
           <img [src]="subscribeURI" alt="student">
       </div>
       <div class="card-content-wrapper">
-        <div class="title">Create student account</div>
-        <div class="description">The world of web development is as wide as
-          the
-          internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed
-          at creating, managing, and debugging the websites and applications that we increasingly rely on.</div>
+        <div class="title">{{ 'features.landing.createAccount.createStudentAccount' | translate }}</div>
+        <div class="description">{{ 'features.landing.createAccount.studentDescription' | translate }}</div>
         <button mat-flat-button class="ivd-btn btn-accent register-btn" (click)="onRegister()"
-        >register</button>
+        >{{ 'features.landing.createAccount.register' | translate }}</button>
       </div>
     </div>
     <div class="account-card instructor-card">
@@ -24,13 +21,13 @@
         <img [src]="instructorURI" alt="student">
         </div>
       <div class="card-content-wrapper">
-        <div class="title">Create instructor account</div>
-        <div class="description">Publish the course you want, in the way
-          you
-          want, and always have of control your own content. Teach what you know and help learners explore their interests, gain
-          new skills, and advance their careers.</div>
-        <button mat-flat-button class="ivd-btn btn-accent register-btn" (click)="onRegister()"
-        >register</button>
+        <div class="title">{{ 'features.landing.createAccount.createInstructorAccount' | translate }}</div>
+        <div class="description">{{ 'features.landing.createAccount.instructorDescription' | translate }}</div>
+        <button 
+          mat-flat-button 
+          class="ivd-btn btn-accent register-btn" 
+          (click)="onRegister()"
+        >{{ 'features.landing.createAccount.register' | translate }}</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,187 @@
+{
+  "features": {
+    "dashboard": {
+      "chatbox": {
+        "chatIcon": "chat icon",
+        "encryptionMsg": "Don't worry, your messages are end-to-end encrypted.",
+        "emptyChatMsg": "Please select a Chat to continue.",
+        "profileImage": "profile image",
+        "send": "send",
+        "contactList": {
+          "contacts": "Contacts",
+          "contactRequest": "Contact requests"
+        },
+        "contactSearch": {
+          "placeholder": "Search contact to add..."
+        }
+      },
+      "paper": {
+        "saveChanges": "Save Changes",
+        "editPaper": "Edit Paper",
+        "selectQuestion": "Select Question",
+        "addQuestion": "Add Question",
+        "difficulty": "Difficulty",
+        "type": "Type",
+        "author": "Author",
+        "ratePaper": "rate this paper"
+      }
+    },
+    "landing": {
+      "topCourses": "top courses",
+      "viewAllCourses": "view all courses",
+      "whatIsInterviewDream": "What is InterviewDream?",
+      "interviewDescription": "InterviewDream gives you both \"FAST TRACK\" and \"BEST WAY\" to get you ready by series of questions. InterviewDream also allows you to get familiar with online test section of various companies by providing mock tests available.",
+      "banner": {
+        "quotes": "“In order to create an engaging learning experience, the role of instructor is optional, but the role of learner is essential.”",
+        "author": "- Bernard Bull",
+        "offers": "Sign up to get best courses starting for just $20",
+        "exploreMore": "explore more"
+      },
+      "createAccount": {
+        "createInstructorAccount": "Create instructor account",
+        "createStudentAccount": "Create student account",
+        "createYourAccount": "create your account",
+        "instructorDescription": "Publish the course you want, in the way you want, and always have of control your own content. Teach what you know and help learners explore their interests, gain new skills, and advance their careers.",
+        "register": "register",
+        "studentDescription": "The world of web development is as wide as the internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed at creating, managing, and debugging the websites and applications that we increasingly rely on."
+      },
+      "footer": {
+        "aboutInterviewDream": "about interviewDream",
+        "contactUs": "contact us",
+        "email": "Email Address",
+        "faqs": "faqs",
+        "orderingAndPayment": "ordering and payment",
+        "privacyPolicy": "privacy policy",
+        "subscribe": "Subscribe",
+        "subscribeDescription": "To get latest offers and updated from InterviewDream. Click on the subscribe button below.",
+        "subscribeTitle": "Subscribe to InterviewDream via Email",
+        "termsAndConditions": "terms & conditions",
+        "workWithUs": "workWithUs"
+      },
+      "navBar": {
+        "applicationLogo": "application logo",
+        "logIn": "Log In",
+        "signUp": "Sign Up"
+      },
+      "subscribe": {
+        "title": "Subscribe to our newsletter to get latest offers",
+        "description": "Register to receive additional benefits and newsletter from interviewDream",
+        "subscribe": "Subscribe"
+      }
+    },
+    "login": {
+      "loginSignupCard": {
+        "alreadyHaveAccount": "Already have an account?",
+        "confirmPassword": "Confirm Password",
+        "createAnAccount": "Create An Account",
+        "email": "Email",
+        "facebookSignIn": "Sign in with Facebook",
+        "forgotPassword": "Forgot Password?",
+        "fullName": "Full Name",
+        "getStarted": "Get Started",
+        "googlePlusSignIn": "Sign in with Google+",
+        "login": "Log In",
+        "loginImageAlt": "Login image",
+        "notMember": "Not a member yet?",
+        "password": "Password",
+        "register": "Register",
+        "signIn": "Sign In",
+        "username": "Username"
+      },
+      "accountSelectorCard": {
+        "title": "Select you account",
+        "student": "Student",
+        "instructor": "Instructor"
+      }
+    }
+  },
+  "paperConfig": {
+    "algorithms": "Algorithms",
+    "all": "All",
+    "author": "Author",
+    "authorPlaceholder": "Enter author name...",
+    "categories": "Categories",
+    "categoriesPlaceholder": "Select tags for paper...",
+    "dataStructure": "Data Structure",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter description of the paper here...",
+    "save": "Save",
+    "title": "Title",
+    "titlePlaceholder": "Enter the title for paper...",
+    "type": "Type",
+    "typePlaceholder": "Select type for paper..."
+  },
+  "shared": {
+    "advanceSearch": {
+      "algorithm": "Algorithm",
+      "backend": "Backend",
+      "bestSeller": "Best Seller",
+      "categories": "Categories",
+      "difficulty": "Difficulty",
+      "filter": "Filter",
+      "hot": "Hot",
+      "java": "Java",
+      "language": "Language",
+      "new": "New",
+      "node": "Node",
+      "popular": "Popular",
+      "select": "Select",
+      "tags": "Tags",
+      "title": "Title",
+      "titlePlaceholder": "Search for any title here",
+      "topRated": "Top Rated",
+      "web": "Web"
+    },
+    "breadcrumbs": {
+      "chat": "chat",
+      "courses": "courses",
+      "dashboard": "dashboard",
+      "papers": "papers"
+    },
+    "infoCard": {
+      "difficulty": "Difficulty",
+      "maxTime": "Max Time",
+      "maxScore": "Max Score",
+      "numberOfQuestions": "Number of Questions",
+      "openPaper": "Open Paper",
+      "openTest": "Open Test"
+    },
+    "profileMainInfo": {
+      "cancel": "cancel",
+      "changeProfilePhoto": "Change profile photo",
+      "upload": "upload"
+    },
+    "profilePicUpload": {
+      "dragAndDrop": "Drag and drop your image here",
+      "note": "Your profile photo will be visible to everyone.",
+      "noFileUploaded": "No file uploaded yet.",
+      "or": "or",
+      "uploadFromComputer": "Upload from computer"
+    },
+    "sideNav": {
+      "home": "Home",
+      "chat": "Chat",
+      "notifications": "Notifications",
+      "profile": "Profile",
+      "publicProfile": "Public profile",
+      "editProfile": "Edit profile",
+      "courses": "Courses",
+      "allCourses": "All courses",
+      "myCourses": "My courses",
+      "QAAndPapers": "QA & Papers",
+      "allPapers": "All papers",
+      "createPracticePaper": "Create practice paper",
+      "editPracticePaper": "Edit practice paper",
+      "allQuestions": "All questions",
+      "onlineTests": "Online Tests",
+      "allTests": "All tests",
+      "createTest": "Create test",
+      "editTest": "Edit test",
+      "payment": "Payment",
+      "account": "Account",
+      "administration": "Administration",
+      "help": "Help",
+      "logout": "Logout"
+    }
+  }
+}

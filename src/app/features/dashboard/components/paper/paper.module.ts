@@ -7,6 +7,7 @@ import { PaperComponent } from './paper.component';
 import { StarRatingModule } from '../../../../shared/components/star-rating/star-rating.module';
 import { DynamicFormModule } from '../../../../shared/components/dynamic-form/dynamic-form.module';
 import { QuestionCardModule } from '../../../../shared/components/question-card/question-card.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const MATERIALS = [MatButtonModule];
     QuestionCardModule,
     RouterModule.forChild(routes),
     StarRatingModule,
+    TranslateModule,
     ...MATERIALS,
   ],
 })

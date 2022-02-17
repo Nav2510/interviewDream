@@ -5,13 +5,12 @@
   <div class="content-container">
     <div class="inspirational-quotes">
       <span class="quotes-wrapper">
-        “In order to create an engaging learning experience, the role of
-        instructor is optional, but the role of learner is essential.”
+        {{ 'features.landing.banner.quotes' | translate }}
       </span>
       <br />
-      <span class="author">- Bernard Bull</span>
+      <span class="author">{{ 'features.landing.banner.author' | translate }}</span>
     </div>
-    <div class="offers">Sign up to get best courses starting for just $20</div>
+    <div class="offers">{{ 'features.landing.banner.offers' | translate }}</div>
   </div>
   <div class="images-container">
     <div class="images-wrapper" *ngFor="let image of imageList; let i = index;">
@@ -21,7 +20,7 @@
   <div class="show-more" (click)="onShowMore()">
     <a class="show-more-link" href="#aboutInterview">
       <div class="show-more-text">
-        explore more
+        {{ 'features.landing.banner.exploreMore' | translate }}
       </div>
       <div class="show-more-icon">
         <mat-icon>arrow_forward_ios</mat-icon>

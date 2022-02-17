@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -40,6 +41,8 @@ export class NavBarComponent implements OnInit {
     private readonly authService: AuthService,
     private readonly meGQL: MeGQL,
     private readonly router: Router,
+    private readonly translateService: TranslateService,
+    private readonly cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +55,13 @@ export class NavBarComponent implements OnInit {
     } else if (userAction.type === 'url') {
       this.router.navigate([userAction.url]);
     }
+  }
+
+  toggleLang(): void {
+    console.log(this.translateService.getLangs())
+    this.translateService.use('hi');
+    console.log(this.translateService.getLangs())
+    this.cdr.detectChanges();
   }
 
   onLogout(): void {

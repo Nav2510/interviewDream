@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ProfileInfoCardComponent } from './profile-info-card.component';
+import { TitlecaseModule } from '../../pipes/titlecase/titlecase.module';
 
 const MATERIALS = [
   MatButtonModule,
@@ -19,7 +20,7 @@ const MATERIALS = [
 
 @NgModule({
   declarations: [ProfileInfoCardComponent],
-  imports: [CommonModule, ...MATERIALS, ReactiveFormsModule],
+  imports: [CommonModule, ...MATERIALS, ReactiveFormsModule, TitlecaseModule],
   exports: [ProfileInfoCardComponent],
 })
 export class ProfileInfoCardModule {}

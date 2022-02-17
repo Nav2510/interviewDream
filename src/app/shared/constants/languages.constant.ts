@@ -1,12 +1,16 @@
-export const LANGUAGES = {
-  en: {
+import { LanguageModel } from "../models/language.model";
+
+export const LANGUAGES: LanguageModel[] = [
+  {
     name: 'English (United States)',
-    label: 'English-US',
+    label: 'English',
     code: 'en-US',
   },
-  hi: {
+  {
     name: 'Hindi',
     label: 'हिंदी',
     code: 'hi',
   },
-};
+];
+
+export const DEFAULT_LANGUAGE: LanguageModel = LANGUAGES[0];

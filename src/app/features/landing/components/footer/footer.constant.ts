@@ -3,25 +3,25 @@ import { LANGUAGES } from '../../../../shared/constants/languages.constant';
 export const FOOTER_LINKS = [
   [
     {
-      label: LANGUAGES.en.label,
-      url: `/${LANGUAGES.en.code}`,
+      label: LANGUAGES[0].label,
+      url: `/${LANGUAGES[0].code}`,
     },
     {
-      label: LANGUAGES.hi.label,
-      url: `/${LANGUAGES.hi.code}`,
+      label: LANGUAGES[1].label,
+      url: `/${LANGUAGES[1].code}`,
     },
   ],
   [
-    { label: 'contact us' },
-    { label: 'ordering and payment' },
-    { label: 'faqs' },
+    { label: 'features.landing.footer.contactUs' },
+    { label: 'features.landing.footer.orderingAndPayment' },
+    { label: 'features.landing.footer.faqs' },
   ],
   [
-    { label: 'about interviewdream' },
-    { label: 'work with us' },
-    { label: 'privacy policy' },
-    { label: 'terms & conditions' },
-    { label: 'faqs' },
+    { label: 'features.landing.footer.aboutInterviewDream' },
+    { label: 'features.landing.footer.workWithUs' },
+    { label: 'features.landing.footer.privacyPolicy' },
+    { label: 'features.landing.footer.termsAndConditions' },
+    { label: 'features.landing.footer.faqs' },
   ],
 ];
 export const SOCIAL_LINKS = [

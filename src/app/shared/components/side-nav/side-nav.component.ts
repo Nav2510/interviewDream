@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 
-import { SIDE_NAV_CONTENT } from './side-nav';
+import { SIDE_NAV_CONTENT } from './side-nav.contant';
 import { SideNavModel, SideNavSubItemModel } from './side-nav.model';
 
 @Component({

@@ -1,11 +1,11 @@
 <div class="ivd-account-selector-card">
-  <h1 class="title">Select your Account</h1>
+  <h1 class="title">{{ 'features.login.accountSelectorCard.title' | translate }}</h1>
   <div class="student-wrapper" (click)="onSelection(accountType.Student)">
-    <img src="assets/images/bgImages/2.jpg" alt="background-image">
-    <h2 class="sub-title">Student</h2>
+    <img [src]="studentCardBg" alt="background-image">
+    <h2 class="sub-title">{{ 'features.login.accountSelectorCard.student' | translate }}</h2>
   </div>
   <div class="instructor-wrapper" (click)="onSelection(accountType.Instructor)">
-    <img src="assets/images/bgImages/18.jpg" alt="background-image">
-    <h2 class="sub-title">Instructor</h2>
+    <img [src]="instructorCardBg" alt="background-image">
+    <h2 class="sub-title">{{ 'features.login.accountSelectorCard.instructor' | translate }}</h2>
   </div>
 </div>

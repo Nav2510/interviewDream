@@ -4,5 +4,5 @@
             <img src="assets/icons/menu.svg" alt="">
         </button>
     </div>
-    <app-navbar-actions [actions]="userActions" [currentUser]="currentUser$ | async"></app-navbar-actions>
+    <app-navbar-actions [actions]="userActions" [userLogged]="isLoggedIn" [currentUser]="currentUser$ | async"></app-navbar-actions>
 </div>

@@ -1,5 +1,5 @@
 <div class="ivd-contact-search">
-    <input class="ivd-custom-input" placeholder="Search contact to add..." id="contact" type="text"
+    <input class="ivd-custom-input" placeholder="{{ 'features.dashboard.chatbox.contactSearch.placeholder' | translate }}" id="contact" type="text"
       [formControl]="contactControl"
       [matAutocomplete]="auto">
     <mat-autocomplete class="ivd-autocomplete-panel" #auto="matAutocomplete">

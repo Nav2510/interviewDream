@@ -4,7 +4,7 @@
         <a class="ivd-breadcrumb-link"
         [ngClass]="{'ivd-last-breadcrumb': breadcrumbIndex === breadcrumbList.length - 1}"
         (click)="onLinkClick(breadcrumb, breadcrumbIndex === breadcrumbList.length - 1)">
-            <span class="ivd-breadcrumb-label" *ngIf="!isObjectId(breadcrumb.label)">{{breadcrumb.label | titlecase}}</span>
+            <span class="ivd-breadcrumb-label" *ngIf="!isObjectId(breadcrumb.label)">{{ breadcrumb.label | translate | titlecase }}</span>
         </a>
         <mat-icon 
         *ngIf="breadcrumbIndex !== breadcrumbList.length - 1" 

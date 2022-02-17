@@ -10,10 +10,10 @@
     </div>
     <div class="ivd-sub-info-wrapper">
         <div class="ivd-sub-info-list ivd-sub-info-label">
-            <span *ngIf="cardInfo.maxTime">Max Time</span>
-            <span *ngIf="cardInfo.maxTime">Max Score</span>
-            <span>Number of Questions</span>
-            <span>Difficulty</span>
+            <span *ngIf="cardInfo.maxTime">{{ 'shared.infoCard.maxTime' | translate }}</span>
+            <span *ngIf="cardInfo.maxTime">{{ 'shared.infoCard.maxScore' | translate }}</span>
+            <span>{{ 'shared.infoCard.numberOfQuestions' | translate }}</span>
+            <span>{{ 'shared.infoCard.difficulty' | translate }}</span>
         </div>
         <div class="ivd-sub-info-list ivd-sub-info-value">
             <span *ngIf="cardInfo.maxTime">{{cardInfo.maxTime}}</span>
@@ -22,5 +22,5 @@
             <span><app-star-rating [rating]="cardInfo.difficulty"></app-star-rating></span>
         </div>
     </div>
-    <a class="ivd-info-card-link" [routerLink]="cardInfo.link">{{(cardType === 'paper') ? 'Open Paper' : 'Open Test'}}</a>
+    <a class="ivd-info-card-link" [routerLink]="cardInfo.link">{{(cardType === 'paper') ? ('shared.infoCard.openPaper' | translate) : ('shared.infoCard.openTest' | translate) }}</a>
 </div>

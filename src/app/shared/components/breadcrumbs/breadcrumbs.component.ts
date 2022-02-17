@@ -54,8 +54,14 @@ export class BreadcrumbsComponent implements OnInit {
             const title = response.data.course.title;
             urlFragList[urlFragList.length - 1] = title;
             this.breadcrumbs.next(
-              urlFragList.map((fragment) => {
-                return { label: fragment, url: BREADCRUMB_URL[fragment] };
+              urlFragList.map((fragment, index) => {
+                return {
+                  label:
+                    index < urlFragList.length -1
+                      ? `shared.breadcrumbs.${fragment}`
+                      : fragment,
+                  url: BREADCRUMB_URL[fragment],
+                };
               }),
             );
           });
@@ -70,8 +76,11 @@ export class BreadcrumbsComponent implements OnInit {
             const title = response.data.paper.title;
             urlFragList[urlFragList.length - 1] = title;
             this.breadcrumbs.next(
-              urlFragList.map((fragment) => {
-                return { label: fragment, url: BREADCRUMB_URL[fragment] };
+              urlFragList.map((fragment, index) => {
+                return {
+                  label: index < urlFragList.length - 1 ? `shared.breadcrumbs.${fragment}` : fragment,
+                  url: BREADCRUMB_URL[fragment],
+                };
               }),
             );
           });
@@ -79,7 +88,7 @@ export class BreadcrumbsComponent implements OnInit {
     }
     this.breadcrumbs.next(
       urlFragList.map((fragment) => {
-        return { label: fragment, url: BREADCRUMB_URL[fragment] };
+        return { label: `shared.breadcrumbs.${fragment}`, url: BREADCRUMB_URL[fragment] };
       }),
     );
   }

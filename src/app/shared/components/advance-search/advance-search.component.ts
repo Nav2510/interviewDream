@@ -12,6 +12,7 @@ import {
   CourseTagEnum,
 } from '../../../../graphql/generated/graphql.types';
 import { ConfigModel } from '../dynamic-form/config.model';
+import { ADVANCE_SEARCH_CONFIG } from './advance-search.constant';
 import { IFilterValueModel } from './filter-value.model';
 
 interface ChipModel {
@@ -28,114 +29,10 @@ interface ChipModel {
 export class AdvanceSearchComponent implements OnInit {
   @Output() filterChangeEvent = new EventEmitter<IFilterValueModel>();
 
+  readonly filterConfig = ADVANCE_SEARCH_CONFIG;
+
   filterModel: FormGroup;
   selectedItems: ChipModel[] = [];
-  filterConfig: ConfigModel[] = [
-    {
-      label: 'Title',
-      name: 'title',
-      type: 'input',
-      defaultValue: '',
-      placeholder: 'Search for any title here',
-      classes: ['ivd-col-4-half'],
-    },
-    {
-      label: 'Tags',
-      name: 'tags',
-      type: 'dropdown',
-      placeholder: 'Select',
-      defaultValue: [],
-      classes: ['ivd-col-2'],
-      options: [
-        {
-          label: 'Best Seller',
-          value: CourseTagEnum.BestSeller,
-        },
-        {
-          label: 'Top Rated',
-          value: CourseTagEnum.TopRated,
-        },
-        {
-          label: 'Hot',
-          value: CourseTagEnum.Hot,
-        },
-        {
-          label: 'Popular',
-          value: CourseTagEnum.Popular,
-        },
-        {
-          label: 'New',
-          value: CourseTagEnum.New,
-        },
-      ],
-    },
-    {
-      label: 'Categories',
-      name: 'categories',
-      type: 'dropdown',
-      placeholder: 'Select',
-      defaultValue: [],
-      classes: ['ivd-col-2'],
-      // TODO: Check for grouped dropdown with title
-      options: [
-        {
-          label: 'Algorithm',
-          value: CourseCategoryEnum.Algorithm,
-        },
-        {
-          label: 'Backend',
-          value: CourseCategoryEnum.Backend,
-        },
-        {
-          label: 'Java',
-          value: CourseCategoryEnum.Java,
-        },
-        {
-          label: 'Language',
-          value: CourseCategoryEnum.Language,
-        },
-        {
-          label: 'Node',
-          value: CourseCategoryEnum.Node,
-        },
-        {
-          label: 'Web',
-          value: CourseCategoryEnum.Web,
-        },
-      ],
-    },
-    {
-      label: 'Difficulty',
-      name: 'difficulty',
-      type: 'dropdown',
-      placeholder: 'Select',
-      defaultValue: [],
-      classes: ['ivd-col-2'],
-      options: [
-        {
-          label: '1',
-          value: '1',
-          alternateLabel: 'Difficulty: 1',
-        },
-        {
-          label: '2',
-          value: '2',
-          alternateLabel: 'Difficulty: 2',
-        },
-        {
-          label: '3',
-          value: '3',
-          alternateLabel: 'Difficulty: 3',
-        },
-      ],
-    },
-    {
-      label: 'Filter',
-      name: 'filter',
-      type: 'button',
-      classes: ['ivd-col-1-half'],
-    },
-  ];
 
   ngOnInit() {
     this.build();

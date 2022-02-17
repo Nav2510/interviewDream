@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { LandingComponent } from './landing.component';
 import { CardModule } from '../../shared/components/card/card.module';
@@ -11,10 +14,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BannerComponent } from './components/banner/banner.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { NavbarActionsModule } from 'src/app/shared/components/navbar-actions/navbar-actions.module';
+import { NavbarActionsModule } from '../../shared/components/navbar-actions/navbar-actions.module';
 
 const MATERIALS = [
   MatIconModule,
@@ -32,19 +33,20 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    BannerComponent,
     CreateAccountComponent,
     FooterComponent,
     LandingComponent,
     NavBarComponent,
     SubscribeComponent,
-    BannerComponent,
   ],
   imports: [
-    CommonModule,
     CardModule,
-    ReactiveFormsModule,
+    CommonModule,
     NavbarActionsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
+    TranslateModule,
     ...MATERIALS,
   ],
   exports: [LandingComponent],

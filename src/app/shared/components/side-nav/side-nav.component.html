@@ -16,7 +16,7 @@
         expandedHeight="40px" >
           <mat-panel-title>
             <mat-icon class="ivd-list-icon">{{item.icon}}</mat-icon>
-            {{item.label}}
+            {{item.label | translate}}
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div class="ivd-sub-list-item"
@@ -24,7 +24,7 @@
         *ngFor="let subItem of item.subList; let subIndex = index"
         (click)="onClickSubListItem(listIndex, subIndex, subItem)"
         >
-          {{subItem.label}}
+          {{subItem.label | translate}}
         </div>
       </mat-expansion-panel>
     </ng-container>

@@ -13,7 +13,6 @@ import { ProfileInfoCardModel } from './profile-info-card.model';
 @Component({
   selector: 'app-profile-info-card',
   templateUrl: './profile-info-card.component.html',
-  styleUrls: ['./profile-info-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileInfoCardComponent implements OnInit {
