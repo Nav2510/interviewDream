@@ -3,6 +3,7 @@
     "dashboard": {
       "chatbox": {
         "chatIcon": "chat icon",
+        "chatPlaceholder": "Start typing to chat...",
         "encryptionMsg": "Don't worry, your messages are end-to-end encrypted.",
         "emptyChatMsg": "Please select a Chat to continue.",
         "profileImage": "profile image",
@@ -157,6 +158,13 @@
       "noFileUploaded": "No file uploaded yet.",
       "or": "or",
       "uploadFromComputer": "Upload from computer"
+    },
+    "questionCard": {
+      "explanation": "Explanation",
+      "hideAnswer": "Hide Answer",
+      "noExplanation": "Sorry no explanation avalable",
+      "report": "Report",
+      "viewAnswer": "View Answer"
     },
     "sideNav": {
       "home": "Home",

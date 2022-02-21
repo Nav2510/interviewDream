@@ -19,7 +19,7 @@
         </app-messages-area>
       </div>
       <div class="action-wrapper">
-          <input placeholder="Start typing to chat..." class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()"
+          <input placeholder="{{ 'features.dashboard.chatbox.chatPlaceholder' | translate }}" class="ivd-custom-input" type="text" (keyup.enter)="onSendMessage()"
             [(ngModel)]="chatModel">
         <button class="ivd-btn btn-accent ivd-dynamic-form-field" (click)="onSendMessage()" mat-flat-button>
           <span>{{ 'features.dashboard.chatbox.send' | translate }}</span>

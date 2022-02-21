@@ -22,7 +22,7 @@ export class NavbarActionsComponent {
   @Input() userLogged: boolean = false;
 
   readonly LANGUAGES = LANGUAGES;
-  currentLanguage = DEFAULT_LANGUAGE;
+  currentLanguage = LANGUAGES.find((language) => this.translateService.currentLang === language.code);
 
   constructor(
     private readonly router: Router,

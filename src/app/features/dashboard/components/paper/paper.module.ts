@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { PaperComponent } from './paper.component';
 import { StarRatingModule } from '../../../../shared/components/star-rating/star-rating.module';
 import { DynamicFormModule } from '../../../../shared/components/dynamic-form/dynamic-form.module';
 import { QuestionCardModule } from '../../../../shared/components/question-card/question-card.module';
-import { TranslateModule } from '@ngx-translate/core';
+import { TitlecaseModule } from '../../../../shared/pipes/titlecase/titlecase.module';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const MATERIALS = [MatButtonModule];
     QuestionCardModule,
     RouterModule.forChild(routes),
     StarRatingModule,
+    TitlecaseModule,
     TranslateModule,
     ...MATERIALS,
   ],

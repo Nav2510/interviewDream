@@ -40,18 +40,18 @@
                     </div>
                     <div class="ivd-qstn-btn-wrapper">
                         <button class="ivd-qstn-btn ivd-btn-2 btn-primary" (click)="qstnPanelHeader._toggle()" mat-button>
-                            {{(isExpansionOpened)? 'Hide Answer' : 'View Answer'}}
+                            {{(isExpansionOpened)? ('shared.questionCard.hideAnswer' | translate) : ('shared.questionCard.viewAnswer' | translate )}}
                         </button>
                         <button class="ivd-qstn-btn ivd-btn-2 btn-danger" mat-button>
-                            Report
+                            {{ 'shared.questionCard.report' | translate }}
                         </button>
                     </div>
                 </div>
             </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="ivd-qstn-explanation-wrapper">
-            <h4 *ngIf="question.explanation">Explanation</h4>
-            {{(question.explanation)? question.explanation: 'Sorry no explanation avalable'}}
+            <h4 *ngIf="question.explanation">{{ 'shared.questionCard.explanation' | translate }}</h4>
+            {{(question.explanation)? question.explanation: ( 'shared.questionCard.noExplanation' | translate )}}
         </div>
     </mat-expansion-panel>
 </div>

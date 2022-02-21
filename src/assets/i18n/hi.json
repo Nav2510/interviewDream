@@ -3,6 +3,7 @@
     "dashboard": {
       "chatbox": {
         "chatIcon": "चैट आइकन",
+        "chatPlaceholder": "चैट करने के लिए टाइप करना प्रारंभ करें...",
         "encryptionMsg": "चिंता न करें, आपके संदेश पूरी तरह से एन्क्रिप्ट किए गए है।",
         "emptyChatMsg": "जारी रखने के लिए कृपया एक चैट चुनें।",
         "profileImage": "प्रोफ़ाइल छवि",
@@ -157,6 +158,13 @@
       "noFileUploaded": "अभी तक कोई फ़ाइल अपलोड नहीं हुई है.",
       "or": "या",
       "uploadFromComputer": "कंप्यूटर से अपलोड करे"
+    },
+    "questionCard": {
+      "explanation": "व्याख्या",
+      "hideAnswer": "उत्तर छुपाएं",
+      "noExplanation": "क्षमा करें कोई स्पष्टीकरण उपलब्ध नहीं है",
+      "report": "प्रतिवेदन",
+      "viewAnswer": "उत्तर देखें"
     },
     "sideNav": {
       "account": "खाता",

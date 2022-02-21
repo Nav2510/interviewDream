@@ -5,6 +5,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { QuestionCardComponent } from './question-card.component';
 
@@ -17,7 +18,7 @@ const MATERIALS = [
 
 @NgModule({
   declarations: [QuestionCardComponent],
-  imports: [CommonModule, FormsModule, ...MATERIALS],
+  imports: [CommonModule, FormsModule, TranslateModule, ...MATERIALS],
   exports: [QuestionCardComponent],
 })
 export class QuestionCardModule {}
