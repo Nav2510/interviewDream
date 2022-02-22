@@ -12,6 +12,7 @@ import { NavUserActionModel } from '../../shared/components/top-nav/nav-user-act
 })
 export class DashboardComponent {
   showSideNav = true;
+  isLoggedIn: boolean;
   userActions: NavUserActionModel[] = [
     { label: 'Profile', type: 'url', url: '/dashboard/profile' },
     {
@@ -26,7 +27,9 @@ export class DashboardComponent {
   constructor(
     private readonly router: Router,
     private readonly authService: AuthService,
-  ) {}
+  ) {
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
 
   onToggleSideNav() {
     this.showSideNav = !this.showSideNav;

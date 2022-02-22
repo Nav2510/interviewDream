@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" [opened]="showSideNav" class="side-nav">
+    <mat-sidenav *ngIf="isLoggedIn" mode="side" [opened]="showSideNav" class="side-nav">
         <app-side-nav></app-side-nav>
     </mat-sidenav>
     <mat-sidenav-content class="main-container">

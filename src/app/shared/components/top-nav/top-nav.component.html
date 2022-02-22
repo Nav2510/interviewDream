@@ -1,5 +1,5 @@
 <div class="ivd-top-nav">
-    <div class="ivd-menu-icon">
+    <div class="ivd-menu-icon" *ngIf="isLoggedIn">
         <button (click)="onToggleMenu()" mat-icon-button aria-label="Icon button with a menu icon">
             <img src="assets/icons/menu.svg" alt="">
         </button>
